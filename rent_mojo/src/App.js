@@ -1,12 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import { HomeNavbar } from './Components/HomeNavbar';
-import EmptyCart from "./ArjunPages/EmptyCart";
+import { HomePage } from './RohiniPages/HomePage';
+
 function App() {
   return (
     <div className="App">
-      <HomeNavbar />
-      {/* <EmptyCart /> */}
+      <HomePage/>   
     </div>
   );
 }
