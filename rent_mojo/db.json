@@ -1,0 +1,6 @@
+{
+	"users": [
+		{ "id": 1, "name": "XYZ", "number": "9876543210", "email": "xyz@abc.com" }
+	],
+	"loginUser": []
+}
