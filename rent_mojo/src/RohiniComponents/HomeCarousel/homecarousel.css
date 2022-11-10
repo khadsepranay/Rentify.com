@@ -1,0 +1,22 @@
+.carousel-main {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh; 
+  }
+  
+  .rec-arrow:hover {
+    border-radius: 50%;
+    background-color: transparent;
+  }
+  .carousel-wrapper {
+    width: 100%;
+    background-color:#f5f7fa;
+    padding: 80px 5px 50px 5px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  
