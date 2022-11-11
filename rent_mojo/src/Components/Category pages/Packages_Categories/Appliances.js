@@ -6,7 +6,9 @@ import axios from "axios"
 import {Link} from "@mui/material"
 import CloseIcon from '@mui/icons-material/Close';
 
-function Bedroom() {
+function Appliances() {
+  const [sliderValue, setSliderValue] = React.useState(5);
+  const [showTooltip, setShowTooltip] = React.useState(false);
   let [packageRoomData,setPackageRoomData] = useState([])
   let [packageApartData,setPackageApartData] = useState([])
   let [data,setData] = useState([])
@@ -22,21 +24,20 @@ function Bedroom() {
       let data = res.data
       setPackageApartData(data)
     })
-    axios.get("http://localhost:8000/bedroom").then((res)=>{
+    axios.get("http://localhost:8000/appliances").then((res)=>{
       setData(res.data)
-      setClose(false)
     })
   },[])
 
-  function handleChange(e){
-    setValue(e.target.value)
-  }
-
+  
   function ResetData(){
     setData([])
     setClose(true)
   }
-  
+
+  function handleChange(e){
+    setValue(e.target.value)
+  }
 
   return (
     <Box sx={{ width: "100vw", height: "100%", margin: "0px", padding: "0px" }}>
@@ -84,8 +85,8 @@ function Bedroom() {
                 {
                   packageRoomData && packageRoomData.map((el)=>{
                     return(
-                     <Link href={`/${el.endPoint}`}> 
-                     <Box sx={{width:"100px",padding:"10px",textAlign:"center",border:"1px solid gray"}}>
+                        <Link href={`/${el.endPoint}`}>
+                      <Box sx={{width:"100px",padding:"10px",textAlign:"center",border:"1px solid gray"}}>
                         <Box component="img" src={el.logo} width="25%"/>
                         <Box>{el.name}</Box>
                         <Box>{el.NOP} Packages</Box>
@@ -101,13 +102,13 @@ function Bedroom() {
                 {
                   packageApartData && packageApartData.map((el)=>{
                     return(
-                      <Link href={`/${el.endPoint}`}>
-                    <Box sx={{width:"100px",padding:"10px",textAlign:"center",border:"1px solid gray"}}>
-                      <Box component="img" src={el.logo} width="25%"/>
-                      <Box>{el.name}</Box>
-                      <Box>{el.NOP} Packages</Box>
-                    </Box>
-                    </Link>
+                        <Link href={`/${el.endPoint}`}>
+                      <Box sx={{width:"100px",padding:"10px",textAlign:"center",border:"1px solid gray"}}>
+                        <Box component="img" src={el.logo} width="25%"/>
+                        <Box>{el.name}</Box>
+                        <Box>{el.NOP} Packages</Box>
+                      </Box>
+                      </Link>
                     )
                   })
                 }
@@ -117,13 +118,12 @@ function Bedroom() {
             <Box>
             </Box>
             {
-              close?(<Box></Box>):(<Box sx={{width:"120px",height:"32px",backgroundColor:"#F2ECEC",color:"gray",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"15px",gap:"5px",marginBottom:"28px"}}>Bedroom<CloseIcon sx={{width:"20px",marginTop:"2px",cursor:"pointer"}} onClick={()=>ResetData()}/></Box>)
+              close?(<Box></Box>):(<Box sx={{width:"120px",height:"32px",backgroundColor:"#F2ECEC",color:"gray",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"15px",gap:"5px",marginBottom:"28px"}}>Appliances<CloseIcon sx={{width:"20px",marginTop:"2px",cursor:"pointer"}} onClick={()=>ResetData()}/></Box>)
             }
           <Box sx={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:"20px",height:"145vh",overflow:"scroll"}}>
             {
               data && data.map((el)=>{
                 return(
-                  <Link href={`/bedroom/${el.id}`}>
                   <Box sx={{border:"1px solid grey"}}>
                   <Box component="img" src={el.src} width="100%"></Box>
                   <Box sx={{padding:"25px"}}>
@@ -139,7 +139,6 @@ function Bedroom() {
                   </Box>
                   </Box>
                   </Box>
-                  </Link>
                 )
               })
             }
@@ -151,4 +150,4 @@ function Bedroom() {
   );
 }
 
-export default Bedroom;
+export default Appliances;
