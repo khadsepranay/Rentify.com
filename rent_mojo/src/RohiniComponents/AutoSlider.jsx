@@ -35,8 +35,8 @@ export default function AutoSlider() {
 
     // These are the images used in the slide
     const cards = [
-        'https://s.rmjo.in/WP-Web.png',
         'https://s.rmjo.in/Fitness-Offer-HP-Web-%20(1).jpg',
+        'https://s.rmjo.in/WP-Web.png',
         'https://s.rmjo.in/AC-Offer-Banner-Web-.jpg',
         'https://s.rmjo.in/Paytm-Offer-banner-for-web.jpg',
         'https://s.rmjo.in/Paytm-Bank-Desktop-banner-%20(1).jpg'
