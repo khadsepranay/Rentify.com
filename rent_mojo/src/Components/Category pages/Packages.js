@@ -1,6 +1,7 @@
 import { Box, Image } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function Packages() {
   let [roomData, setRoomData] = useState([]);
@@ -28,9 +29,10 @@ function Packages() {
         boxSizing: "border-box",
         margin: "0px",
         padding: "0px",
+        fontFamily:"'Open Sans', sans-serif"
       }}
     >
-      <Box sx={{ width: "75vw", margin: "144px auto 0px" }}>
+      <Box sx={{ width: "75vw", margin: "40px auto 0px" }}>
         <Box>
           <Box>
             <Box
@@ -63,6 +65,7 @@ function Packages() {
             {roomData &&
               roomData.map((el) => {
                 return (
+                  <NavLink to={`/packages/${el.endPoint}`} style={{textDecoration:"none"}} >
                   <Box
                     sx={{
                       _hover: {
@@ -104,6 +107,7 @@ function Packages() {
                       </Box>
                     </Box>
                   </Box>
+                  </NavLink>
                 );
               })}
           </Box>
@@ -140,6 +144,7 @@ function Packages() {
             {apartData &&
               apartData.map((el) => {
                 return (
+                  <NavLink to={`/packages/${el.endPoint}`} style={{textDecoration:"none"}}>
                   <Box
                     sx={{
                       _hover: {
@@ -171,6 +176,7 @@ function Packages() {
                       </Box>
                     </Box>
                   </Box>
+                  </NavLink>
                 );
               })}
           </Box>

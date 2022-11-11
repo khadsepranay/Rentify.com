@@ -3,7 +3,7 @@ import Slider from "@mui/material/Slider";
 import { Button } from "@mui/material";
 import React,{useEffect, useState} from "react";
 import axios from "axios"
-import {Link} from "@mui/material"
+import {Link} from "react-router-dom"
 import CloseIcon from '@mui/icons-material/Close';
 
 function OneBHK() {
@@ -84,13 +84,21 @@ function OneBHK() {
                 {
                   packageRoomData && packageRoomData.map((el)=>{
                     return(
-                        <Link href={`/${el.endPoint}`}>
-                      <Box sx={{width:"100px",padding:"10px",textAlign:"center",border:"1px solid gray"}}>
-                        <Box component="img" src={el.logo} width="25%"/>
-                        <Box>{el.name}</Box>
-                        <Box>{el.NOP} Packages</Box>
-                      </Box>
-                      </Link>
+                      <Link to={`/packages/${el.endPoint}`} style={{textDecoration:"none",color:"#808080"}}>
+                       {
+                         el.name=="1 BHK"?
+                         <Box sx={{width:"100px",padding:"10px",textAlign:"center", backgroundColor:"#F5FAFF",color:"gray",borderBottom:"4px solid #0080ff",boxShadow:"0.1px 8px 10px #e0e0e0"}}>
+                            <Box component="img" src={el.logo} width="25%"/>
+                            <Box sx={{fontSize:"12px",color:"#0080ff",letterSpacing:0.4}}>{el.name}</Box>
+                            <Box sx={{fontSize:"11px"}}>{el.NOP} Packages</Box>
+                          </Box>:
+                       <Box sx={{width:"100px",padding:"10px",textAlign:"center",border:"1px solid #e0e0e0"}}>
+                       <Box component="img" src={el.logo} width="25%"/>
+                       <Box sx={{fontSize:"12px",letterSpacing:0.4}}>{el.name}</Box>
+                       <Box sx={{fontSize:"11px"}}>{el.NOP} Packages</Box>
+                     </Box>
+                       }
+                       </Link>
                     )
                   })
                 }
@@ -101,13 +109,21 @@ function OneBHK() {
                 {
                   packageApartData && packageApartData.map((el)=>{
                     return(
-                        <Link href={`/${el.endPoint}`}>
-                      <Box sx={{width:"100px",padding:"10px",textAlign:"center",border:"1px solid gray"}}>
-                        <Box component="img" src={el.logo} width="25%"/>
-                        <Box>{el.name}</Box>
-                        <Box>{el.NOP} Packages</Box>
-                      </Box>
-                      </Link>
+                      <Link to={`/packages/${el.endPoint}`} style={{textDecoration:"none",color:"#808080"}}>
+                       {
+                         el.name=="1 BHK"?
+                         <Box sx={{width:"100px",padding:"10px",textAlign:"center", backgroundColor:"#F5FAFF",color:"gray",borderBottom:"4px solid #0080ff",boxShadow:"0.1px 8px 10px #e0e0e0"}}>
+                            <Box component="img" src={el.logo} width="25%"/>
+                            <Box sx={{fontSize:"12px",color:"#0080ff",letterSpacing:0.4}}>{el.name}</Box>
+                            <Box sx={{fontSize:"11px"}}>{el.NOP} Packages</Box>
+                          </Box>:
+                       <Box sx={{width:"100px",padding:"10px",textAlign:"center",border:"1px solid #e0e0e0"}}>
+                       <Box component="img" src={el.logo} width="25%"/>
+                       <Box sx={{fontSize:"12px",letterSpacing:0.4}}>{el.name}</Box>
+                       <Box sx={{fontSize:"11px"}}>{el.NOP} Packages</Box>
+                     </Box>
+                       }
+                       </Link>
                     )
                   })
                 }
