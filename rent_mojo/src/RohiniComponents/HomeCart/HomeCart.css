@@ -1,0 +1,50 @@
+.cart-header {
+    animation: pulse2 .3s;
+    font-size: 10px;
+    width: 18px;
+    height: 18px;
+    background: #1dbdc0;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    right: -10px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.hover-div{
+    position: absolute;
+    z-index: 1000;
+    min-width: 300px;
+    padding: 20px!important;
+
+    border-radius: 3px;
+    padding: 0;
+    animation-name: fadeIn;
+    animation-duration: .3s;
+    top: 30px;
+    float: left;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    font-size: 14px;
+    text-align: left;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+    box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+@media all and (min-width : 100px) and (max-width : 700px) {
+    .cart-header {
+        top: -10px; 
+    }
+}

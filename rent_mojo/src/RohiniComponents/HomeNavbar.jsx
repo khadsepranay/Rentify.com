@@ -17,6 +17,7 @@ import {
     Image,
     Select,
 } from '@chakra-ui/react';
+import "./HomeCart/HomeCart.css";
 import {
     HamburgerIcon,
     CloseIcon,
@@ -24,14 +25,26 @@ import {
     ChevronRightIcon,
 } from '@chakra-ui/icons';
 import { IoCartOutline } from 'react-icons/io5';
-import { LoginSignup } from './Login-Signup';
+import { LoginSignup } from './LoginSignup';
 import { SearchBar } from './SearchBar';
+import { HomeCart } from './HomeCart/HomeCart';
+import { NavSelectTag } from './NavSelectTag';
+import { useState } from 'react';
 
 export default function HomeNavbar() {
     const { isOpen, onToggle } = useDisclosure();
 
+    const [displayDiv, setDisplayDiv] = useState({ display: "none" });
+
+    const handleDisplay = () => {
+        setDisplayDiv({ display: "block" })
+    }
+    const RemoveDisplay = () => {
+        setDisplayDiv({ display: "none" });
+    }
+
     return (
-        <Box style={{position:"fixed",zIndex:"100", width:"100%",marginTop:"-90px"}} boxShadow={"0px 4px 10px 0 rgb(0 0 0 / 16%)"}>
+        <Box style={{ position: "fixed", zIndex: "100", width: "100%", marginTop: "-90px" }} boxShadow={"0px 4px 10px 0 rgb(0 0 0 / 16%)"}>
             <Box width={{ base: '95%', sm: '95%', md: '95%', lg: '75%' }} margin={'auto'} boxSizing={'border-box !important'}>
                 <Flex
                     bg={useColorModeValue('white', 'gray.800')}
@@ -63,14 +76,14 @@ export default function HomeNavbar() {
                             fontFamily={'heading'}
                             color={useColorModeValue('gray.800', 'white')}>
                             <Box display={'flex'} gap={'10px'} alignItems={'center'} cursor={'pointer'} href="/home">
-                                <Image src="./logo-img/Rentify.png" alt="logo-img" width="35px" rounded={'full'} />
-                                <Image src="./logo-img/Rentify-name.jpg" alt="name-img" height="30px" />
+                                <Image src="./logoImage/rentifyLogo.png" alt="logo-img" width="35px" rounded={'full'} />
+                                <Image src="./logoImage/rentifyName.jpg" alt="name-img" height="30px" />
                             </Box>
                         </Text>
 
                         <Flex
                             display={{ base: 'none', md: 'flex' }}
-                            ml={10}>
+                            ml={5}>
                             <DesktopNav />
                         </Flex>
                     </Flex>
@@ -95,15 +108,25 @@ export default function HomeNavbar() {
                                 fontSize={'14px'}
                                 fontWeight={400}
                                 color={'#313131'}>
-                                Cart
+                                <HomeCart handleDisplay={handleDisplay} RemoveDisplay={RemoveDisplay} />
                             </Text>
+                            <div style={displayDiv} onMouseEnter={handleDisplay} onMouseLeave={RemoveDisplay} className="hover-div">
+                                <div style={{ display: "flex", justifyContent:"space-evenly", alignItems:"center" }}>
+                                    <img src="./logoImage/login_side.gif" width={"100px"} />
+                                    <div >
+                                        <Text fontSize={"20px"}>cat gif</Text>
+                                        <br/>
+                                        <button style={{ backgroundColor: "red", color: "white" ,padding:"8px"}}>Add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
                         </Button>
                         <LoginSignup />
                     </Stack>
                 </Flex>
 
                 <Collapse in={isOpen} animateOpacity>
-                    {/* <MobileNavItem /> */}
+                    <MobileNav />
                 </Collapse>
             </Box>
         </Box>
@@ -115,19 +138,7 @@ const DesktopNav = () => {
     return (
         <Stack direction={'row'} spacing={4}>
             <Box>
-                <Select
-                    width={"120px"}
-                    focusBorderColor={'none'}
-                    border={'none'}
-                    overflow={'visible'}
-                    cursor={'pointer'}
-                    display={{ base: "none", md: "none", lg: "inline-flex" }}
-                >
-                    <option value="">Mumbai</option>
-                    <option value="">Pune</option>
-                    <option value="">Banglore</option>
-                    <option value="">Delhi</option>
-                </Select>
+                <NavSelectTag />
             </Box>
             <SearchBar />
         </Stack>
@@ -168,58 +179,102 @@ const DesktopNav = () => {
 //     );
 // };
 
-// const MobileNav = () => {
-//     return (
-//         <Stack
-//             bg={useColorModeValue('white', 'gray.800')}
-//             p={4}
-//             display={{ md: 'none' }}>
-//             {NAV_ITEMS.map((navItem) => (
-//                 <MobileNavItem key={navItem.label} {...navItem} />
-//             ))}
-//         </Stack>
-//     );
-// };
+const MobileNav = () => {
+    return (
+        <Stack
+            bg={useColorModeValue('white', 'gray.800')}
+            p={4}
+            display={{ md: 'none' }}>
+            {NAV_ITEMS.map((navItem) => (
+                <MobileNavItem key={navItem.label} {...navItem} />
+            ))}
+        </Stack>
+    );
+};
 
-// const MobileNavItem = () => {
-//     const { isOpen, onToggle } = useDisclosure();
+const MobileNavItem = ({ label, children, href }) => {
+    const { isOpen, onToggle } = useDisclosure();
 
-//     return (
-//         <Stack spacing={4} onClick={onToggle}>
-//             <Flex
-//                 py={2}
-//                 as={''}
-//                 href={'#'}
-//                 justify={'space-between'}
-//                 align={'center'}
-//                 _hover={{
-//                     textDecoration: 'none',
-//                 }}>
-//                 <Text
-//                     fontWeight={600}
-//                     color={useColorModeValue('gray.600', 'gray.200')}>
-//                     Login / Signup
-//                 </Text>
-//             </Flex>
+    return (
+        <Stack spacing={4} onClick={children && onToggle}>
+            <Flex
+                py={2}
+                as={''}
+                href={'#'}
+                justify={'space-between'}
+                align={'center'}
+                _hover={{
+                    textDecoration: 'none',
+                }}>
+                <Text
+                    fontWeight={600}
+                    color={useColorModeValue('gray.600', 'gray.200')}>
+                    {label}
+                </Text>
+            </Flex>
 
-//             <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
-//                 <Stack
-//                     mt={2}
-//                     pl={4}
-//                     borderLeft={1}
-//                     borderStyle={'solid'}
-//                     borderColor={useColorModeValue('gray.200', 'gray.700')}
-//                     align={'start'}>
-//                 </Stack>
-//             </Collapse>
-//         </Stack>
-//     );
-// };
+            <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
+                <Stack
+                    mt={2}
+                    pl={4}
+                    borderLeft={1}
+                    borderStyle={'solid'}
+                    borderColor={useColorModeValue('gray.200', 'gray.700')}
+                    align={'start'}>
+                    {children &&
+                        children.map((child) => (
+                            <Link key={child.label} py={2} href={child.href}>
+                                <li>{child.label}</li>
+                            </Link>
+                        ))}
+                </Stack>
+            </Collapse>
+        </Stack>
+    );
+};
 
-//   interface NavItem {
-//     label: string;
-//     subLabel?: string;
-//     children?: Array<NavItem>;
-//     href?: string;
-//   }
+const NAV_ITEMS = [
+    {
+        label: "Login/Sign Up",
+        href: "/login"
+    },
+    {
+        label: 'Categories >',
+        children: [
+            {
+                label: 'Packages',
+                subLabel: 'Find your dream design job',
+                href: './packages',
+            },
+            {
+                label: 'Furniture',
+                subLabel: 'An exclusive list for contract work',
+                href: './furniture',
+            },
+            {
+                label: 'Appliances',
+                subLabel: 'An exclusive list for contract work',
+                href: './appliances',
+            },
+            {
+                label: 'Electronics',
+                subLabel: 'An exclusive list for contract work',
+                href: './electronics',
+            },
+            {
+                label: 'Fitness',
+                subLabel: 'An exclusive list for contract work',
+                href: './fitness',
+            },
+        ],
+    },
+    {
+        label: 'Read More >',
+        href: '#',
+    },
+    {
+        label: 'Need Help    >',
+        href: '#',
+    },
+];
 
