@@ -6,6 +6,8 @@ import axios from "axios"
 import {Link} from "react-router-dom"
 import CloseIcon from '@mui/icons-material/Close';
 import Navbar from "../CategoryPagesNavbar/Navbar";
+import HomeNavbar from "../../Home/HomeNavbar";
+import {ChakraProvider} from "@chakra-ui/react"
 
 function Bedroom() {
   let [packageRoomData,setPackageRoomData] = useState([])
@@ -53,10 +55,11 @@ function Bedroom() {
 
   return (
     <Box sx={{ width: "100vw", height: "100%", marginTop: "90px", padding: "0px" }}>
+      <ChakraProvider><HomeNavbar/></ChakraProvider>
       <Navbar/>
-      <Box sx={{ width: {xl:"80vw",lg:"80vw",md:"85vw",sm:"95vw"}, margin: "40px auto 0px" }}>
-        <Box sx={{ display: "grid", gridTemplateColumns: {xl:"1fr 9fr",lg:"1fr 6fr",md:"1fr 4fr",sm:"1fr 3fr"}, gap:{xl:"50px",lg:"25px",md:"0px"} }}>
-          <Box sx={{width:{xl:"100%",lg:"90%",md:"80%",sm:"80%"}}}>
+      <Box sx={{ width: {xl:"80vw",lg:"80vw",md:"90vw",sm:"90vw"}, margin: "40px auto 0px" }}>
+        <Box sx={{ display: "grid", gridTemplateColumns: {xl:"1fr 3fr",lg:"1fr 3fr",md:"1fr 3fr",sm:"2fr 5fr"}, gap:{xl:"40px",lg:"5px",md:"0px",sm:"0px"} }}>
+          <Box sx={{width:{xl:"100%",lg:"90%",md:"90%",sm:"90%",xs:"90%"},margin:"auto"}}>
             <Box sx={{ display: "flex", justifyContent: "space-between"}}>
               <Box>
                 <Box
@@ -65,29 +68,28 @@ function Bedroom() {
                 />
                 <span style={{color:"gray"}}>Filters</span>
               </Box>
-              <Button sx={{color:"white",fontWeight:"500",backgroundColor:"#ff0000",":hover":{backgroundColor:"#FC4E4E"}}} onClick={()=>ResetData()}>Reset</Button>
+              <Button sx={{color:"white",padding:"5px 25px",fontWeight:"500",backgroundColor:"#dd0000",":hover":{backgroundColor:"green"}}} onClick={()=>ResetData()}>Reset</Button>
             </Box>
             <Box
               sx={{
                 width: "100%",
-                height: "100px",
                 boxShadow:"1px 2px 10px #e0e0e0",
                 marginTop: "30px",
-                padding:"15px 0px 0px 20px",
-                margin:"25px auto 25px -11px"
+                padding:"15px",
+                margin:"25px auto"
               }}
             >
-              <Box sx={{color:"#808080",fontSize:"14px",fontWeight:"500"}}>CHOOSE RENTAL TENURE</Box>
-              <Box sx={{ width: 230, marginTop:"10px" }}>
+              <Box sx={{color:"#808080",fontSize:{xl:"14px",lg:"14px",md:"13px",sm:"12px"},fontWeight:"500"}}>CHOOSE RENTAL TENURE</Box>
+              <Box sx={{ marginTop:"10px" }}>
                 <Slider
                   aria-label="Custom marks"
                   defaultValue={100}
                   value={value}
                   onChange={(e)=>handleChange(e)}
                   step={50}
-                  sx={{width:{xl:"95%",lg:"80%",md:"70%",sm:"70%"},color:"#00BCBC"}}
+                  sx={{width:{xl:"95%",lg:"95%",md:"95%",sm:"95%"},color:"#00BCBC"}}
                 />
-                <Box sx={{display:"flex",justifyContent:"space-between",width:{xl:"100%",lg:"85%",md:"75%",sm:"75%"}}}>
+                <Box sx={{display:"flex",justifyContent:"space-between",width:"100%"}}>
                     <Box sx={{color:"#330019"}}>3+</Box>
                     <Box sx={{color:"#330019"}}>6+</Box>
                     <Box sx={{color:"#330019"}}>12+</Box>
@@ -96,22 +98,22 @@ function Bedroom() {
             </Box>
             <Box sx={{margin:"40px auto 10px",color:"#808080",fontWeight:"500"}}>Choose by Room Type</Box>
             <hr/>
-            <Box sx={{display:"grid",gridTemplateColumns:{xl:"repeat(2,1fr)",lg:"repeat(2,1fr)",md:"repeat(1,1fr)"},gap:{xs:"25px 30px",lg:"20px 5px"},marginTop:"20px",marginBottom:"30px",width:"100%"}}>
+            <Box sx={{display:"grid",gridTemplateColumns:{xl:"repeat(2,1fr)",lg:"repeat(2,1fr)",md:"repeat(1,1fr)",sm:"repeat(1,1fr)",xs:"repeat(1,1fr)"},justifyContent:"space-between",gap:{xl:"25px 20px",lg:"20px 5px",md:"25px",sm:"25px",xs:"25px"},marginTop:"20px",marginBottom:"30px",width:"100%"}}>
                 {
                   packageRoomData && packageRoomData.map((el)=>{
                     return(
                      <Link to={`/packages/${el.endPoint}`} style={{textDecoration:"none",color:"#808080"}}>
                       {
                         el.name=="Bedroom" && reset?
-                        <Box sx={{width:{xl:"100px",lg:"90px",md:"90%",sm:"90%"},padding:"10px",textAlign:"center", backgroundColor:"white",color:"gray",borderBottom:"4px solid #00BCBC",boxShadow:"0.1px 8px 10px #e0e0e0"}}>
-                           <Box component="img" src={el.logo} width="25%"/>
-                           <Box sx={{fontSize:"12px",color:"#00BCBC",letterSpacing:0.4}}>{el.name}</Box>
-                           <Box sx={{fontSize:"11px"}}>{el.NOP} Packages</Box>
+                        <Box sx={{width:"100%",padding:"10px",textAlign:"center", backgroundColor:"white",color:"gray",borderBottom:"4px solid #00BCBC",boxShadow:"0.1px 8px 10px #e0e0e0"}}>
+                           <Box component="img" src={el.logo} width={{xl:"25%",lg:"25%",md:"25%",sm:"25%",xs:"10%"}} margin="auto"/>
+                           <Box sx={{fontSize:{xl:"14px",lg:"14px",md:"17px",sm:"16px",xs:"14px"},color:"#00BCBC",letterSpacing:0.4}}>{el.name}</Box>
+                           <Box sx={{fontSize:{xl:"12px",lg:"12px",md:"15px",sm:"14px",xs:"12px"}}}>{el.NOP} Packages</Box>
                          </Box>:
-                      <Box sx={{width:{xl:"100px",lg:"90px",md:"90%",sm:"90%"},padding:"10px",textAlign:"center",border:"1px solid #e0e0e0"}} onClick={()=>getData()}>
-                      <Box component="img" src={el.logo} width="25%"/>
-                      <Box sx={{fontSize:"12px",letterSpacing:0.4}}>{el.name}</Box>
-                      <Box sx={{fontSize:"11px"}}>{el.NOP} Packages</Box>
+                      <Box sx={{width:"100%",padding:"10px",textAlign:"center",border:"1px solid #e0e0e0"}} onClick={()=>getData()}>
+                      <Box component="img" src={el.logo} width={{xl:"25%",lg:"25%",md:"25%",sm:"25%",xs:"10%"}} margin="auto"/>
+                      <Box sx={{fontSize:{xl:"14px",lg:"14px",md:"17px",sm:"16px",xs:"14px"},letterSpacing:0.4}}>{el.name}</Box>
+                      <Box sx={{fontSize:{xl:"12px",lg:"12px",md:"15px",sm:"14px",xs:"12px"}}}>{el.NOP} Packages</Box>
                     </Box>
                       }
                       </Link>
@@ -119,24 +121,24 @@ function Bedroom() {
                   })
                 }
             </Box>
-            <Box sx={{margin:"40px auto 10px",color:"#808080",fontWeight:"500"}}>Choose by Room Type</Box>
+            <Box sx={{margin:"40px auto 10px",color:"#808080",fontWeight:"500"}}>Choose by Apartment Type</Box>
             <hr/>
-            <Box sx={{display:"grid",gridTemplateColumns:{xl:"repeat(2,1fr)",lg:"repeat(2,1fr)",md:"repeat(1,1fr)"},gap:{xs:"25px 30px",lg:"20px 5px"},marginTop:"20px",marginBottom:"30px",width:"100%"}}>
+            <Box sx={{display:"grid",gridTemplateColumns:{xl:"repeat(2,1fr)",lg:"repeat(2,1fr)",md:"repeat(1,1fr)"},gap:{xl:"25px 20px",lg:"20px 5px",md:"25px",sm:"25px",xs:"25px"},marginTop:"20px",marginBottom:"30px",width:"100%"}}>
                 {
                   packageApartData && packageApartData.map((el)=>{
                     return(
                      <Link to={`/packages/${el.endPoint}`} style={{textDecoration:"none",color:"#808080"}}>
                       {
                         el.name=="Bedroom"?
-                        <Box sx={{width:{xl:"100px",lg:"90px",md:"90%",sm:"90%"},padding:"10px",textAlign:"center", backgroundColor:"#F5FAFF",color:"gray",borderBottom:"4px solid #00BCBC",boxShadow:"0.1px 8px 10px #e0e0e0"}}>
-                           <Box component="img" src={el.logo} width="25%"/>
-                           <Box sx={{fontSize:"12px",color:"#0080ff",letterSpacing:0.4}}>{el.name}</Box>
-                           <Box sx={{fontSize:"11px"}}>{el.NOP} Packages</Box>
+                        <Box sx={{width:"100%",padding:"10px",textAlign:"center", backgroundColor:"white",color:"gray",borderBottom:"4px solid #00BCBC",boxShadow:"0.1px 8px 10px #e0e0e0"}}>
+                           <Box component="img" src={el.logo} width={{xl:"25%",lg:"25%",md:"25%",sm:"25%",xs:"10%"}} margin="auto"/>
+                           <Box sx={{fontSize:{xl:"14px",lg:"14px",md:"17px",sm:"16px",xs:"14px"},color:"#0080ff",letterSpacing:0.4}}>{el.name}</Box>
+                           <Box sx={{fontSize:{xl:"12px",lg:"12px",md:"15px",sm:"14px",xs:"12px"}}}>{el.NOP} Packages</Box>
                          </Box>:
-                      <Box sx={{width:{xl:"100px",lg:"90px",md:"90%",sm:"90%"},padding:"10px",textAlign:"center",border:"1px solid #e0e0e0"}}>
-                      <Box component="img" src={el.logo} width="25%"/>
-                      <Box sx={{fontSize:"12px",letterSpacing:0.4}}>{el.name}</Box>
-                      <Box sx={{fontSize:"11px"}}>{el.NOP} Packages</Box>
+                      <Box sx={{width:"100%",padding:"10px",textAlign:"center",border:"1px solid #e0e0e0"}} onClick={()=>getData()}>
+                      <Box component="img" src={el.logo} width={{xl:"25%",lg:"25%",md:"25%",sm:"25%",xs:"10%"}} margin="auto"/>
+                      <Box sx={{fontSize:{xl:"14px",lg:"14px",md:"17px",sm:"16px",xs:"14px"},letterSpacing:0.4}}>{el.name}</Box>
+                      <Box sx={{fontSize:{xl:"12px",lg:"12px",md:"15px",sm:"14px",xs:"12px"}}}>{el.NOP} Packages</Box>
                     </Box>
                       }
                       </Link>
@@ -149,9 +151,9 @@ function Bedroom() {
             <Box>
             </Box>
             {
-              close?(<Box></Box>):(<Box sx={{width:"120px",height:"32px",backgroundColor:"#F2ECEC",color:"gray",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"15px",gap:"5px",marginBottom:"28px",marginLeft:{xl:"22px",lg:"35px",md:"35px",sm:"25px"}}}>Bedroom<CloseIcon sx={{width:"20px",marginTop:"2px",cursor:"pointer"}} onClick={()=>ResetData()}/></Box>)
+              close?(<Box></Box>):(<Box sx={{width:"120px",height:"32px",backgroundColor:"#F2ECEC",color:"gray",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"15px",gap:"5px",marginBottom:"28px",marginLeft:{xl:"22px",lg:"35px",md:"35px",sm:"25px",xs:"25px"}}}>Bedroom<CloseIcon sx={{width:"20px",marginTop:"2px",cursor:"pointer"}} onClick={()=>ResetData()}/></Box>)
             }
-          <Box sx={{display:"grid",gridTemplateColumns:{xl:"repeat(2,1fr)",lg:"repeat(1,1fr)"},gap:"35px",height:"100vh",overflow:"scroll","&::-webkit-scrollbar":{width:"1px"}}}>
+          <Box sx={{display:"grid",gridTemplateColumns:{xl:"repeat(2,1fr)",lg:"repeat(1,1fr)"},gap:"15px",height:"130vh",overflow:"scroll","&::-webkit-scrollbar":{width:"1px"}}}>
             {
               data && data.map((el)=>{
                 return(
@@ -165,7 +167,7 @@ function Bedroom() {
                     <Box>
                       <span>{value==100?el.price:el.price2}</span><span>{el.desc}</span>
                     </Box>
-                    <Box>
+                    <Box sx={{display:"flex"}}>
                       <Box component="img" src={el.logo} style={{width:"30px",height:"30px",borderRadius:"50%",border:"1px solid gray",padding:"5px",boxSizing:"border-box",marginRight:"10px"}}/><Box sx={{float:"right",marginTop:"2px"}}>{el.items}</Box>
                     </Box>
                   </Box>

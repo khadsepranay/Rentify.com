@@ -22,6 +22,13 @@
       "NOP":"19"
     },
     {
+      "image":"https://www.rentomojo.com/public/images/category/package-bg/smart-packages.jpg",
+      "logo":"https://www.rentomojo.com/public/images/category/icons/smart-packages.svg",
+      "name":"Smart Home",
+      "endPoint":"smarthome",
+      "NOP":"3"
+    },
+    {
       "image":"https://www.rentomojo.com/public/images/category/package-bg/study-room-v1.jpg",
       "logo":"https://www.rentomojo.com/public/images/category/icons/study-room.svg",
       "name":"Work From Home",
@@ -34,13 +41,6 @@
       "name":"Kitchen & Dining",
       "endPoint":"KandD",
       "NOP":"2"
-    },
-    {
-      "image":"https://www.rentomojo.com/public/images/category/package-bg/smart-packages.jpg",
-      "logo":"https://www.rentomojo.com/public/images/category/icons/smart-packages.svg",
-      "name":"Smart Home",
-      "endPoint":"smarthome",
-      "NOP":"3"
     },
     {
       "image":"https://www.rentomojo.com/public/images/category/package-bg/fitness-packages.jpg",
