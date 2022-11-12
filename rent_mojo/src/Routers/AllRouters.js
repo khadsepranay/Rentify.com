@@ -1,4 +1,4 @@
-import {Routes,Route} from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import { HomePage } from "../Pages/HomePage"
 // import Packages from "../Components/Category pages/Packages"
 // import Bedroom from "../Components/Category pages/Packages_Categories/Bedroom"
@@ -17,14 +17,19 @@ import { AppFilter } from "../Components/Productpages/AppFilter";
 import { ElctoFilter } from "../Components/Productpages/ElctoFilter";
 import { FurFilter } from "../Components/Productpages/FurFilter";
 import { Fitfilter } from "../Components/Productpages/Fitfilter";
-function AllRouters(){
-    return(
+import PaymentPage from "../Components/Home/checkoutPages/PaymentPage";
+
+function AllRouters() {
+    return (
         <Routes>
-            <Route path="/" element={<ChakraProvider><HomePage/></ChakraProvider>}></Route>
-            <Route path="/appliances" element={<ChakraProvider><AppFilter/></ChakraProvider>}></Route>
-            <Route path="/electronics" element={<ChakraProvider><ElctoFilter/></ChakraProvider>}></Route>
-            <Route path="/fitness" element={<ChakraProvider><Fitfilter/></ChakraProvider>}></Route>
-            <Route path="/furniture" element={<ChakraProvider><FurFilter/></ChakraProvider>}></Route>
+            <Route path="/" element={<ChakraProvider><HomePage /></ChakraProvider>}></Route>
+            <Route path="/appliances" element={<ChakraProvider><AppFilter /></ChakraProvider>}></Route>
+            <Route path="/electronics" element={<ChakraProvider><ElctoFilter /></ChakraProvider>}></Route>
+            <Route path="/fitness" element={<ChakraProvider><Fitfilter /></ChakraProvider>}></Route>
+            <Route path="/furniture" element={<ChakraProvider><FurFilter /></ChakraProvider>}></Route>
+            <Route path="/cart" element={<ChakraProvider><PaymentPage /></ChakraProvider>}></Route>
+
+
             {/* <Route path="/packages" element={<Packages/>}></Route>
             <Route path="/packages/bedroom" element={<Bedroom/>}></Route>
             <Route path="/packages/livingroom" element={<Livingroom/>}></Route>

@@ -46,7 +46,7 @@ export default function HomeNavbar() {
     }
 
     return (
-        <Box style={{ position: "fixed", zIndex: "100", width: "100%", marginTop: "-90px",backgroundColor:"#ffffff" }} boxShadow={"0px 4px 10px 0 rgb(0 0 0 / 16%)"}>
+        <Box style={{ position: "fixed", zIndex: "100", width: "100%", marginTop: "-90px", backgroundColor: "#ffffff" }} boxShadow={"0px 4px 10px 0 rgb(0 0 0 / 16%)"}>
             <Box width={{ base: '95%', sm: '95%', md: '95%', lg: '75%' }} margin={'auto'} boxSizing={'border-box !important'}>
                 <Flex
                     bg={useColorModeValue('white', 'gray.800')}
@@ -110,15 +110,17 @@ export default function HomeNavbar() {
                                 fontSize={'14px'}
                                 fontWeight={400}
                                 color={'#313131'}>
+
                                 <HomeCart handleDisplay={handleDisplay} RemoveDisplay={RemoveDisplay} />
+
                             </Text>
                             <div style={displayDiv} onMouseEnter={handleDisplay} onMouseLeave={RemoveDisplay} className="hover-div">
-                                <div style={{ display: "flex", justifyContent:"space-evenly", alignItems:"center" }}>
+                                <div style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center" }}>
                                     <img src="./logoImage/login_side.gif" width={"100px"} />
                                     <div >
                                         <Text fontSize={"20px"}>cat gif</Text>
-                                        <br/>
-                                        <button style={{ backgroundColor: "red", color: "white" ,padding:"8px"}}>Add to cart</button>
+                                        <br />
+                                        <button style={{ backgroundColor: "red", color: "white", padding: "8px" }}>Add to cart</button>
                                     </div>
                                 </div>
                             </div>

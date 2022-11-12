@@ -1,11 +1,15 @@
+
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./HomeCart.css";
-export const HomeCart = ({handleDisplay,RemoveDisplay}) => {
+export const HomeCart = ({ handleDisplay, RemoveDisplay }) => {
 
     return (
-        <div>
-            <span onMouseEnter={handleDisplay} onMouseLeave={RemoveDisplay}>Cart</span>
-            <span className="cart-header">1</span>
-        </div>
+        <Link to="/cart">
+            <div>
+                <span onMouseEnter={handleDisplay} onMouseLeave={RemoveDisplay}>Cart</span>
+                <span className="cart-header">1</span>
+            </div>
+        </Link>
     )
 }
