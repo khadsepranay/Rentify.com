@@ -1,41 +1,54 @@
 import { Box, Flex, Grid, GridItem, Image, Show, SimpleGrid, Text, VStack } from "@chakra-ui/react";
-import AutoSlider from "../RohiniComponents/AutoSlider";
-import HomeCarousel from "../RohiniComponents/HomeCarousel/HomeCarousel";
-import HomeNavbar from "../RohiniComponents/HomeNavbar";
-import { MoreRenting } from "../RohiniComponents/MoreRenting";
-import ReviewCarousel from "../RohiniComponents/ReviewCarousel";
+import { Link } from "react-router-dom";
+import AutoSlider from "../Components/Home/AutoSlider";
+import HomeCarousel from "../Components/Home/HomeCarousel/HomeCarousel";
+import HomeNavbar from "../Components/Home/HomeNavbar";
+import { MoreRenting } from "../Components/Home/MoreRenting";
+import ReviewCarousel from "../Components/Home/ReviewCarousel";
+import extraImages from "../Images/extraImages/packages.jpg"
+import appliances from "../Images/extraImages/appliances.jpg"
+import electronics from "../Images/extraImages/electronics.jpg"
+import fitness from "../Images/extraImages/fitness.jpg"
+import furniture from "../Images/extraImages/furniture.jpg"
+import wfh from "../Images/extraImages/wfh.jpg"
 
 const iconsDiv = [
 
     {
         id: "1",
         icon: "./extraImages/packages.jpg",
-        iconName: "Packages"
+        iconName: "Packages",
+        href:"/packages"
     },
     {
         id: "2",
         icon: "./extraImages/furniture.jpg",
-        iconName: "Furniture"
+        iconName: "Furniture",
+        href:""
     },
     {
         id: "3",
         icon: "./extraImages/appliances.jpg",
-        iconName: "Appliances"
+        iconName: "Appliances",
+        href:""
     },
     {
         id: "4",
         icon: "./extraImages/electronics.jpg",
-        iconName: "Electronics"
+        iconName: "Electronics",
+        href:""
     },
     {
         id: "5",
         icon: "./extraImages/fitness.jpg",
-        iconName: "Fitness"
+        iconName: "Fitness",
+        href:""
     },
     {
         id: "6",
         icon: "./extraImages/wfh.jpg",
-        iconName: "WFH Essentials"
+        iconName: "WFH Essentials",
+        href:""
     },
 
 ]
@@ -52,12 +65,14 @@ export const HomePage = () => {
                     <SimpleGrid columns={[4, 4, 4, 6]} spacing='25px'>
                         {
                             iconsDiv.map((el) => (
+                                <Link to={el.href}>
                                 <Box key={el.id} cursor={'pointer'} height='120px' border={'1px solid #e2eaf0'} borderRadius={'10px'} _hover={{ background: "#fff", boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px" }}>
                                     <Flex direction={'column'} alignItems={'center'} justifyContent={'center'} padding={'30px'}>
                                         <Image src={el.icon} alt="icon-image-1" width={'30px'} />
                                         <Text>{el.iconName}</Text>
                                     </Flex>
                                 </Box>
+                                </Link>
                             ))
 
                         }

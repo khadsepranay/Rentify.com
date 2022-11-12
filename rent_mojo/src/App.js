@@ -1,11 +1,12 @@
 import './App.css';
-import { HomePage } from './RohiniPages/HomePage'; 
-import Footer from './RohiniComponents/Footer';
+import AllRouters from './Routers/AllRouters';
+import { ChakraProvider } from '@chakra-ui/react';
+import HomeNavbar from './Components/Home/HomeNavbar';
 function App() {
   return (
     <div className="App">
-      <HomePage/>
-      <Footer/>   
+    <ChakraProvider><HomeNavbar /></ChakraProvider>
+      <AllRouters/> 
     </div>
   );
 }

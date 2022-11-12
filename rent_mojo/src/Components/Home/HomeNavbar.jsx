@@ -30,6 +30,8 @@ import { SearchBar } from './SearchBar';
 import { HomeCart } from './HomeCart/HomeCart';
 import { NavSelectTag } from './NavSelectTag';
 import { useState } from 'react';
+import rentifyName from "../../Images/logoImage/rentifyName.jpg"
+import rentifyLogo from "../../Images/logoImage/rentifyLogo.png"
 
 export default function HomeNavbar() {
     const { isOpen, onToggle } = useDisclosure();
@@ -44,7 +46,7 @@ export default function HomeNavbar() {
     }
 
     return (
-        <Box style={{ position: "fixed", zIndex: "100", width: "100%", marginTop: "-90px" }} boxShadow={"0px 4px 10px 0 rgb(0 0 0 / 16%)"}>
+        <Box style={{ position: "fixed", zIndex: "100", width: "100%", marginTop: "-90px",backgroundColor:"#ffffff" }} boxShadow={"0px 4px 10px 0 rgb(0 0 0 / 16%)"}>
             <Box width={{ base: '95%', sm: '95%', md: '95%', lg: '75%' }} margin={'auto'} boxSizing={'border-box !important'}>
                 <Flex
                     bg={useColorModeValue('white', 'gray.800')}
@@ -76,8 +78,8 @@ export default function HomeNavbar() {
                             fontFamily={'heading'}
                             color={useColorModeValue('gray.800', 'white')}>
                             <Box display={'flex'} gap={'10px'} alignItems={'center'} cursor={'pointer'} href="/home">
-                                <Image src="./logoImage/rentifyLogo.png" alt="logo-img" width="35px" rounded={'full'} />
-                                <Image src="./logoImage/rentifyName.jpg" alt="name-img" height="30px" />
+                                <Image src={rentifyLogo} alt="logo-img" width="35px" rounded={'full'} />
+                                <Image src={rentifyName} alt="name-img" height="30px" />
                             </Box>
                         </Text>
 
