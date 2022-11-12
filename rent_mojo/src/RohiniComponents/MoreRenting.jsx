@@ -3,42 +3,42 @@ import { Box, Heading, Image, Link, SimpleGrid, Text } from "@chakra-ui/react";
 const rentIcon = [
     {
         id: 1,
-        img: "./logo-img/finestQuality.png",
+        img: "./logoImage/finestQuality.png",
         name: "Finest-quality products",
         desc: "Quality matters to you, and us! That's why we do a strict quality-check for every product."
 
     },
     {
         id: 2,
-        img: "./logo-img/freelocation.jpg",
+        img: "./logoImage/freelocation.jpg",
         name: "Free relocation",
         desc: "Changing your house or even your city? We'll relocate your rented products for free."
 
     },
     {
         id: 3,
-        img: "./logo-img/freemaintenance.jpg",
+        img: "./logoImage/freemaintenance.jpg",
         name: "Free maintenance",
         desc: "Keeping your rented products in a spick and span condition is on us, so you can sit back and relax."
 
     },
     {
         id: 4,
-        img: "./logo-img/cancel.jpg",
+        img: "./logoImage/cancel.jpg",
         name: "Cancel anytime",
         desc: "Pay only for the time you use the product and close your subscription without any hassle."
 
     },
     {
         id: 5,
-        img: "./logo-img/easyreturn.jpg",
+        img: "./logoImage/easyreturn.jpg",
         name: "Easy return on delivery",
         desc: "If you don't like the product on delivery, you can return it right away—no questions asked."
 
     },
     {
         id: 6,
-        img: "./logo-img/keepupgrading.jpg",
+        img: "./logoImage/keepupgrading.jpg",
         name: "Keep upgrading",
         desc: "Bored of the same product? Upgrade to try another, newer design and enjoy the change!"
 
