@@ -24,31 +24,31 @@ const iconsDiv = [
         id: "2",
         icon: "./extraImages/furniture.jpg",
         iconName: "Furniture",
-        href:""
+        href:"/furniture"
     },
     {
         id: "3",
         icon: "./extraImages/appliances.jpg",
         iconName: "Appliances",
-        href:""
+        href:"/appliances"
     },
     {
         id: "4",
         icon: "./extraImages/electronics.jpg",
         iconName: "Electronics",
-        href:""
+        href:"/electronics"
     },
     {
         id: "5",
         icon: "./extraImages/fitness.jpg",
         iconName: "Fitness",
-        href:""
+        href:"/fitness"
     },
     {
         id: "6",
         icon: "./extraImages/wfh.jpg",
         iconName: "WFH Essentials",
-        href:""
+        href:"#"
     },
 
 ]
