@@ -33,8 +33,10 @@ import { NavSelectTag } from './NavSelectTag';
 import { useState } from 'react';
 import rentifyName from '../../Images/logoImage/rentifyName.jpg';
 import rentifyLogo from '../../Images/logoImage/rentifyLogo.png';
+import { useSelector } from 'react-redux';
 
 export default function HomeNavbar() {
+	const { cart } = useSelector((state) => state.Item);
 	const { isOpen, onToggle } = useDisclosure();
 
 	const [displayDiv, setDisplayDiv] = useState({ display: 'none' });
@@ -163,38 +165,52 @@ export default function HomeNavbar() {
 									RemoveDisplay={RemoveDisplay}
 								/>
 							</Text>
-							<div
-								style={displayDiv}
-								onMouseEnter={handleDisplay}
-								onMouseLeave={RemoveDisplay}
-								className='hover-div'
-							>
+							{cart.length === 0 ? null :
 								<div
-									style={{
-										display: 'flex',
-										justifyContent: 'space-evenly',
-										alignItems: 'center',
-									}}
+									style={displayDiv}
+									onMouseEnter={handleDisplay}
+									onMouseLeave={RemoveDisplay}
+									className='hover-div'
 								>
-									<img
-										src='./logoImage/login_side.gif'
-										width={'100px'}
-									/>
-									<div>
-										<Text fontSize={'20px'}>cat gif</Text>
-										<br />
+									{cart.map((el) => (
+										<div
+											style={{
+												display: 'flex',
+												justifyContent: 'space-between',
+												alignItems: 'center',
+												marginBottom:"10px",
+												border : "1px solid lightgray",
+												padding:"5px"
+											}}
+										>
+											<img
+												src={el.img}
+												width={'80px'}
+											/>
+											<div style={{width:"100%", padding:"10px"}}>
+												<Text textAlign={"left"} fontSize={'14px'}>{el.title}</Text>
+												<br />
+											</div>
+										</div>
+									))}
+									<RefLink to="/cart">
+										<Stack>
 										<button
 											style={{
 												backgroundColor: 'red',
 												color: 'white',
-												padding: '8px',
+												padding: '10px 0px 10px 0px',
+												fontSize:"14px",
+												fontWeight:"bold"
 											}}
 										>
-											Add to cart
+											Take me to cart
 										</button>
-									</div>
+										</Stack>
+									</RefLink>
+
 								</div>
-							</div>
+							}
 						</Button>
 						<LoginSignup />
 					</Stack>
