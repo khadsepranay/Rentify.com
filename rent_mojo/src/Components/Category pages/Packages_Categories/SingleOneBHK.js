@@ -4,8 +4,8 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import {useParams} from "react-router-dom"
 import Navbar from "../CategoryPagesNavbar/Navbar";
-import Skeleton from '@mui/material/Skeleton';
-import Stack from '@mui/material/Stack';
+import Loader from "../Loader";
+import {ChakraProvider} from "@chakra-ui/react"
 
 function SingleOneBHKPage(){
     let [data,setData] = useState({})
@@ -14,7 +14,7 @@ function SingleOneBHKPage(){
 
     useEffect(()=>{
         setLoading(true)
-        axios.get(`http://rent-mojo-server.onrender.com/1bhk/${id}`).then((res)=>{
+        axios.get(`https://rent-mojo-server.onrender.com/1bhk/${id}`).then((res)=>{
             setData(res.data)
             setLoading(false)
         })
@@ -26,12 +26,7 @@ function SingleOneBHKPage(){
     let [loading,setLoading] = useState(false)
     if(loading){
       return (
-        <Stack spacing={1} alignItems="center" marginTop="250px" height="100vh">
-          <Skeleton variant="text" width={200} />
-          <Skeleton variant="circular" width={40} height={40} />
-          <Skeleton variant="rectangular" width={210} height={60} />
-          <Skeleton variant="rounded" width={210} height={60} />
-        </Stack>
+        <ChakraProvider><Loader/></ChakraProvider>
       );
     }
 

@@ -7,9 +7,8 @@ import {Link} from "react-router-dom"
 import CloseIcon from '@mui/icons-material/Close';
 import Navbar from "../CategoryPagesNavbar/Navbar";
 import HomeNavbar from "../../Home/HomeNavbar";
+import Loader from "../Loader";
 import {ChakraProvider} from "@chakra-ui/react"
-import Skeleton from '@mui/material/Skeleton';
-import Stack from '@mui/material/Stack';
 
 function Appliances() {
   let [packageRoomData,setPackageRoomData] = useState([])
@@ -20,15 +19,17 @@ function Appliances() {
   let [reset,setReset] = useState(true)
 
   useEffect(()=>{
-    axios.get("http://rent-mojo-server.onrender.com/packagesRoom").then((res)=>{
+    setLoading(true)
+    axios.get("https://rent-mojo-server.onrender.com/packagesRoom").then((res)=>{
       let data = res.data
       setPackageRoomData(data)
     })
-    axios.get("http://rent-mojo-server.onrender.com/packagesApart").then((res)=>{
+    axios.get("https://rent-mojo-server.onrender.com/packagesApart").then((res)=>{
       let data = res.data
       setPackageApartData(data)
+      setLoading(false)
     })
-    axios.get("http://rent-mojo-server.onrender.com/appliances").then((res)=>{
+    axios.get("https://rent-mojo-server.onrender.com/appliances").then((res)=>{
       setData(res.data)
       setClose(false)
     })
@@ -41,7 +42,7 @@ function Appliances() {
   }
 
   function ResetData(){
-    axios.get("http://rent-mojo-server.onrender.com/entire").then((res)=>{
+    axios.get("https://rent-mojo-server.onrender.com/entire").then((res)=>{
       setData(res.data)
       setClose(true)
       setReset(false)
@@ -49,7 +50,7 @@ function Appliances() {
   }
 
   function getData(){
-    axios.get("http://rent-mojo-server.onrender.com/appliances").then((res)=>{
+    axios.get("https://rent-mojo-server.onrender.com/appliances").then((res)=>{
       setReset(true)
       setData(res.data)
       setClose(false)
@@ -59,12 +60,7 @@ function Appliances() {
   let [loading,setLoading] = useState(false)
   if(loading){
     return (
-      <Stack spacing={1} alignItems="center" marginTop="250px" height="100vh">
-        <Skeleton variant="text" width={200} />
-        <Skeleton variant="circular" width={40} height={40} />
-        <Skeleton variant="rectangular" width={210} height={60} />
-        <Skeleton variant="rounded" width={210} height={60} />
-      </Stack>
+      <ChakraProvider><Loader/></ChakraProvider>
     );
   }
 
