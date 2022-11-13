@@ -15,6 +15,7 @@ import { getProducts, getType, postProducts } from "../../Redux/product/action";
 import { BsFillHeartFill } from "react-icons/bs";
 import { useState } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
+
 export const Furniture = () => {
   const [heart, setheart] = useState(false);
   const dispatch = useDispatch();
@@ -51,6 +52,7 @@ export const Furniture = () => {
   }
   return (
     <>
+   
       <Flex flexDirection={{base:"row", sm:"column", md:"row", lg:"row"}} justifyContent="space-around">
         <SimpleGrid columns={[1,2, 3]} w="95%" m={{base:"auto", sm:"auto",md:"auto",lg:"left"}} spacing={5} mt={20}>
           {data?.map((el, index) => (

@@ -104,10 +104,10 @@ function Navbar() {
 
   return (
     <>
-    <Box mt="100px">
+    <Box mt="90px">
     <HomeNavbar />
     </Box>
-    <Box position="relative" top="-120px" p="0px">
+    <Box position="relative" top="-89px" p="0px">
     <Box
       sx={{
         padding: "25px 0px",

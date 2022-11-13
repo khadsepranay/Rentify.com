@@ -58,7 +58,7 @@ export const AppFilter = () => {
   return (
     <Box>
       <Nav />
-      <Box width={"90%"} margin={"auto"} mt="0px">
+      <Box width={"90%"} margin={"auto"} mt="20px">
         <Box display={"flex"} justifyContent={"space-evenly"}>
           {windowSize.innerWidth < 700 ? null : (
             <Box width={"20%"}>

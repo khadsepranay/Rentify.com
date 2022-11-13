@@ -6,7 +6,7 @@ import { CiFilter } from "react-icons/ci";
 import { Button, Flex, Input } from "@chakra-ui/react";
 import { Electronics } from "./Electronics";
 import { Fitness } from "./Fitness";
-
+import Nav  from "./Nav";
 export const Fitfilter = () => {
   const [windowSize, setWindowSize] = useState(getWindowSize());
 
@@ -56,6 +56,10 @@ export const Fitfilter = () => {
   };
 
   return (
+    <>
+    <Box>
+    <Nav/>
+  </Box>
     <Box width={"90%"} margin={"auto"}>
       <Box display={"flex"} justifyContent={"space-evenly"}>
         {windowSize.innerWidth < 700 ? null : (
@@ -73,8 +77,8 @@ export const Fitfilter = () => {
               gap={"20px"}
             >
               <Box display={"flex"} gap={"5px"} alignItems={"center"}>
-                <CiFilter size={30} />
-                <Text>Filter</Text>
+                <CiFilter size={38} />
+                <Text fontSize="20px" >Filter</Text>
               </Box>
               <Box>
                 <Button
@@ -175,5 +179,6 @@ export const Fitfilter = () => {
         </Box>
       </Box>
     </Box>
+    </>
   );
 };

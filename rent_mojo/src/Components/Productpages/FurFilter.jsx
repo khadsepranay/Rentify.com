@@ -6,7 +6,7 @@ import { CiFilter } from "react-icons/ci";
 import { Button, Flex, Input } from "@chakra-ui/react";
 import { Electronics } from "./Electronics";
 import { Furniture } from "./Furniture";
-
+import Nav  from "./Nav";
 export const FurFilter = () => {
   const [windowSize, setWindowSize] = useState(getWindowSize());
 
@@ -56,6 +56,10 @@ export const FurFilter = () => {
   };
 
   return (
+    <>
+    <Box>
+    <Nav/>
+  </Box>
     <Box width={"90%"} margin={"auto"}>
       <Box display={"flex"} justifyContent={"space-evenly"} gap="60px">
         {windowSize.innerWidth < 700 ? null : (
@@ -183,5 +187,6 @@ export const FurFilter = () => {
         </Box>
       </Box>
     </Box>
+    </>
   );
 };
