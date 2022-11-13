@@ -7,7 +7,7 @@ import Navbar from "../CategoryPagesNavbar/Navbar";
 import Skeleton from '@mui/material/Skeleton';
 import Stack from '@mui/material/Stack';
 
-function SingleBedroomPage(){
+function SingleBedRoomPage(){
     let [data,setData] = useState({})
     let {id} = useParams()
     let [value,setValue] = useState(100)
@@ -81,4 +81,4 @@ function SingleBedroomPage(){
     )
 }
 
-export default SingleBedroomPage
+export default SingleBedRoomPage

@@ -7,14 +7,14 @@ import Navbar from "../CategoryPagesNavbar/Navbar";
 import Skeleton from '@mui/material/Skeleton';
 import Stack from '@mui/material/Stack';
 
-function SingleBedroomPage(){
+function SingleSmartHomePage(){
     let [data,setData] = useState({})
     let {id} = useParams()
     let [value,setValue] = useState(100)
 
     useEffect(()=>{
         setLoading(true)
-        axios.get(`http://rent-mojo-server.onrender.com/bedroom/${id}`).then((res)=>{
+        axios.get(`http://rent-mojo-server.onrender.com/smarthome/${id}`).then((res)=>{
             setData(res.data)
             setLoading(false)
         })
@@ -81,4 +81,4 @@ function SingleBedroomPage(){
     )
 }
 
-export default SingleBedroomPage
+export default SingleSmartHomePage

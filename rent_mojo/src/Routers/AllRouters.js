@@ -24,6 +24,16 @@ import Requests from '../Pages/Accounts/Requests';
 import RefundStatus from '../Pages/Accounts/RefundStatus';
 import UndeliveredOrders from '../Pages/Accounts/UndeliveredOrders';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
+import SingleWorkFromHomePage from '../Components/Category pages/Packages_Categories/SingleWorkFromHome';
+import SingleTwoBHKPage from '../Components/Category pages/Packages_Categories/SingleTwoBHK';
+import SingleStudioApartmentPage from '../Components/Category pages/Packages_Categories/SingleStudioApartment';
+import SingleSmartHomePage from '../Components/Category pages/Packages_Categories/SingleSmartHome';
+import SingleOneBHKPage from '../Components/Category pages/Packages_Categories/SingleOneBHK';
+import SingleLivingRoomPage from '../Components/Category pages/Packages_Categories/SingleLivingRoom';
+import SingleKitcheDiningPage from '../Components/Category pages/Packages_Categories/SingleKitchenDining';
+import SingleFitExercisePage from '../Components/Category pages/Packages_Categories/SingleFitExercise';
+import SingleBedRoomPage from '../Components/Category pages/Packages_Categories/SingleBedroom';
+import SingleAppliancesPage from '../Components/Category pages/Packages_Categories/SingleAppliances';
 
 function AllRouters() {
 	return (
@@ -124,6 +134,42 @@ function AllRouters() {
 			<Route
 				path='/packages/bedroom/:id'
 				element={<SingleBedroomPage />}
+			></Route>
+			<Route
+				path='/packages/livingroom/:id'
+				element={<SingleLivingRoomPage />}
+			></Route>
+			<Route
+				path='/packages/1bhk/:id'
+				element={<SingleOneBHKPage />}
+			></Route>
+			<Route
+				path='/packages/2bhk/:id'
+				element={<SingleTwoBHKPage />}
+			></Route>
+			<Route
+				path='/packages/appliances/:id'
+				element={<SingleAppliancesPage />}
+			></Route>
+			<Route
+				path='/packages/FandE/:id'
+				element={<SingleFitExercisePage />}
+			></Route>
+			<Route
+				path='/packages/KandD/:id'
+				element={<SingleKitcheDiningPage />}
+			></Route>
+			<Route
+				path='/packages/smarthome/:id'
+				element={<SingleSmartHomePage />}
+			></Route>
+			<Route
+				path='/packages/studio-apartment/:id'
+				element={<SingleStudioApartmentPage />}
+			></Route>
+			<Route
+				path='/packages/wfh/:id'
+				element={<SingleWorkFromHomePage />}
 			></Route>
 
 			<Route
