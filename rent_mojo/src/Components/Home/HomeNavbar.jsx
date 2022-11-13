@@ -165,7 +165,7 @@ export default function HomeNavbar() {
 									RemoveDisplay={RemoveDisplay}
 								/>
 							</Text>
-							{cart.length === 0 ? null :
+							{cart.length === 0 ? null : (
 								<div
 									style={displayDiv}
 									onMouseEnter={handleDisplay}
@@ -178,39 +178,44 @@ export default function HomeNavbar() {
 												display: 'flex',
 												justifyContent: 'space-between',
 												alignItems: 'center',
-												marginBottom:"10px",
-												border : "1px solid lightgray",
-												padding:"5px"
+												marginBottom: '10px',
+												border: '1px solid lightgray',
+												padding: '5px',
 											}}
 										>
 											<img
 												src={el.img}
 												width={'80px'}
 											/>
-											<div style={{width:"100%", padding:"10px"}}>
-												<Text textAlign={"left"} fontSize={'14px'}>{el.title}</Text>
+											<div style={{ width: '100%', padding: '10px' }}>
+												<Text
+													whiteSpace={'break-spaces'}
+													textAlign={'left'}
+													fontSize={'14px'}
+												>
+													{el.title}
+												</Text>
 												<br />
 											</div>
 										</div>
 									))}
-									<RefLink to="/cart">
+									<RefLink to='/cart'>
 										<Stack>
-										<button
-											style={{
-												backgroundColor: 'red',
-												color: 'white',
-												padding: '10px 0px 10px 0px',
-												fontSize:"14px",
-												fontWeight:"bold"
-											}}
-										>
-											Take me to cart
-										</button>
+											<button
+												style={{
+													backgroundColor: 'red',
+													color: 'white',
+													padding: '10px 0px 10px 0px',
+													fontSize: '14px',
+													fontWeight: 'bold',
+												}}
+											>
+												Take me to cart
+											</button>
 										</Stack>
 									</RefLink>
-
 								</div>
-							}
+							)}
 						</Button>
 						<LoginSignup />
 					</Stack>
