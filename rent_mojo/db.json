@@ -1,81 +1,81 @@
 {
-  "packagesRoom":[
+  "packagesRoom": [
     {
-      "image":"https://www.rentomojo.com/public/images/category/package-bg/bedroom-v1_new.jpg",
-      "logo":"https://www.rentomojo.com/public/images/category/icons/bedroom.svg",
-      "name":"Bedroom",
-      "endPoint":"bedroom",
-      "NOP":"21"
+      "image": "https://www.rentomojo.com/public/images/category/package-bg/bedroom-v1_new.jpg",
+      "logo": "https://www.rentomojo.com/public/images/category/icons/bedroom.svg",
+      "name": "Bedroom",
+      "endPoint": "bedroom",
+      "NOP": "21"
     },
     {
-      "image":"https://www.rentomojo.com/public/images/category/package-bg/living-room-v2.jpg",
-      "logo":"https://www.rentomojo.com/public/images/category/icons/living-room.svg",
-      "name":"Livingroom",
-      "endPoint":"livingroom",
-      "NOP":"14"
+      "image": "https://www.rentomojo.com/public/images/category/package-bg/living-room-v2.jpg",
+      "logo": "https://www.rentomojo.com/public/images/category/icons/living-room.svg",
+      "name": "Livingroom",
+      "endPoint": "livingroom",
+      "NOP": "14"
     },
     {
-      "image":"https://www.rentomojo.com/public/images/category/package-bg/bedroom-v1_new.jpg",
-      "logo":"https://www.rentomojo.com/public/images/category/icons/appliance.svg",
-      "name":"Appliances",
-      "endPoint":"appliances",
-      "NOP":"19"
+      "image": "https://www.rentomojo.com/public/images/category/package-bg/bedroom-v1_new.jpg",
+      "logo": "https://www.rentomojo.com/public/images/category/icons/appliance.svg",
+      "name": "Appliances",
+      "endPoint": "appliances",
+      "NOP": "19"
     },
     {
-      "image":"https://www.rentomojo.com/public/images/category/package-bg/smart-packages.jpg",
-      "logo":"https://www.rentomojo.com/public/images/category/icons/smart-packages.svg",
-      "name":"Smart Home",
-      "endPoint":"smarthome",
-      "NOP":"3"
+      "image": "https://www.rentomojo.com/public/images/category/package-bg/smart-packages.jpg",
+      "logo": "https://www.rentomojo.com/public/images/category/icons/smart-packages.svg",
+      "name": "Smart Home",
+      "endPoint": "smarthome",
+      "NOP": "3"
     },
     {
-      "image":"https://www.rentomojo.com/public/images/category/package-bg/study-room-v1.jpg",
-      "logo":"https://www.rentomojo.com/public/images/category/icons/study-room.svg",
-      "name":"Work From Home",
-      "endPoint":"wfh",
-      "NOP":"6"
+      "image": "https://www.rentomojo.com/public/images/category/package-bg/study-room-v1.jpg",
+      "logo": "https://www.rentomojo.com/public/images/category/icons/study-room.svg",
+      "name": "Work From Home",
+      "endPoint": "wfh",
+      "NOP": "6"
     },
     {
-      "image":"https://www.rentomojo.com/public/images/category/package-bg/dining-v1.jpg",
-      "logo":"https://www.rentomojo.com/public/images/category/icons/dining.svg",
-      "name":"Kitchen & Dining",
-      "endPoint":"KandD",
-      "NOP":"2"
+      "image": "https://www.rentomojo.com/public/images/category/package-bg/dining-v1.jpg",
+      "logo": "https://www.rentomojo.com/public/images/category/icons/dining.svg",
+      "name": "Kitchen & Dining",
+      "endPoint": "KandD",
+      "NOP": "2"
     },
     {
-      "image":"https://www.rentomojo.com/public/images/category/package-bg/fitness-packages.jpg",
-      "logo":"https://www.rentomojo.com/public/images/category/icons/fitness-packages.svg",
-      "name":"Fitness & Exercise",
-      "endPoint":"FandE",
-      "NOP":"1"
+      "image": "https://www.rentomojo.com/public/images/category/package-bg/fitness-packages.jpg",
+      "logo": "https://www.rentomojo.com/public/images/category/icons/fitness-packages.svg",
+      "name": "Fitness & Exercise",
+      "endPoint": "FandE",
+      "NOP": "1"
     }
   ],
-  "packagesApart":[
-    { "image":"https://www.rentomojo.com/public/images/category/package-bg/1-bhk-new.jpg",
-      "logo":"https://www.rentomojo.com/public/images/category/icons/1-bhk.svg",
-      "name":"1 BHK",
-      "endPoint":"1bhk",
-      "NOP":"2"
+  "packagesApart": [
+    {
+      "image": "https://www.rentomojo.com/public/images/category/package-bg/1-bhk-new.jpg",
+      "logo": "https://www.rentomojo.com/public/images/category/icons/1-bhk.svg",
+      "name": "1 BHK",
+      "endPoint": "1bhk",
+      "NOP": "2"
     },
-    { "image":"https://www.rentomojo.com/public/images/category/package-bg/2-bhk-new.jpg",
-      "logo":"https://www.rentomojo.com/public/images/category/icons/2-bhk.svg",
-      "name":"2 BHK",
-      "endPoint":"2bhk",
-      "NOP":"1"
+    {
+      "image": "https://www.rentomojo.com/public/images/category/package-bg/2-bhk-new.jpg",
+      "logo": "https://www.rentomojo.com/public/images/category/icons/2-bhk.svg",
+      "name": "2 BHK",
+      "endPoint": "2bhk",
+      "NOP": "1"
     },
-    { "image":"https://www.rentomojo.com/public/images/category/package-bg/studio-apartment.jpg",
-      "logo":"https://www.rentomojo.com/public/images/category/icons/studio-apartment.svg",
-      "name":"Studio Apartment",
-      "endPoint":"studio-apartment",
-      "NOP":"1"
+    {
+      "image": "https://www.rentomojo.com/public/images/category/package-bg/studio-apartment.jpg",
+      "logo": "https://www.rentomojo.com/public/images/category/icons/studio-apartment.svg",
+      "name": "Studio Apartment",
+      "endPoint": "studio-apartment",
+      "NOP": "1"
     }
   ],
-
-
-
-
-  "bedroom":[
-    { "id":1,
+  "bedroom": [
+    {
+      "id": 1,
       "href": "https://www.rentomojo.com/pune/packages/rent-kipper-basic-bedroom/98335",
       "src": "https://p.rmjo.in/moodShot/vgqeajhe-1024x512.jpg",
       "title": "Kipper Basic Bedroom",
@@ -83,13 +83,14 @@
       "desc": "mo",
       "price2": "₹988/",
       "desc2": "mo",
-      "price3":"₹1078/",
+      "price3": "₹1078/",
       "items": "3 Items",
       "logo": "https://www.rentomojo.com/public/images/package/icons/bed.svg",
       "rm-oos__container": "",
       "rm-oos__container2": ""
     },
-    { "id":2,
+    {
+      "id": 2,
       "href": "https://www.rentomojo.com/pune/packages/rent-two-door-wardrobe-and-shoe-rack-large/103919",
       "src": "https://p.rmjo.in/moodShot/lcc7ot7j-1024x512.jpg",
       "title": "Hutch2-Door Wardrobe & Saddle Shoe Rack",
@@ -97,13 +98,14 @@
       "desc": "mo",
       "price2": "₹245/",
       "desc2": "",
-      "price3":"₹312/",
+      "price3": "₹312/",
       "items": "2 Items",
       "logo": "https://www.rentomojo.com/public/images/package/icons/bed.svg",
       "rm-oos__container": "",
       "rm-oos__container2": ""
     },
-    { "id":3,
+    {
+      "id": 3,
       "href": "https://www.rentomojo.com/pune/packages/rent-queen-bed-fridge-and-top-load-washing-machine/96900",
       "src": "https://p.rmjo.in/moodShot/i05w1kj4-1024x512.jpg",
       "title": "Double Bed with Fridge & Washing Machine",
@@ -111,13 +113,14 @@
       "desc": "mo",
       "price2": "₹2357/",
       "desc2": "mo",
-      "price3":"₹2479/",
+      "price3": "₹2479/",
       "items": "3 Items",
       "logo": "https://www.rentomojo.com/public/images/package/icons/bed.svg",
       "rm-oos__container": "",
       "rm-oos__container2": ""
     },
-    { "id":4,
+    {
+      "id": 4,
       "href": "https://www.rentomojo.com/pune/packages/rent-sofa-and-bed-combo/97846",
       "src": "https://p.rmjo.in/moodShot/wruziw9d-1024x512.jpg",
       "title": "Sofa & Bed Combo",
@@ -125,13 +128,14 @@
       "desc": "mo",
       "price2": "₹629/",
       "desc2": "",
-      "price3":"₹714/",
+      "price3": "₹714/",
       "items": "2 Items",
       "logo": "https://www.rentomojo.com/public/images/package/icons/bed.svg",
       "rm-oos__container": "",
       "rm-oos__container2": ""
     },
-    { "id":5,
+    {
+      "id": 5,
       "href": "https://www.rentomojo.com/pune/packages/rent-queen-bed-study-table-and-office-chair-combo/97855",
       "src": "https://p.rmjo.in/moodShot/ev9k8oq0-1024x512.jpg",
       "title": "Double Bed with Study Table & Chair",
@@ -139,13 +143,14 @@
       "desc": "mo",
       "price2": "₹887/",
       "desc2": "mo",
-      "price3":"₹978/",
+      "price3": "₹978/",
       "items": "3 Items",
       "logo": "https://www.rentomojo.com/public/images/package/icons/bed.svg",
       "rm-oos__container": "",
       "rm-oos__container2": ""
     },
-    { "id":6,
+    {
+      "id": 6,
       "href": "https://www.rentomojo.com/pune/packages/rent-kipper-basic-bedroom/98335",
       "src": "https://p.rmjo.in/moodShot/vgqeajhe-1024x512.jpg",
       "title": "Kipper Basic Bedroom",
@@ -153,13 +158,14 @@
       "desc": "mo",
       "price2": "₹988/",
       "desc2": "mo",
-      "price3":"₹1033/",
+      "price3": "₹1033/",
       "items": "3 Items",
       "logo": "https://www.rentomojo.com/public/images/package/icons/bed.svg",
       "rm-oos__container": "",
       "rm-oos__container2": ""
     },
-    {"id":7,
+    {
+      "id": 7,
       "href": "https://www.rentomojo.com/pune/packages/rent-two-door-wardrobe-and-shoe-rack-large/103919",
       "src": "https://p.rmjo.in/moodShot/lcc7ot7j-1024x512.jpg",
       "title": "Hutch2-Door Wardrobe & Saddle Shoe Rack",
@@ -167,13 +173,14 @@
       "desc": "mo",
       "price2": "₹212/",
       "desc2": "",
-      "price3":"₹294/",
+      "price3": "₹294/",
       "items": "2 Items",
       "logo": "https://www.rentomojo.com/public/images/package/icons/bed.svg",
       "rm-oos__container": "",
       "rm-oos__container2": ""
     },
-    { "id":8,
+    {
+      "id": 8,
       "href": "https://www.rentomojo.com/pune/packages/rent-queen-bed-fridge-and-top-load-washing-machine/96900",
       "src": "https://p.rmjo.in/moodShot/i05w1kj4-1024x512.jpg",
       "title": "Double Bed with Fridge & Washing Machine",
@@ -181,13 +188,14 @@
       "desc": "mo",
       "price2": "₹2357/",
       "desc2": "mo",
-      "price3":"₹2471/",
+      "price3": "₹2471/",
       "items": "3 Items",
       "logo": "https://www.rentomojo.com/public/images/package/icons/bed.svg",
       "rm-oos__container": "",
       "rm-oos__container2": ""
     },
-    { "id":9,
+    {
+      "id": 9,
       "href": "https://www.rentomojo.com/pune/packages/rent-sofa-and-bed-combo/97846",
       "src": "https://p.rmjo.in/moodShot/wruziw9d-1024x512.jpg",
       "title": "Sofa & Bed Combo",
@@ -195,13 +203,14 @@
       "desc": "mo",
       "price2": "₹610/",
       "desc2": "",
-      "price3":"₹682/",
+      "price3": "₹682/",
       "items": "2 Items",
       "logo": "https://www.rentomojo.com/public/images/package/icons/bed.svg",
       "rm-oos__container": "",
       "rm-oos__container2": ""
     },
-    { "id":10,
+    {
+      "id": 10,
       "href": "https://www.rentomojo.com/pune/packages/rent-queen-bed-study-table-and-office-chair-combo/97855",
       "src": "https://p.rmjo.in/moodShot/ev9k8oq0-1024x512.jpg",
       "title": "Double Bed with Study Table & Chair",
@@ -209,26 +218,14 @@
       "desc": "mo",
       "price2": "₹887/",
       "desc2": "mo",
-      "price3":"₹943/",
+      "price3": "₹943/",
       "items": "3 Items",
       "logo": "https://www.rentomojo.com/public/images/package/icons/bed.svg",
       "rm-oos__container": "",
       "rm-oos__container2": ""
     }
-   ],
-
-
-
-
-
-
-
-
-
-
-
-
-   "livingroom":[
+  ],
+  "livingroom": [
     {
       "href": "https://www.rentomojo.com/pune/packages/rent-kipper-basic-bedroom/98335",
       "src": "https://p.rmjo.in/moodShot/vgqeajhe-1024x512.jpg",
@@ -372,17 +369,8 @@
       "rm-oos__container": "",
       "rm-oos__container 2": ""
     }
-   ],
-
-
-
-
-
-
-
-
-
-   "appliances":[
+  ],
+  "appliances": [
     {
       "href": "https://www.rentomojo.com/pune/packages/rent-top-load-washing-machine-single-door-fridge-and-water-purifier/104000",
       "src": "https://p.rmjo.in/moodShot/jm4i5q50-1024x512.jpg",
@@ -578,18 +566,8 @@
       "rm-oos__container": "",
       "rm-oos__container 2": ""
     }
-   ],
-
-
-
-
-
-
-
-
-
-
-   "wfh":[
+  ],
+  "wfh": [
     {
       "href": "https://www.rentomojo.com/pune/packages/rent-top-load-washing-machine-single-door-fridge-and-water-purifier/104000",
       "src": "https://p.rmjo.in/moodShot/jm4i5q50-1024x512.jpg",
@@ -1253,16 +1231,8 @@
       "rm-oos__container": "Out of stock",
       "rm-oos__container 2": "It will be available soon"
     }
-   ],
-
-
-
-
-
-
-
-
-   "KandD":[
+  ],
+  "KandD": [
     {
       "href": "https://www.rentomojo.com/pune/packages/rent-top-load-washing-machine-single-door-fridge-and-water-purifier/104000",
       "src": "https://p.rmjo.in/moodShot/jm4i5q50-1024x512.jpg",
@@ -1913,19 +1883,8 @@
       "rm-oos__container": "Out of stock",
       "rm-oos__container 2": "It will be available soon"
     }
-   ],
-
-
-
-
-
-
-
-
-
-
-
-   "smarthome":[
+  ],
+  "smarthome": [
     {
       "href": "https://www.rentomojo.com/pune/packages/rent-stuart-basic-study-room/78933",
       "src": "https://p.rmjo.in/moodShot/85870ibz-1024x512.jpg",
@@ -2004,18 +1963,8 @@
       "rm-oos__container": "",
       "rm-oos__container 2": ""
     }
-   ],
-
-
-
-
-
-
-
-
-
-
-   "FandE":[
+  ],
+  "FandE": [
     {
       "href": "https://www.rentomojo.com/pune/packages/rent-bedroom-basics/4026",
       "src": "https://p.rmjo.in/moodShot/vurcemex-1024x512.jpg",
@@ -2354,17 +2303,8 @@
       "rm-oos__container": "Out of stock",
       "rm-oos__container2": "It will be available soon"
     }
-   ],
-
-
-
-
-
-
-
-
-
-   "studio-apartment":[
+  ],
+  "studio-apartment": [
     {
       "href": "https://www.rentomojo.com/pune/packages/rent-sofa-and-bed-combo/97846",
       "src": "https://p.rmjo.in/moodShot/wruziw9d-1024x512.jpg",
@@ -2586,17 +2526,8 @@
       "rm-oos__container": "Out of stock",
       "rm-oos__container2": "It will be available soon"
     }
-   ],
-
-
-
-
-
-
-
-
-
-   "1bhk":[
+  ],
+  "1bhk": [
     {
       "href": "https://www.rentomojo.com/pune/packages/rent-sofa-and-bed-combo/97846",
       "src": "https://p.rmjo.in/moodShot/wruziw9d-1024x512.jpg",
@@ -2805,14 +2736,8 @@
       "rm-oos__container": "Out of stock",
       "rm-oos__container2": "It will be available soon"
     }
-   ],
-
-
-
-
-
-
-   "2bhk":[
+  ],
+  "2bhk": [
     {
       "href": "https://www.rentomojo.com/pune/packages/rent-felix-utility-study-room/4175",
       "src": "https://www.rentomojo.com/public/images/loader/image-loader.gif",
@@ -2943,17 +2868,8 @@
       "rm-oos__container": "Out of stock",
       "rm-oos__container2": "It will be available soon"
     }
-   ],
-
-
-
-
-
-
-
-
-
-   "entire":[
+  ],
+  "entire": [
     {
       "href": "https://www.rentomojo.com/pune/packages/rent-sofa-and-bed-combo/97846",
       "src": "https://p.rmjo.in/moodShot/wruziw9d-1024x512.jpg",
@@ -3474,16 +3390,22 @@
       "rm-oos__container": "Out of stock",
       "rm-oos__container2": "It will be available soon"
     }
-   ]
-
-
-
-
-
-
-  }
-
-
-
-
-
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Rentify-Admin-1",
+      "mobile": 12345,
+      "email": "rentify-admin.1@rentify.com",
+      "admin": true
+    },
+    {
+      "id": 2,
+      "name": "XYZ",
+      "mobile": 9876543210,
+      "email": "xyz@abc.com",
+      "admin": false
+    }
+  ],
+  "loginUser": []
+}
