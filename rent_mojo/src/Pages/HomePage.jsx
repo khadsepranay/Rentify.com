@@ -11,6 +11,8 @@ import electronics from "../Images/extraImages/electronics.jpg"
 import fitness from "../Images/extraImages/fitness.jpg"
 import furniture from "../Images/extraImages/furniture.jpg"
 import wfh from "../Images/extraImages/wfh.jpg"
+import { useState, useEffect } from "react"
+import axios from "axios"
 
 const iconsDiv = [
 

@@ -11,7 +11,6 @@ export const getAllUsers = () => async (dispatch) => {
 	try {
 		let res = await axios.get('https://mock-login-rentify.onrender.com/users');
 		let data = await res.data;
-		console.log('auth/getAllUsers', data);
 		dispatch({ type: GET_ALL_USERS, payload: data });
 		return data;
 	} catch (e) {

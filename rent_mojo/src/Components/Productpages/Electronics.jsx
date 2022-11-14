@@ -7,6 +7,7 @@ import {
   chakra,
   Tooltip,
   Button,
+  useToast
 } from "@chakra-ui/react";
 import { CircularProgress, SimpleGrid } from "@chakra-ui/react";
 import { FiShoppingCart } from "react-icons/fi";
@@ -21,8 +22,17 @@ export const Electronics = () => {
   const { loading, error, data } = useSelector((state) => state.product);
   const [searchParams] = useSearchParams();
   const location = useLocation();
+  const toast = useToast();
   const handleClick = (el) => {
     postProducts(el);
+		toast({
+			title: 'Product added to cart',
+			description: `Product has been added to cart successfully`,
+			status: 'success',
+			duration: 3000,
+			isClosable: true,
+			position: 'top',
+		})
   };
 
   useEffect(() => {
@@ -64,7 +74,7 @@ export const Electronics = () => {
               <Box
                 border="1px grey solid"
                 maxW="100%"
-                height={415}
+                height={420}
                 borderWidth="1px"
                 shadow="lg"
                 position="relative"
@@ -122,6 +132,8 @@ export const Electronics = () => {
                         as="h3"
                         textAlign="left"
                         lineHeight="tight"
+                        whiteSpace="nowrap"
+                        overflow="hidden"
                       >
                         {el.title}
                       </Box>
