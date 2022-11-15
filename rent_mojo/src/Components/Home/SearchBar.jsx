@@ -1,36 +1,38 @@
-import { Box, Input } from "@chakra-ui/react"
+import { Box, Flex, HStack, Input, Text, VStack } from "@chakra-ui/react"
 import { IoSearchOutline } from "react-icons/io5"
 import { useState, useEffect } from "react"
 import axios from "axios"
+import { Link } from "react-router-dom"
 
-export const SearchBar = () => {
-    let [searchValue,setSearchValue] = useState("")
-    let [data,setData] = useState([])
-    let [filterData,setFilterData] = useState([])
-    function handleChange(e){
-        setSearchValue(e.target.value)
-    }
-
-    useEffect(()=>{
-        axios.get("https://rent-mojo-server.onrender.com/entire").then((res)=>{
-            setData(res.data)
-        })
-    },[])
-
-    useEffect(()=>{
-        let newData = data
-        let FilteredData = newData.filter((el)=>{
-            return el.title.includes(searchValue)
-        })
-        setFilterData(FilteredData)
-    },[searchValue])
+export const SearchBar = ({ handleChange, filterData, searchValue }) => {
 
     return (
         <div>
-            <Box display={'flex'} alignItems={'center'} border={'1px solid lightgray'} borderRadius={'10px'} width={{base:'180px',md:'300px',lg:'510px'}} marginLeft={{md:'10px',lg:'20px'}} backgroundColor={'#fafafa'} _hover={{backgroundColor:"transparent"}}>
-                <Input type="search" placeholder="Search for products" border={'none'} focusBorderColor={'none'} onChange={(e)=>handleChange(e)} />
-                <IoSearchOutline style={{ marginRight: "10px" }} />
-            </Box>
-        </div>
+            <Box alignItems={'center'} border={'1px solid lightgray'} borderRadius={'10px'} width={{ base: '180px', md: '300px', lg: '510px' }} marginLeft={{ md: '10px', lg: '20px' }} backgroundColor={'#fafafa'} _hover={{ backgroundColor: "transparent" }}>
+                <VStack>
+                    <Flex justifyContent={'space-between'} width={"100%"} alignItems={'center'}>
+                        <Input type="search" placeholder="Search for products" border={'none'} focusBorderColor={'none'} onChange={(e) => handleChange(e)} />
+                        <IoSearchOutline style={{ marginRight: "10px" }} />
+                    </Flex>
+                    {
+                       filterData.length == 0 || searchValue=="" ? <Box display={"none"}></Box> :
+                    <Box position={"absolute"} top={"40px"} left="36.8%" border={'1px solid lightgray'} borderBottomRadius={"10px"} overflow={'scroll'} height={"xs"} backgroundColor={"white"} padding={"20px"} width={{ base: '180px', md: '300px', lg: '510px' }} css={{
+                        '&::-webkit-scrollbar': {
+                            width: '4px',
+                        }
+                    }}>
+                        {
+                            filterData && filterData.map((el) => (
+                                <Link to={`/SingleRoomData/${el.title}`}>
+                                   <Box><Text align="left">{el.title}</Text></Box>
+                                </Link>
+                            )
+                            )
+                        }
+                    </Box>
+                    }
+                </VStack>
+            </Box >
+        </div >
     )
 }

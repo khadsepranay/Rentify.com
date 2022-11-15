@@ -56,6 +56,7 @@ const iconsDiv = [
 ]
 
 export const HomePage = () => {
+
     return (
         <Box>
             <HomeNavbar />

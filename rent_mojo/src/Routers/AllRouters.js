@@ -34,6 +34,7 @@ import SingleKitcheDiningPage from '../Components/Category pages/Packages_Catego
 import SingleFitExercisePage from '../Components/Category pages/Packages_Categories/SingleFitExercise';
 import SingleBedRoomPage from '../Components/Category pages/Packages_Categories/SingleBedroom';
 import SingleAppliancesPage from '../Components/Category pages/Packages_Categories/SingleAppliances';
+import { SingleSearchData } from '../Components/Home/SingleSearchData';
 
 function AllRouters() {
 	return (
@@ -171,6 +172,9 @@ function AllRouters() {
 				path='/packages/wfh/:id'
 				element={<SingleWorkFromHomePage />}
 			></Route>
+			<Route path="/SingleRoomData/:title" element={<SingleSearchData/>}>
+
+			</Route>
 
 			<Route
 				path='/myAccount'

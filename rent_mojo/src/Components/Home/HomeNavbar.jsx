@@ -16,6 +16,7 @@ import {
 	useDisclosure,
 	Image,
 	Select,
+	VStack,
 } from '@chakra-ui/react';
 import './HomeCart/HomeCart.css';
 import { Link as RefLink } from 'react-router-dom';
@@ -30,10 +31,11 @@ import LoginSignup from './LoginSignup';
 import { SearchBar } from './SearchBar';
 import { HomeCart } from './HomeCart/HomeCart';
 import { NavSelectTag } from './NavSelectTag';
-import { useState } from 'react';
 import rentifyName from '../../Images/logoImage/rentifyName.jpg';
 import rentifyLogo from '../../Images/logoImage/rentifyLogo.png';
 import { useSelector } from 'react-redux';
+import { useState, useEffect } from "react"
+import axios from "axios"
 
 export default function HomeNavbar() {
 	const { cart } = useSelector((state) => state.Item);
@@ -47,6 +49,34 @@ export default function HomeNavbar() {
 	const RemoveDisplay = () => {
 		setDisplayDiv({ display: 'none' });
 	};
+
+	let [searchValue,setSearchValue] = useState("")
+    let [data,setData] = useState([])
+    let [filterData,setFilterData] = useState([])
+    function handleChange(e){
+		setSearchValue(e.target.value)
+    }
+	console.log(searchValue);
+	console.log(filterData);
+
+    useEffect(()=>{
+        axios.get("https://rent-mojo-server.onrender.com/entire").then((res)=>{
+            setData(res.data)
+        })
+    },[])
+
+    useEffect(()=>{
+        let newData = data
+        let FilteredData = newData.filter((el)=>{
+            return el.title.includes(searchValue)
+        })
+		// if(searchValue==null){
+		//    FilteredData=[];
+		// }
+        setFilterData(FilteredData)
+		
+    },[searchValue]);
+
 
 	return (
 		<Box
@@ -134,7 +164,7 @@ export default function HomeNavbar() {
 							display={{ base: 'none', md: 'flex' }}
 							ml={5}
 						>
-							<DesktopNav />
+							<DesktopNav handleChange = {handleChange} filterData={filterData} searchValue={searchValue} />
 						</Flex>
 					</Flex>
 
@@ -232,7 +262,7 @@ export default function HomeNavbar() {
 	);
 }
 
-const DesktopNav = () => {
+const DesktopNav = ({handleChange, filterData, searchValue}) => {
 	return (
 		<Stack
 			direction={'row'}
@@ -241,7 +271,9 @@ const DesktopNav = () => {
 			<Box>
 				<NavSelectTag />
 			</Box>
-			<SearchBar />
+			<VStack>
+			<SearchBar handleChange = {handleChange} filterData={filterData} searchValue={searchValue}/>
+			</VStack>
 		</Stack>
 	);
 };

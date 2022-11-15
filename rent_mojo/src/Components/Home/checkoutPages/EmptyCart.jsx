@@ -8,6 +8,7 @@ import {
 	Button,
 } from '@chakra-ui/react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import HomeNavbar from '../HomeNavbar';
 
 const PaymentPage = () => {
@@ -46,6 +47,7 @@ const PaymentPage = () => {
 				</Box>
 				<br />
 				<Box>
+					<Link to="/appliances">
 					<Button
 						borderRadius={0}
 						bg='#dc3226'
@@ -63,6 +65,7 @@ const PaymentPage = () => {
 							Browse catalogue
 						</Text>
 					</Button>
+					</Link>
 				</Box>
 			</Stack>
 		</div>
