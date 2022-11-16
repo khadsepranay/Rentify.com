@@ -2,7 +2,7 @@ import { Box, Flex, HStack, Input, Text, VStack } from "@chakra-ui/react"
 import { IoSearchOutline } from "react-icons/io5"
 import { useState, useEffect } from "react"
 import axios from "axios"
-import { Link } from "react-router-dom"
+import { Link } from "@chakra-ui/react"
 
 export const SearchBar = ({ handleChange, filterData, searchValue }) => {
 
@@ -23,7 +23,7 @@ export const SearchBar = ({ handleChange, filterData, searchValue }) => {
                     }}>
                         {
                             filterData && filterData.map((el) => (
-                                <Link to={`/SingleRoomData/${el.title}`}>
+                                <Link href={`/SingleRoomData/${searchValue}`}>
                                    <Box><Text align="left">{el.title}</Text></Box>
                                 </Link>
                             )

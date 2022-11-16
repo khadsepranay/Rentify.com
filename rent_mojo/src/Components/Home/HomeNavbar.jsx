@@ -56,8 +56,6 @@ export default function HomeNavbar() {
     function handleChange(e){
 		setSearchValue(e.target.value)
     }
-	console.log(searchValue);
-	console.log(filterData);
 
     useEffect(()=>{
         axios.get("https://rent-mojo-server.onrender.com/entire").then((res)=>{
@@ -70,9 +68,6 @@ export default function HomeNavbar() {
         let FilteredData = newData.filter((el)=>{
             return el.title.includes(searchValue)
         })
-		// if(searchValue==null){
-		//    FilteredData=[];
-		// }
         setFilterData(FilteredData)
 		
     },[searchValue]);
