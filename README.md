@@ -1,5 +1,5 @@
 # Rentify.com
-India's leading rental platform brings to you a wide range of products on rent. Rento mojo is an online rental platform that provides furniture, appliances and electronics on a monthly rental basis.
+India's leading rental platform brings to you a wide range of products on rent. Rentify is an online rental platform that provides furniture, appliances and electronics on a monthly rental basis.
 
  Team Manager : Om Prakash
 
