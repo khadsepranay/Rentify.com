@@ -8,7 +8,7 @@ export const SearchBar = ({ handleChange, filterData, searchValue }) => {
 
     return (
         <div>
-            <Box alignItems={'center'} border={'1px solid lightgray'} borderRadius={'10px'} width={{ base: '180px', md: '300px', lg: '510px' }} marginLeft={{ md: '10px', lg: '20px' }} backgroundColor={'#fafafa'} _hover={{ backgroundColor: "transparent" }}>
+            <Box alignItems={'center'} border={'1px solid lightgray'} borderRadius={'10px'} width={{ base: '180px', md: '300px', lg: '400px',xl:"510px" }} marginLeft={{ md: '10px', lg: '20px' }} backgroundColor={'#fafafa'} _hover={{ backgroundColor: "transparent" }}>
                 <VStack>
                     <Flex justifyContent={'space-between'} width={"100%"} alignItems={'center'}>
                         <Input type="search" placeholder="Search for products" border={'none'} focusBorderColor={'none'} onChange={(e) => handleChange(e)} />

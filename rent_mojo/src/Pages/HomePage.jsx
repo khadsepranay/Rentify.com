@@ -64,8 +64,8 @@ export const HomePage = () => {
                 <AutoSlider />
                 {/* // Passing `columns={[2, null, 3]}` and `columns={{ sm: 2, md: 3 }}`
             // will have the same effect. */}
-                <Box width={{ base: '95%', sm: '95%', md: '95%', lg: '75%' }} margin={'auto'} marginTop={'50px'}>
-                    <SimpleGrid columns={[4, 4, 4, 6]} spacing='25px'>
+                <Box width={{ base: '95%', sm: '95%', md: '95%', lg: '75%' }} zIndex={'100'} position={"relative"} margin={'auto'} marginTop={{base:"-250px",sm:"-200px",md:"150px",lg:'-90px',xl:"50px"}}>
+                    <SimpleGrid columns={[3, 4, 4, 5, 6]} spacing='25px'>
                         {
                             iconsDiv.map((el) => (
                                 <Link to={el.href}>
@@ -83,8 +83,8 @@ export const HomePage = () => {
                 </Box>
                 <HomeCarousel />
                 <MoreRenting />
-                <Box display={'flex'} flexDirection={{lg:"row", md:"row", sm:"column", base:"row"}} gap={{base:'180px', sm:"20px"}} textAlign={'left'} padding={{base:'120px 0px 50px 50px', sm:"80px 0px 50px 0px", lg:'120px 0px 50px 50px'}}>
-                    <Box width={{base:"15%", md:"20%", sm:"50%", lg:"15%"}} marginLeft={{sm:"10%"}}>
+                <Box display={'flex'} flexDirection={{lg:"row", md:"row", sm:"column", base:"column"}} gap={{base:'30px', sm:"30px",md:"50px", lg:"180px"}} textAlign={'left'} padding={{base:'120px 10px 50px 10px', sm:"120px 10px 50px 10px", md:"120px 10px 50px 10px", lg:'120px 0px 50px 50px'}}>
+                    <Box width={{base:"90%", md:"20%", sm:"95%", lg:"15%"}} marginLeft={{sm:"5%",md:"5%",lg:"10%",base:"5%"}}>
                         <Text fontSize={'22px'} fontWeight={'600'} fontFamily={'Muli, sans-serif'}>Over 1.5 lac</Text>
                         <Text fontSize={'22px'} fontFamily={'Muli, sans-serif'}>happy subscribers</Text>
                         <Box backgroundColor={'#dc3236'} borderRadius={'5px'} width={'3em'} height={'2.5px'} bottom={'-12px'}></Box>

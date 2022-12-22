@@ -2,7 +2,7 @@ import { Button, Slider } from "@mui/material"
 import { Box } from "@mui/system"
 import axios from "axios"
 import { useEffect, useState } from "react"
-import {useParams} from "react-router-dom"
+import {Link, useParams} from "react-router-dom"
 import Navbar from "../CategoryPagesNavbar/Navbar";
 import Loader from "../Loader";
 import {ChakraProvider} from "@chakra-ui/react"
@@ -68,7 +68,7 @@ function SingleAppliancesPage(){
                         <Box>Free Upgrade</Box> 
                     </Box>
                     <Box sx={{margin:"20px auto"}}>
-                    <Button sx={{backgroundColor:"red",color:"white",width:"100%",margin:"45px auto",":hover":{backgroundColor:"#FF6464"}}}>Book Your Plan</Button>
+                      <Button sx={{backgroundColor:"red",color:"white",width:"100%",margin:"45px auto",":hover":{backgroundColor:"#FF6464"}}}>Book Your Plan</Button>
                     </Box>
             </Box>
         </Box>

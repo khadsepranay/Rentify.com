@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Flex, IconButton, Image, Text, useBreakpointValue } from '@chakra-ui/react';
 // Here we have used react-icons package for the icons
 import { FaChevronLeft, FaChevronRight, IconName } from "react-icons/fa";
@@ -24,16 +24,10 @@ const settings = {
 };
 
 export default function AutoSlider() {
-    // As we have used custom buttons, we need a reference variable to
-    // change the state
+
     const [slider, setSlider] = React.useState(0);
-
-    // These are the breakpoints which changes the position of the
-    // buttons as the screen size changes
-    const top = useBreakpointValue({ base: '90%', md: '50%', sm:"25%" });
-    const side = useBreakpointValue({ base: '30%', md: '10px', sm:"0%" });
-
-    // These are the images used in the slide
+    const top = useBreakpointValue({ base: '18%', md: '30%', sm: "18%",lg:"35%",xl:"50%" });
+    const side = useBreakpointValue({ base: '2%', md: '10px', sm: "2%",lg:"1%",xl:"1%" });
     const cards = [
         'https://s.rmjo.in/Fitness-Offer-HP-Web-%20(1).jpg',
         'https://s.rmjo.in/WP-Web.png',
@@ -42,8 +36,28 @@ export default function AutoSlider() {
         'https://s.rmjo.in/Paytm-Bank-Desktop-banner-%20(1).jpg'
     ];
 
+    const [windowSize, setWindowSize] = useState(getWindowSize());
+
+    useEffect(() => {
+        function handleWindowResize() {
+            setWindowSize(getWindowSize());
+        }
+
+        window.addEventListener("resize", handleWindowResize);
+
+        return () => {
+            window.removeEventListener("resize", handleWindowResize);
+        };
+    }, []);
+
+    function getWindowSize() {
+        const { innerWidth, innerHeight } = window;
+        return { innerWidth, innerHeight };
+    }
+
+
     return (
-        <Box height={{ base: '300px', md: '300px', sm: '220px', lg: '470px' }} width={{base:'95%', sm:'95%', md:'95%', lg:'75%' }} margin={'auto'} marginTop={'15px'} borderRadius={'30px'} backgroundColor={'#d4e0e9'} zIndex={0} fontSize={{base:"13px", md:"10px", sm:"10px", lg:"13px"}}>
+        <Box display={"flex"} flexDir={"column"} pb={"10px"} height={{ base: '0%', sm: '0%', md: '0%', lg: '20%' }} width={{ base: '95%', sm: '95%', md: '95%', lg: '75%' }} margin={'auto'} borderRadius={'30px'} backgroundColor={{base:"transparent",sm:"transparent",md:"transparent",lg:'transparent',xl:"#d4e0e9"}} zIndex={0} fontSize={{ base: "13px", md: "10px", sm: "10px", lg: "13px" }}>
             <Box
                 position={'relative'}
                 height={'425px'}
@@ -104,25 +118,29 @@ export default function AutoSlider() {
                             backgroundPosition="center"
                             backgroundRepeat="no-repeat"
                             backgroundSize="cover"
-                        // backgroundImage={`url(${url})`}
                         >
                             <Image src={url} borderRadius={'30px'} />
                         </Box>
                     ))}
                 </Slider>
             </Box>
-            <Flex gap={{base:"2px", md:"2px", sm:"2px",lg:"5px"}} justifyContent={'center'} alignItems={'center'} mt={{sm:"-250px",lg:"10px"}}>
-                <Image src='https://www.rentomojo.com/public/images/icons/virusSafetyGreen.png' width={'20px'}/>
-                <Text>
-                     Safety precautions during COVID-19. We’re taking additional steps and precautionary measures to protect our community from COVID-19.
-                </Text>
-                <a href='https://www.rentomojo.com/covid19-response' target="_blank">
-                <Text display={'flex'}>
-                      Know more 
-                      <IoChevronForwardOutline style={{marginTop:'5px'}}/>
-                </Text>
-                </a> 
-            </Flex>
+            {
+                windowSize.innerWidth < 1050 ? null :
+                    <Flex gap={{ base: "2px", md: "2px", sm: "2px", lg: "5px" }} justifyContent={'center'} alignItems={'center'} mt={{ sm: "-250px", lg: "10px" }}>
+                        <Image src='https://www.rentomojo.com/public/images/icons/virusSafetyGreen.png' width={'20px'} />
+                        <Text>
+                            Safety precautions during COVID-19. We’re taking additional steps and precautionary measures to protect our community from COVID-19.
+                        </Text>
+                        <a href='https://www.rentomojo.com/covid19-response' target="_blank">
+                            <Text display={'flex'}>
+                                Know more
+                                <IoChevronForwardOutline style={{ marginTop: '5px' }} />
+                            </Text>
+                        </a>
+                    </Flex>
+
+            }
+
         </Box>
     );
 }

@@ -47,7 +47,7 @@ const rentIcon = [
 
 export const MoreRenting = () => {
     return (
-        <Box width={{ base: '95%', sm: '95%', md: '95%', lg: '75%' }} margin={'auto'} textAlign={'start'} marginTop={'50px'}>
+        <Box width={{ base: '95%', sm: '95%', md: '95%', lg: '75%' }} margin={'auto'} textAlign={'start'} marginTop={{md:"-100px",sm:"50px",lg:"200px",xl:"50px"}}>
             <Box >
                 <Text fontSize={'22px'} fontWeight={'600'} fontFamily={'Muli, sans-serif'}>There's more</Text>
                 <Text fontSize={'22px'} fontFamily={'Muli, sans-serif'}>to renting</Text>
