@@ -26,17 +26,15 @@ const settings = {
 };
 
 export default function ReviewCarousel() {
-  // As we have used custom buttons, we need a reference variable to
-  // change the state
+
   const [slider, setSlider] = React.useState(null);
 
   // These are the breakpoints which changes the position of the
   // buttons as the screen size changes
-  const top = useBreakpointValue({ base: "96%",sm:"90%", md: "50%"});
-  const side = useBreakpointValue({ base: "30%", md: "40px",lg:"10%"});
+  const top = useBreakpointValue({ base: "90%",sm:"90%", md: "50%"});
+  const side = useBreakpointValue({ base: "5%", md: "40px",lg:"10%"});
 
   // This list contains all the data for carousels
-  // This can be static or loaded from a server
   const cards = [
     {
       name: "Kushal Tiwari",
@@ -80,7 +78,7 @@ export default function ReviewCarousel() {
     <Box
       position={"relative"}
       height={{ xl: "536px", md: "536px" , base:"434px" }}
-      width={{base:"65%", md:"65%", sm:"90%", lg:"70%"}}
+      width={{base:"90%", md:"65%", sm:"90%", lg:"70%"}}
       m="auto"
       overflow={"hidden"}
     >
@@ -131,7 +129,7 @@ export default function ReviewCarousel() {
         {cards.map((card, index) => (
           <Box
             key={index}
-            height={{ xl: "536px", md: "536px" , base:"434px"}}
+            height={{ lg: "536px", md: "536px" , base:"95%", sm:"90%"}}
             position="relative"
             // backgroundPosition="center"
             // backgroundRepeat="no-repeat"

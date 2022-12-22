@@ -282,25 +282,9 @@ const breakPoints = [
 
 export default function HomeCarousel() {
 
-  // const [items, setItems] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
-
-  // const addItem = () => {
-  //   const nextItem = Math.max(1, items.length + 1);
-  //   setItems([...items, nextItem]);
-  // };
-
-  // const removeItem = () => {
-  //   const endRange = Math.max(0, items.length - 1);
-  //   setItems(items.slice(0, endRange));
-  // };
-
   return (
     <div className="carousel-main">
-      {/* <div className="controls-wrapper">
-        <button onClick={removeItem}>Remove Item</button>
-        <button onClick={addItem}>Add Item</button>
-      </div> */}
-      {/* <hr className="seperator" /> */}
+
       <div className="carousel-wrapper">
         <Box marginBottom={'5px'} marginLeft={{ base: "13%", sm: "22%", md: "12%", lg: "13%" }} textAlign={'left'} color={'#313131'}>
           <Text fontSize={'22px'} fontWeight={'600'} fontFamily={'Muli, sans-serif'}>You'll love to</Text>
@@ -321,7 +305,7 @@ export default function HomeCarousel() {
                     <Text fontSize={'12px'} color={'#BABABA'}>Rent</Text>
                     <Text fontSize={'13px'} color={'#313131'}>₹ {el.price}</Text>
                   </Box>
-                  <Link style={{ textDecoration: 'none' }} to="">
+                  <Link style={{ textDecoration: 'none' }} href="/packages">
                     <Button width={'92px'} height={'33px'} padding={'5px 15px'} fontSize={'14px'} border={' 1px solid #DC3226'} backgroundColor={'transparent'} fontWeight={'100'} color={'#DC3226'} borderRadius={'none'} _hover={{ backgroundColor: "#DC3226", textUnderlineOffset: "none", color: "white" }}>See more</Button>
                   </Link>
                 </Flex>
@@ -334,13 +318,4 @@ export default function HomeCarousel() {
   );
 }
 
-// background: #dc3226;
-// border-radius: 5px;
-// bottom: -12px;
-// content: "";
-// height: 2px;
-// left: 0;
-// position: absolute;
-// right: 0;
-// width: 2em;
 

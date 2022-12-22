@@ -77,15 +77,15 @@ export default function HomeNavbar() {
 		<Box
 			style={{
 				position: 'fixed',
-				zIndex: '100',
+				zIndex: '1000',
 				width: '100%',
-				marginTop: '-90px',
+				top:"0px",
 				backgroundColor: '#ffffff',
 			}}
 			boxShadow={'0px 4px 10px 0 rgb(0 0 0 / 16%)'}
 		>
 			<Box
-				width={{ base: '95%', sm: '95%', md: '95%', lg: '75%' }}
+				width={{ base: '98%', sm: '98%', md: '98%', lg: '98%',xl:"75%" }}
 				margin={'auto'}
 				boxSizing={'border-box !important'}
 			>
@@ -167,7 +167,7 @@ export default function HomeNavbar() {
 						flex={{ base: 1, md: 0 }}
 						justify={'flex-end'}
 						direction={'row'}
-						spacing={6}
+						spacing={{sm:"0",base:"0",md:"6",lg:"6",xl:"6"}}
 					>
 						<Button
 							as={'a'}
