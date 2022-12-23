@@ -60,10 +60,10 @@ export const Fitfilter = () => {
     <Box>
     <Nav/>
   </Box>
-    <Box width={"90%"} margin={"auto"}>
-      <Box display={"flex"} justifyContent={"space-evenly"}>
+    <Box width={{base:"98%",sm:"98%",md:"95%",lg:"95%",xl:"90%"}} margin={"auto"}>
+      <Box display={"flex"} justifyContent={"space-evenly"} gap={"10px"} alignItems={"flex-start"}>
         {windowSize.innerWidth < 700 ? null : (
-          <Box width={"20%"}>
+          <Box width={{md:"25%",lg:"20%",xl:"20%"}}>
             <Box
               display={"flex"}
               flexDirection={{
@@ -161,8 +161,8 @@ export const Fitfilter = () => {
             </Flex>
           </Box>
         )}
-        <Box width={"78%"}>
-          <Box width={"95%"} margin={"auto"}>
+        <Box width={{base:"98%",sm:"98%",md:"98%",lg:"78%",xl:"78%"}}>
+          <Box width={"100%"} margin={"auto"}>
             <Box flexDirection="row" textAlign={"left"}>
               {category?.map((el, index) => (
                 <Button borderRadius={"none"}>

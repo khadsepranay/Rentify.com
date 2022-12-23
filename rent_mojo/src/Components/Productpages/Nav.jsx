@@ -119,7 +119,8 @@ function Navbar() {
           xl: "15px 0px",
           lg: "15px 0px",
           md: "15px 0px",
-          sm: "15px 60px",
+          sm: "15px 0px",
+          base:"15px 0px"
         },
         display: "flex",
         justifyContent: {
@@ -127,6 +128,7 @@ function Navbar() {
           lg: "space-around",
           md: "space-around",
           sm: "space-between",
+          base:"space-between"
         },
         fontFamily: "'Mulish', sans-serif;",
         border: "1px solid #e6e6e6",
