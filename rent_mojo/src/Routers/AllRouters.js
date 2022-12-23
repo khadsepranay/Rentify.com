@@ -35,6 +35,7 @@ import SingleFitExercisePage from '../Components/Category pages/Packages_Categor
 import SingleBedRoomPage from '../Components/Category pages/Packages_Categories/SingleBedroom';
 import SingleAppliancesPage from '../Components/Category pages/Packages_Categories/SingleAppliances';
 import { SingleSearchData } from '../Components/Home/SingleSearchData';
+import { CartPay } from '../Components/Home/checkoutPages/cartPay';
 
 function AllRouters() {
 	return (
@@ -83,7 +84,7 @@ function AllRouters() {
 				path='/cart'
 				element={
 					<ChakraProvider>
-						<PaymentPage />
+						<CartPay />
 					</ChakraProvider>
 				}
 			></Route>
