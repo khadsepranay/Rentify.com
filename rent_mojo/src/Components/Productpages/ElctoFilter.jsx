@@ -1,5 +1,5 @@
 
-import { Box, Checkbox, CloseButton, Stack, Text } from "@chakra-ui/react";
+import { Box, ChakraProvider, Checkbox, CloseButton, Stack, Text } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { Electronics } from "./Electronics";
 import  Nav  from "./Nav";
+import HomeNavbar from "../Home/HomeNavbar";
 export const ElctoFilter = () => {
 
     const [windowSize, setWindowSize] = useState(getWindowSize());
@@ -62,8 +63,9 @@ export const ElctoFilter = () => {
 
     return (
         <Box>
+            <ChakraProvider><HomeNavbar/></ChakraProvider>
             <Nav/>
-        <Box width={{base:"98%",sm:"98%",md:"95%",lg:"95%",xl:"90%"}} margin={'auto'}>
+        <Box width={{base:"98%",sm:"98%",md:"95%",lg:"95%",xl:"90%"}} margin={'auto'} mt={"30px"}>
 
             <Box display={'flex'} justifyContent={'space-evenly'} gap={"10px"} alignItems={"flex-start"}>
                 {
@@ -145,7 +147,7 @@ export const ElctoFilter = () => {
                             {category?.map((el, index) => (
                                 <Button borderRadius={'none'} >
                                     <Text key={index}>{el}</Text>
-                                    <CloseButton size='sm' />
+                                    {/* <CloseButton size='sm' /> */}
                                 </Button>
                             ))}
                         </Box>

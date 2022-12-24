@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { addNewUser, setLoginUser } from '../../../../Redux/Auth/auth.actions';
 
-export default function Signup({ number }) {
+export default function Signup({ number , onClose }) {
 	const toast = useToast();
 	const [inputOtp, setInputOtp] = useState('');
 	const [otp, setOtp] = useState('');
@@ -37,14 +37,14 @@ export default function Signup({ number }) {
 
 		return otp;
 	}
-	const { currentUser } = useSelector((store) => store.auth);
+	const { currentUser, users } = useSelector((store) => store.auth);
 
 	const dispatch = useDispatch();
 
 	// let otp;
 	useEffect(() => {
 		setOtp(showOtp());
-		console.log(otp, typeof otp);
+		// console.log(otp, typeof otp);
 	}, []);
 
 	const verifyOtp = () => {
@@ -73,9 +73,11 @@ export default function Signup({ number }) {
 		}
 	};
 
-	const userRegister = () => {
-		dispatch(setLoginUser(currentUser[0]));
-		dispatch(addNewUser(registerForm));
+	const userRegister = async () => {
+		// console.log('currentUser', currentUser);
+		let newUser = await dispatch(addNewUser(registerForm));
+		dispatch(setLoginUser(newUser));
+		onClose();
 	};
 
 	const handleChange = (e) => {

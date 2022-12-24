@@ -1,4 +1,4 @@
-import { Box, Button, CircularProgress, Flex, HStack, Image, Select, Table, TableContainer, Tbody, Td, Text, Th, Thead, Tr, useToast, VStack } from "@chakra-ui/react"
+import { Box, Button, ChakraProvider, CircularProgress, Flex, HStack, Image, Select, Table, TableContainer, Tbody, Td, Text, Th, Thead, Tr, useToast, VStack } from "@chakra-ui/react"
 import { fontWeight } from "@mui/system"
 import { useEffect } from "react"
 import { AiOutlineFileText } from "react-icons/ai"
@@ -10,38 +10,44 @@ import HomeNavbar from "../HomeNavbar";
 import EmptyCart from "./EmptyCart";
 import { BsDashLg, BsPlusCircle, BsPlusLg } from "react-icons/bs";
 import { BiMinusCircle } from "react-icons/bi";
+import Nav from "../../Productpages/Nav"
 
 const myarr = [{}];
 
 export const CartPay = () => {
 
     const dispatch = useDispatch();
-    const { loading, error, cart } = useSelector((state) => state.Item);
-    const initial = Number(0);
+    const { loading, error, cart } = useSelector((state) => state.Item);  
+    const toast = useToast();
+    const navigate = useNavigate();
 
-    const sum = cart?.reduce(
-        (accumulator, x) => accumulator + (Number(x.price)*Number(x.qty)),
-        initial
-    );
+   let gst = 199;
+   let charges = 99
 
-    const x = Math.floor((sum * 18) / 100);
-    console.log(x);
-    console.log(sum);
+    let total = cart?.reduce((acc,el)=>{
+        return acc + (Number(el.price)*Number(el.qty)) + gst
+    },0)
+
+    let totalRent = cart?.reduce((acc,el)=>{
+        return acc + (Number(el.price)*Number(el.qty))
+    },0)
+
+    let totalDeposit = cart?.reduce((acc,el)=>{
+        return acc + (Number(el.deposit)*Number(el.qty))
+    },0)
 
     useEffect(() => {
         dispatch(CartProduct());
-    }, [dispatch, sum]);
+    }, [dispatch]);
 
     const handleDelete = (id) => {
         dispatch(cartDelete(id));
         window.location.reload();
     };
-
-    const toast = useToast();
-    const navigate = useNavigate();
-    console.log(Date());
+    // console.log(Date());
 
     const paymentSuccessful = () => {
+        // console.log("toast")
         toast({
             title: "Payment Successful",
             description:
@@ -51,19 +57,30 @@ export const CartPay = () => {
             isClosable: true,
             position: "top",
         });
-        navigate("/");
+        navigate("/orderSuccessful");
     };
 
     const handleIncQty = (el) => {
         el.qty++;
-        console.log("Inc",el.qty)
+        // console.log("Inc",el.qty)
         dispatch(IncDecQty(el))
+        window.location.reload();
     }
 
-    const handleDecQty = (el) => {
+    const handleDecQty = (el,qty) => {
         el.qty--;
-        console.log("dec",el.qty)
+        // console.log("dec",el.qty)
         dispatch(IncDecQty(el))
+        window.location.reload();
+    }
+
+    const handleDeposit = (e,el,deposit) => {
+        let val = e.target.value;
+        console.log(val)
+        deposit = Number(val)
+        console.log(deposit)
+        dispatch(IncDecQty(el))
+        window.location.reload();
     }
 
     if (loading) {
@@ -83,6 +100,7 @@ export const CartPay = () => {
         <Box>
             <Box mt={"60px"}>
                 <HomeNavbar />
+                <Nav/>
             </Box>
             {
                 cart?.length != 0 ?
@@ -102,11 +120,11 @@ export const CartPay = () => {
                                             <hr />
                                             <Flex justifyContent={"space-between"} mt={"10px"}>
                                                 <Text fontSize={"12px"}>Refundable Deposit</Text>
-                                                <Text fontSize={"12px"}>₹{Math.floor(sum * 1.25)}</Text>
+                                                <Text fontSize={"12px"}>₹{totalDeposit}</Text>
                                             </Flex>
                                             <Flex justifyContent={"space-between"}>
                                                 <Text fontSize={"12px"}>Delivery Charges</Text>
-                                                <Text fontSize={"12px"}>{`₹${Math.floor(sum * 1.25) < 1000 ? 99 : 199}`}</Text>
+                                                <Text fontSize={"12px"}>{`₹${charges}`}</Text>
                                             </Flex>
                                         </Box>
                                         <Box border={"1px solid #9accd8"} width={{ base: "100%", sm: "100%", md: "100%", lg: "48%", xl: "48%" }} textAlign={"left"} lineHeight={"2.5"} p={"20px"} borderRadius={"10px 15px"}>
@@ -114,16 +132,16 @@ export const CartPay = () => {
                                             <hr />
                                             <Flex justifyContent={"space-between"} mt={"10px"}>
                                                 <Text fontSize={"12px"}>Product Rent</Text>
-                                                <Text fontSize={"12px"} >₹{`${sum}/mo`}</Text>
+                                                <Text fontSize={"12px"} >₹{`${totalRent}/mo`}</Text>
                                             </Flex>
                                             <Flex justifyContent={"space-between"} mb={"10px"}>
                                                 <Text fontSize={"12px"}>GST</Text>
-                                                <Text fontSize={"12px"}>₹{x}</Text>
+                                                <Text fontSize={"12px"}>₹{gst}</Text>
                                             </Flex>
                                             <hr />
                                             <Flex justifyContent={"space-between"} py={"10px"}>
                                                 <Text fontSize={"12px"}>Total Monthly Rent</Text>
-                                                <Text fontSize={"12px"}>₹{x + sum}</Text>
+                                                <Text fontSize={"12px"}>₹{total}</Text>
                                             </Flex>
                                             <hr />
                                         </Box>
@@ -145,9 +163,7 @@ export const CartPay = () => {
                                 >
                                     <Box>
                                         <Text fontSize={"12px"}>
-                                            ₹{Math.floor(sum * 1.25) < 1000
-                                                ? 99 + Math.floor(sum * 1.25)
-                                                : 199 + Math.floor(sum * 1.25)}
+                                            ₹ {totalDeposit + charges}
                                         </Text>
                                         <Text fontSize={"12px"}>Payable Now</Text>
                                     </Box>
@@ -183,8 +199,8 @@ export const CartPay = () => {
                                                             </Thead>
                                                             <Tbody>
                                                                 <tr>
-                                                                    <td>{`₹${sum}/mo`}</td>
-                                                                    <td>₹{Math.floor(sum * 1.25)}</td>
+                                                                    <td>{`₹${el.price*el.qty}/mo`}</td>
+                                                                    <td>₹ {el.deposit*el.qty}</td>
                                                                 </tr>
                                                             </Tbody>
                                                         </Table>
@@ -208,15 +224,15 @@ export const CartPay = () => {
                                                     gap={"30px"}
                                                     cursor={"pointer"}
                                                 >
-                                                    <BsDashLg onClick={()=>handleDecQty(el)}/>
+                                                    <BsDashLg onClick={()=>handleDecQty(el,el.handleIncQty)}/>
                                                     <Box>{el.qty}</Box>
-                                                    <BsPlusLg onClick={()=>handleIncQty(el)}/>
+                                                    <BsPlusLg onClick={()=>handleIncQty(el,el.qty)}/>
                                                 </Box>
                                                 <Box w={"45%"} border="1px solid #9accd8" borderRadius={5}>
-                                                    <Select name="" id="" w={"100%"} border={"none"} focusBorderColor={"transparent"}>
-                                                        <option value="">12 months</option>
-                                                        <option value="">6 months</option>
-                                                        <option value="">3 months</option>
+                                                    <Select name="" id="" value={el.deposit} w={"100%"} border={"none"} focusBorderColor={"transparent"} onChange={(e)=>handleDeposit(e,el,el.deposit)}>
+                                                        <option value="12">12 months</option>
+                                                        <option value="6">6 months</option>
+                                                        <option value="3">3 months</option>
                                                     </Select>
                                                 </Box>
                                             </Flex>

@@ -26,9 +26,13 @@ export const authReducer = (state = initState, { type, payload }) => {
 			};
 		}
 		case ADD_NEW_USER: {
+			console.log('newPaylaod',payload)
 			return {
 				...state,
+				newUser: false,
+				existingUser: false,
 				users: [...state.users, payload],
+				currentUser:[...state.currentUser,payload],
 			};
 		}
 		case FIND_ONE_USER: {
@@ -64,6 +68,8 @@ export const authReducer = (state = initState, { type, payload }) => {
 			return {
 				...state,
 				currentUser: [],
+				newUser: false,
+				existingUser: false,
 				isAuthenticated: false,
 			};
 		}

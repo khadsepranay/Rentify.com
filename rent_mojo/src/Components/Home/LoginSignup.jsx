@@ -165,7 +165,7 @@ export default function LoginSignUp() {
 
 	useEffect(() => {
 		dispatch(getAllUsers());
-	}, []);
+	}, [isAuthenticated]);
 
 	// console.log('Login/users', users);
 
@@ -173,6 +173,8 @@ export default function LoginSignUp() {
 		dispatch(findUsers({ number: Number(number) }));
 		// showOtp();
 	};
+
+	// console.log('currentUser-loginSignup', currentUser);
 
 	return (
 		<div>
@@ -265,7 +267,7 @@ export default function LoginSignUp() {
 							/>
 						</Box>
 						{newUser ? (
-							<Signup number={Number(number)} />
+							<Signup number={Number(number)} onClose={onClose}/>
 						) : existingUser ? (
 							<Login onClose={onClose} />
 						) : (

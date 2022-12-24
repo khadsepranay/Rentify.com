@@ -98,6 +98,7 @@ export default function HomeNavbar() {
 					borderStyle={'solid'}
 					borderColor={useColorModeValue('gray.200', 'gray.900')}
 					align={'center'}
+					justifyContent={"space-evenly"}
 				>
 					<Flex
 						flex={{ base: 1, md: 'auto' }}
@@ -263,9 +264,9 @@ const DesktopNav = ({handleChange, filterData, searchValue}) => {
 			direction={'row'}
 			spacing={4}
 		>
-			<Box>
+			{/* <Box>
 				<NavSelectTag />
-			</Box>
+			</Box> */}
 			<VStack>
 			<SearchBar handleChange = {handleChange} filterData={filterData} searchValue={searchValue}/>
 			</VStack>

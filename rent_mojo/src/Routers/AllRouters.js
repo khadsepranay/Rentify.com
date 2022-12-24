@@ -36,6 +36,7 @@ import SingleBedRoomPage from '../Components/Category pages/Packages_Categories/
 import SingleAppliancesPage from '../Components/Category pages/Packages_Categories/SingleAppliances';
 import { SingleSearchData } from '../Components/Home/SingleSearchData';
 import { CartPay } from '../Components/Home/checkoutPages/cartPay';
+import { Success } from '../Components/Home/checkoutPages/orderSuccessful';
 
 function AllRouters() {
 	return (
@@ -173,7 +174,7 @@ function AllRouters() {
 				path='/packages/wfh/:id'
 				element={<SingleWorkFromHomePage />}
 			></Route>
-			<Route path="/SingleRoomData/:title" element={<SingleSearchData/>}>
+			<Route path="/SingleRoomData/:title" element={<SingleSearchData />}>
 
 			</Route>
 
@@ -228,6 +229,14 @@ function AllRouters() {
 						<PrivateRoute>
 							<Requests />
 						</PrivateRoute>
+					</ChakraProvider>
+				}
+			></Route>
+			<Route
+				path='/orderSuccessful'
+				element={
+					<ChakraProvider>
+							<Success />
 					</ChakraProvider>
 				}
 			></Route>
