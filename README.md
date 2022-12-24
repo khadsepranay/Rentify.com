@@ -24,62 +24,63 @@ In this project we have made the foolowing things :
 ***
 ## Landing Page :
 
-![home](./rent_mojo/img/home.png)
+![home](img/home.png)
 
-![home1](./rent_mojo/img/home1.png)
+![home1](img/home1.png)
 
-![home2](./rent_mojo/img/home2.png)
+![home2](img/home2.png)
 
-![home3](./rent_mojo/img/home3.png)
+![home3](img/home3.png)
 
-![search](./rent_mojo/img/search.png)
+![search](img/search.png)
 
 
 ## Sign In page :
 
-![signup](./rent_mojo/img/login.png)
+![signup](img/login.png)
 
-![signup1](./rent_mojo/img/login1.png)
+![signup1](img/login1.png)
 
-![signup2](./rent_mojo/img/login3.png)
+![signup2](img/login3.png)
 
 ## Products Page:
 
-![products](./rent_mojo/img/products1.png)
+![products](img/products1.png)
 
-![products](./rent_mojo/img/products2.png)
+![products](img/products2.png)
 
-![products](./rent_mojo/img/products3.png)
+![products](img/products3.png)
 
-![products](./rent_mojo/img/products4.png)
+![products](img/products4.png)
 
-![products](./rent_mojo/img/products5.png)
+![products](img/products5.png)
 
-![products](./rent_mojo/img/products6.png)
+![products](img/products6.png)
 
-![products](./rent_mojo/img/products7.png)
+![products](img/products7.png)
 
 
 
 ## Cart Page : 
 
-![cart](./rent_mojo/img/cart.png)
+![cart](img/cart.png)
 
-![cart1](./rent_mojo/img/cart1.png)
+![cart1](img/cart1.png)
 
 ## Order Successful Page : 
 
-![orderPlaced](./rent_mojo/img/success.png)
+![orderPlaced](img/success.png)
 
 ## Footer Page :
 
-![footer](./rent_mojo/img/footer.png)
+![footer](img/footer.png)
 
 ## Learnings :
 - Real-life implementation of React,Redux,Chakra-UI.
 - Time-management and Accountability.
 - Learn to work in pressure.
 - Learn to tackle problems and how to keep our-self motivated.
+- Learn team work.
   
 ## Team Members : 
 
