@@ -59,8 +59,6 @@ In this project we have made the foolowing things :
 
 ![products](./rent_mojo/img/products7.png)
 
-
-
 ## Cart Page : 
 
 ![cart](./rent_mojo/img/cart.png)
