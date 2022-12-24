@@ -69,7 +69,7 @@ In this project we have made the foolowing things :
 
 ## Order Successful Page : 
 
-![orderPlaced](success.png)
+![orderPlaced](./rent_mojo/img/success.png)
 
 ## Footer Page :
 
