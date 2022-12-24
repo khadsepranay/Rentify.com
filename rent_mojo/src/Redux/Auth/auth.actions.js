@@ -25,8 +25,9 @@ export const addNewUser = (user) => async (dispatch) => {
 			user
 		);
 		let data = await res.data;
-		console.log(data);
+		console.log('authAction-addNewUser:',data);
 		dispatch({ type: ADD_NEW_USER, payload: data });
+		return data;
 	} catch (e) {
 		console.log(e.message);
 	}
@@ -66,6 +67,7 @@ export const userLogout = (id) => async (dispatch) => {
 };
 
 export const setLoginUser = (creds) => async (dispatch) => {
+	console.log('login Credentials',creds);
 	try {
 		let res = await axios.post(
 			'https://mock-login-rentify.onrender.com/loginUser',

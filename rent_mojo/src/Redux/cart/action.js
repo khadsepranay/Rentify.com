@@ -32,15 +32,17 @@ export const cartDelete = (id) => async (dispatch) => {
 }
 
 export const IncDecQty = (el) => async (dispatch) => {
-  console.log("INCDEC", el);
+  console.log("patchData1", el);
   dispatch({ type: GET_CART_LOADING });
   try{
-    let res = await axios.patch(`https://rentify-com.onrender.com/CartItem/${el.id}`);
+    let res = await axios.patch(`https://rentify-com.onrender.com/CartItem/${el.id}`,el);
     let data = res.data;
-    console.log(data,"incDecData")
+    console.log(data,"patachData2")
     dispatch({ type: GET_CART_SUCCESS, payload: data})
   }
   catch(e){
     dispatch({ type: GET_CART_ERROR});
   }
 }
+
+

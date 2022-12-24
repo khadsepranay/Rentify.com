@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# RentoMojo Clone (named as Rentify.com)
+Got a collaborative project to clone rentomojo website. We have completed this project within 4 days.
+Rentomojo is an online rental platform that provides furniture, appliances and electronics on a monthly rental basis.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this project we have made the foolowing things :
+ - Home Page
+ - Navbar
+ - Admin Page
+ - Signup Page
+ - Various project Pages
+ - Cart Page
+ - Order Successful Page
+ - Footer Page
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+### [click here to run live demo](rentify-one.vercel.app/)
 
-### `npm start`
+## Tech stacks used :
+* **Redux**
+* **React**
+* **Chakra-UI**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+***
+## Landing Page :
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![home](img/home.png)
 
-### `npm test`
+![home1](img/home1.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![home2](img/home2.png)
 
-### `npm run build`
+![home3](img/home3.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![search](img/search.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Sign In page :
 
-### `npm run eject`
+![signup](img/login.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![signup1](img/login1.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![signup2](img/login3.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Products Page:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![products](img/products1.png)
 
-## Learn More
+![products](img/products2.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![products](img/products3.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![products](img/products4.png)
 
-### Code Splitting
+![products](img/products5.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![products](img/products6.png)
 
-### Analyzing the Bundle Size
+![products](img/products7.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Cart Page : 
 
-### Advanced Configuration
+![cart](img/cart.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![cart1](img/cart1.png)
 
-### Deployment
+## Order Successful Page : 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+![orderPlaced](success.png)
 
-### `npm run build` fails to minify
+## Footer Page :
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![footer](img/footer.png)
+
+## Learnings :
+- Real-life implementation of React,Redux,Chakra-UI.
+- Time-management and Accountability.
+- Learn to work in pressure.
+- Learn to tackle problems and how to keep our-self motivated.
+  
+## Team Members : 
+
+- Pranay Khadse - fw20_0117
+  
+- Vinayak Hiwase - fp05_229
+
+- Rohini Kushwaha - fw17_0925
+
+- Arjun Yadav - fw18_0903
+
+- Tarun Kumar Sao - fw20_1259
+
+
+
+
+
+
+
+
+
+
+
+
+
+

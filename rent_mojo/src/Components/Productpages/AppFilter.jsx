@@ -1,5 +1,5 @@
 import { Appliances } from "./Appliances";
-import { Box, Checkbox, CloseButton, Stack, Text } from "@chakra-ui/react";
+import { Box, ChakraProvider, Checkbox, CloseButton, Stack, Text } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
@@ -57,8 +57,9 @@ export const AppFilter = () => {
 
   return (
     <Box>
+      <ChakraProvider><HomeNavbar/></ChakraProvider>
       <Nav />
-      <Box width={{base:"98%",sm:"98%",md:"95%",lg:"95%",xl:"90%"}} margin={"auto"} mt="20px">
+      <Box width={{base:"98%",sm:"98%",md:"95%",lg:"95%",xl:"90%"}} margin={"auto"} mt="30px">
         <Box display={"flex"} justifyContent={"space-evenly"} gap={"10px"} alignItems={"flex-start"}>
           {windowSize.innerWidth < 700 ? null : (
             <Box width={{md:"25%",lg:"20%",xl:"20%"}}>

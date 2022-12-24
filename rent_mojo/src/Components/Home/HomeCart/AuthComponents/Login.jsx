@@ -39,7 +39,7 @@ export default function Login({ onClose }) {
 	// let otp;
 	useEffect(() => {
 		setOtp(showOtp());
-		console.log(otp, typeof otp);
+		// console.log(otp, typeof otp);
 	}, []);
 
 	const verifyOtp = () => {
