@@ -24,7 +24,7 @@ In this project we have made the foolowing things :
 ***
 ## Landing Page :
 
-![home](./rent_mojo/img/home.png)
+![home](img/home.png)
 
 ![home1](img/home1.png)
 
