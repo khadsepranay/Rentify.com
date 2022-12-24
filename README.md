@@ -14,7 +14,7 @@ In this project we have made the foolowing things :
 
 ---
 
-### [click here to run live demo](rentify-one.vercel.app/)
+### [click here to run live demo](https://rentify-pi.vercel.app/)
 
 ## Tech stacks used :
 * **Redux**
