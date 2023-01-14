@@ -59,8 +59,6 @@ In this project we have made the foolowing things :
 
 ![products](img/products7.png)
 
-
-
 ## Cart Page : 
 
 ![cart](img/cart.png)
