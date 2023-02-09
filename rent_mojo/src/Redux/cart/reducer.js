@@ -1,28 +1,21 @@
-import {
-  GET_CART_ERROR,
-  GET_CART_LOADING,
-  GET_CART_SUCCESS,
-} from "./actiontype";
+import { newProductAdded } from "./Actions"
+import { CartData, DecreaseCartData, IncreaseCartData, isAddedToCart, isNewItemAdded } from "./ActionTypes"
 
-const cartInitalState = {
-  loading: false,
-  error: false,
-  cart: [],
-};
+let initState = {
+    isAdded : false,
+    CartData : [],
+    NewProductAdded : false
+}
 
-export const cartReducer = (state = cartInitalState, { type, payload }) => {
-  switch (type) {
-    case GET_CART_LOADING: {
-      return { ...state, loading: true, error: false };
+let CartReducer = (state=initState,{type,payload}) =>{
+    switch(type){
+       case isAddedToCart : return {...state,isAdded:payload}
+       case CartData : return {...state,CartData:payload}
+       case IncreaseCartData : return {...state,CartData:payload}
+       case DecreaseCartData : return {...state,CartData:payload}
+       case isNewItemAdded : return {...state,NewProductAdded:payload}
+       default : return {...state}
     }
-    case GET_CART_SUCCESS: {
-      return { ...state, loading: false, cart: payload };
-    }
-    case GET_CART_ERROR: {
-      return { ...state, loading: false, error: true };
-    }
-    default: {
-      return state;
-    }
-  }
-};
+}
+
+export {CartReducer}

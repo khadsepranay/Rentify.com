@@ -1,0 +1,104 @@
+[
+  {
+    "image": "https://www.rentomojo.com/public/images/category/package-bg/bedroom-v1_new.jpg",
+    "name": "Bedroom",
+    "category": "packages",
+    "sub_category": "bedroom"
+  },
+  {
+    "image": "https://www.rentomojo.com/public/images/category/package-bg/living-room-v2.jpg",
+    "name": "Livingroom",
+    "category": "packages",
+    "sub_category": "livingroom"
+  },
+  {
+    "image": "https://www.rentomojo.com/public/images/category/package-bg/bedroom-v1_new.jpg",
+    "name": "Appliances",
+    "category": "packages",
+    "sub_category": "appliances"
+  },
+  {
+    "image": "https://www.rentomojo.com/public/images/category/package-bg/study-room-v1.jpg",
+    "name": "Work From Home",
+    "category": "packages",
+    "sub_category": "wfh"
+  },
+  {
+    "image": "https://www.rentomojo.com/public/images/category/package-bg/dining-v1.jpg",
+    "name": "Kitchen & Dining",
+    "category": "packages",
+    "sub_category": "kitchenanddining"
+  },
+  {
+    "image": "https://www.rentomojo.com/public/images/category/package-bg/smart-packages.jpg",
+    "name": "Smart Home",
+    "category": "packages",
+    "sub_category": "smarthome"
+  },
+  {
+    "image": "https://www.rentomojo.com/public/images/category/package-bg/fitness-packages.jpg",
+    "name": "Fitness & Exercise",
+    "category": "packages",
+    "sub_category": "fitnessandexcercise"
+  },
+  {
+    "image": "https://www.rentomojo.com/public/images/category/package-bg/bedroom-v1_new.jpg",
+    "name": "Bedroom",
+    "category": "furniture",
+    "sub_category": "bedroom"
+  },
+  {
+    "image": "https://www.rentomojo.com/public/images/category/package-bg/living-room-v2.jpg",
+    "name": "Livingroom",
+    "category": "furniture",
+    "sub_category": "livingroom"
+  },
+  {
+    "image": "https://www.rentomojo.com/public/images/category/package-bg/study-room-v1.jpg",
+    "name": "Work From Home",
+    "category": "furniture",
+    "sub_category": "wfh"
+  },
+  {
+    "image": "https://www.rentomojo.com/public/images/category/package-bg/dining-v1.jpg",
+    "name": "Kitchen & Dining",
+    "category": "furniture",
+    "sub_category": "kitchenanddining"
+  },
+  {
+    "image": "https://www.rentomojo.com/public/images/category/package-bg/baby-furniture.jpg",
+    "name": "Body Furniture",
+    "category": "furniture",
+    "sub_category": "bodyfurniture"
+  },
+  {
+    "image": "https://www.rentomojo.com/public/images/category/appliances-bg/washing-machines.jpg",
+    "name": "Bedroom",
+    "category": "appliances",
+    "sub_category": "bedroom"
+  },
+  {
+    "image": "https://www.rentomojo.com/public/images/category/package-bg/living-room-v2.jpg",
+    "name": "Livingroom",
+    "category": "appliances",
+    "sub_category": "livingroom"
+  },
+  {
+    "image": "https://www.rentomojo.com/public/images/category/package-bg/study-room-v1.jpg",
+    "name": "Work From Home",
+    "category": "appliances",
+    "sub_category": "wfh"
+  },
+  {
+    "image": "https://www.rentomojo.com/public/images/category/package-bg/dining-v1.jpg",
+    "name": "Kitchen & Dining",
+    "category": "appliances",
+    "sub_category": "kitchenanddining"
+  },
+  {
+    "image": "https://www.rentomojo.com/public/images/category/package-bg/baby-furniture.jpg",
+    "name": "Body Furniture",
+    "category": "appliances",
+    "sub_category": "bodyfurniture"
+  }
+]

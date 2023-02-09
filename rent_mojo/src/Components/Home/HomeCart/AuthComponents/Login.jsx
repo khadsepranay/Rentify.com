@@ -12,7 +12,6 @@ import {
 	Text,
 	useToast,
 } from '@chakra-ui/react';
-import { setLoginUser } from '../../../../Redux/Auth/auth.actions';
 
 export default function Login({ onClose }) {
 	const toast = useToast();
@@ -20,7 +19,6 @@ export default function Login({ onClose }) {
 	const [otp, setOtp] = useState('');
 
 	// const [otpVerify, setOtpVerify] = useState(false);
-	const { currentUser } = useSelector((store) => store.auth);
 	const dispatch = useDispatch();
 	function showOtp() {
 		let otp = 9999 - Math.ceil(Math.random() * 1000);
@@ -55,7 +53,6 @@ export default function Login({ onClose }) {
 				position: 'top',
 			});
 			// setOtpVerify(true);
-			dispatch(setLoginUser(currentUser[0]));
 			onClose();
 		} else {
 			toast({

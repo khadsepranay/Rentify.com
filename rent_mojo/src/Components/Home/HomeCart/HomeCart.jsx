@@ -1,9 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import './HomeCart.css';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 export const HomeCart = ({ handleDisplay, RemoveDisplay }) => {
-	const {cart} = useSelector((state)=>state.Item)
+
+	let CartData = useSelector((state)=>state.Cart.CartData)
+	let isAdded = useSelector((state)=>state.Cart.isAdded)
+
+
 	return (
 		<Link to='/cart'>
 			<div>
@@ -13,7 +18,7 @@ export const HomeCart = ({ handleDisplay, RemoveDisplay }) => {
 				>
 					Cart
 				</span>
-				{cart.length==0?null:<span className='cart-header'>{cart.length}</span>}
+				<span className='cart-header'>{CartData.length}</span>
 			</div>
 		</Link>
 	);

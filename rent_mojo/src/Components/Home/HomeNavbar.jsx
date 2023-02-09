@@ -19,7 +19,7 @@ import {
 	VStack,
 } from '@chakra-ui/react';
 import './HomeCart/HomeCart.css';
-import { Link as RefLink } from 'react-router-dom';
+import { Link as RefLink, useNavigate } from 'react-router-dom';
 import {
 	HamburgerIcon,
 	CloseIcon,
@@ -27,21 +27,76 @@ import {
 	ChevronRightIcon,
 } from '@chakra-ui/icons';
 import { IoCartOutline } from 'react-icons/io5';
-import LoginSignup from './LoginSignup';
+import LoginSignup from './Signup';
 import { SearchBar } from './SearchBar';
 import { HomeCart } from './HomeCart/HomeCart';
 import { NavSelectTag } from './NavSelectTag';
-import rentifyName from '../../Images/logoImage/rentifyName.jpg';
-import rentifyLogo from '../../Images/logoImage/rentifyLogo.png';
-import { useSelector } from 'react-redux';
+import rentifyName from './Images/logoImage/rentifyName.jpg';
+import rentifyLogo from './Images/logoImage/rentifyLogo.png';
+import { useSelector,useDispatch } from 'react-redux';
 import { useState, useEffect } from "react"
 import axios from "axios"
+import { login } from '../../Redux/User/ActionTypes';
+import { getData, newProductAdded } from '../../Redux/Cart/Actions';
+import { isNewItemAdded } from '../../Redux/Cart/ActionTypes';
 
 export default function HomeNavbar() {
-	const { cart } = useSelector((state) => state.Item);
+
+	let Auth = useSelector((state)=>state.Auth)
+	let isLogin = Auth.isLogin
+	let CartData = useSelector((state)=>state.Cart.CartData)
+	let NewProductAdded = useSelector((state)=>state.Cart.NewProductAdded)
+	console.log(NewProductAdded)
+
+	useEffect(()=>{
+		if(NewProductAdded){
+			dispatch(getData())
+			dispatch(newProductAdded(false))
+		}
+	},[NewProductAdded])
+
+
+	let dispatch = useDispatch()
+	let Navigate = useNavigate()
+	
+    let [name,setName] = useState('')
+	let [tempName,setTempName] = useState('')
+	let [data,setData] = useState([])
+
+    let token = JSON.parse(localStorage.getItem('token')) || null
+
 	const { isOpen, onToggle } = useDisclosure();
 
 	const [displayDiv, setDisplayDiv] = useState({ display: 'none' });
+
+	
+    useEffect(()=>{
+		if(!token){
+			Navigate('/')
+		}
+        axios.get('https://tender-lime-pike.cyclic.app/user/getname',{
+            headers:{
+                token
+            }
+        }).then((res)=>{
+			if(res.data.name==='JsonWebTokenError'){
+				console.log(res.data)
+			}else{
+				setName(res.data)
+				setTempName(res.data)
+				dispatch({type:login,payload:true})
+				dispatch(getData())
+			}
+        }).catch((err)=>{
+            console.log(err)
+        })
+    },[])
+
+	
+
+
+	
+
 
 	const handleDisplay = () => {
 		setDisplayDiv({ display: 'block' });
@@ -51,17 +106,22 @@ export default function HomeNavbar() {
 	};
 
 	let [searchValue,setSearchValue] = useState("")
-    let [data,setData] = useState([])
     let [filterData,setFilterData] = useState([])
-    function handleChange(e){
+
+
+    let handleChange = (e) =>{
 		setSearchValue(e.target.value)
     }
 
-    useEffect(()=>{
-        axios.get("https://rent-mojo-server.onrender.com/entire").then((res)=>{
-            setData(res.data)
-        })
-    },[])
+
+	useEffect(()=>{
+		axios.get('http://localhost:8000/product').then((res)=>{
+			console.log(res.data)
+			setData(res.data)
+		}).catch((err)=>{
+			console.log(err)
+		})
+	},[])
 
     useEffect(()=>{
         let newData = data
@@ -71,6 +131,16 @@ export default function HomeNavbar() {
         setFilterData(FilteredData)
 		
     },[searchValue]);
+
+
+	let handleLogout = () =>{
+		dispatch({type:login,payload:false})
+		dispatch({type:isNewItemAdded,payload:false})
+		localStorage.removeItem('token')
+		Navigate('/')
+	}
+
+
 
 
 	return (
@@ -83,6 +153,7 @@ export default function HomeNavbar() {
 				backgroundColor: '#ffffff',
 			}}
 			boxShadow={'0px 4px 10px 0 rgb(0 0 0 / 16%)'}
+			onClick={()=>setSearchValue(null)}
 		>
 			<Box
 				width={{ base: '98%', sm: '98%', md: '98%', lg: '98%',xl:"75%" }}
@@ -160,7 +231,7 @@ export default function HomeNavbar() {
 							display={{ base: 'none', md: 'flex' }}
 							ml={5}
 						>
-							<DesktopNav handleChange = {handleChange} filterData={filterData} searchValue={searchValue} />
+							<DesktopNav handleChange = {handleChange} filterData={filterData} searchValue={searchValue} setSearchValue={setSearchValue} />
 						</Flex>
 					</Flex>
 
@@ -170,6 +241,8 @@ export default function HomeNavbar() {
 						direction={'row'}
 						spacing={{sm:"0",base:"0",md:"6",lg:"6",xl:"6"}}
 					>
+						{
+								isLogin?
 						<Button
 							as={'a'}
 							fontSize={'sm'}
@@ -180,51 +253,39 @@ export default function HomeNavbar() {
 							alignItems={'center'}
 							gap={'5px'}
 						>
-							<IoCartOutline />
-							<Text
-								fontSize={'14px'}
-								fontWeight={400}
-								color={'#313131'}
-							>
-								<HomeCart
-									handleDisplay={handleDisplay}
-									RemoveDisplay={RemoveDisplay}
-								/>
-							</Text>
-							{cart.length === 0 ? null : (
+							
+								<span>
+								<IoCartOutline />
+								<Text
+									fontSize={'14px'}
+									fontWeight={400}
+									color={'#313131'}
+								>
+									
+									<HomeCart
+										handleDisplay={handleDisplay}
+										RemoveDisplay={RemoveDisplay}
+									/>
+							</Text> 
+									</span>
 								<div
 									style={displayDiv}
 									onMouseEnter={handleDisplay}
 									onMouseLeave={RemoveDisplay}
 									className='hover-div'
 								>
-									{cart.map((el) => (
-										<div
-											style={{
-												display: 'flex',
-												justifyContent: 'space-between',
-												alignItems: 'center',
-												marginBottom: '10px',
-												border: '1px solid lightgray',
-												padding: '5px',
-											}}
-										>
-											<img
-												src={el.img}
-												width={'80px'}
-											/>
-											<div style={{ width: '100%', padding: '10px' }}>
-												<Text
-													whiteSpace={'break-spaces'}
-													textAlign={'left'}
-													fontSize={'14px'}
-												>
-													{el.title}
-												</Text>
-												<br />
-											</div>
-										</div>
-									))}
+									<Box style={{cursor:'auto'}}>
+										{
+											CartData && CartData.map((el)=>{
+												return(
+													<Box style={{display:'flex',paddingBottom:'10px',gap:'20px',alignItems:'center',justifyContent:'left'}}>
+														<Image src={el.product.image} style={{width:'55px',height:'34px'}}/>
+														<Box sx={{overflow:'hidden',textAlign:'left'}}>{el.product.title}</Box>
+													</Box>
+												)
+											})
+										}
+									</Box>
 									<RefLink to='/cart'>
 										<Stack>
 											<button
@@ -241,9 +302,11 @@ export default function HomeNavbar() {
 										</Stack>
 									</RefLink>
 								</div>
-							)}
-						</Button>
-						<LoginSignup />
+						</Button>:null
+							}
+						{
+							isLogin?<Button sx={{backgroundColor:'green',color:'white',_hover:{backgroundColor:'#E90303',color:'white',width:'140px',transitionDuration:'0.5s',transitionTimingFunction:'ease-out'}}} onMouseEnter={()=>setName("Logout")} onMouseLeave={()=>setName(tempName)} onClick={()=>handleLogout()}>{name}</Button>:<RefLink to='/login'><Button sx={{backgroundColor:'#E90303',color:'white',fontSize:'13px',_hover:{backgroundColor:'#ff3333',transitionDuration:'0.5s',transitionTimingFunction:'ease-out'}}}>SIGNUP/LOGIN</Button></RefLink>
+						}
 					</Stack>
 				</Flex>
 
@@ -424,3 +487,21 @@ const NAV_ITEMS = [
 		href: '#',
 	},
 ];
+
+
+
+
+// useEffect(()=>{
+// 	axios.get("https://rent-mojo-server.onrender.com/entire").then((res)=>{
+// 		setData(res.data)
+// 	})
+// },[])
+
+// useEffect(()=>{
+// 	let newData = data
+// 	let FilteredData = newData.filter((el)=>{
+// 		return el.title.includes(searchValue)
+// 	})
+// 	setFilterData(FilteredData)
+	
+// },[searchValue]);

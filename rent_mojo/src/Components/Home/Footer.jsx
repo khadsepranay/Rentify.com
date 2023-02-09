@@ -72,7 +72,7 @@ const SocialButton = ({
 export default function Footer() {
 
     return (
-        <Box bg="#f5f7fa" marginTop={'50px'} fontFamily={'Muli, sans-serif'}>
+        <Box bg="#f5f7fa" marginTop={'50px'} fontFamily={'Muli, sans-serif'} paddingLeft={'30px'}>
             <Container maxW={"6xl"} py={20}>
                 <Box textAlign={'left'}>
                     <ListHeader>
@@ -121,7 +121,7 @@ export default function Footer() {
                 marginTop={'-80px'}>
                 <Container as={Stack} maxW={'6xl'} py={10}>
                     <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
-                        <Stack align={'flex-start'} >
+                        <Stack align={'flex-start'} marginTop={'80px'} >
                             <ListHeader>
                                 <Text fontSize={'14px'} color={'#313131'}>RENTOMOJO</Text>
                             </ListHeader>

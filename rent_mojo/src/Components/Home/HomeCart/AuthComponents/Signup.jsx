@@ -9,7 +9,6 @@ import {
 	Text,
 	useToast,
 } from '@chakra-ui/react';
-import { addNewUser, setLoginUser } from '../../../../Redux/Auth/auth.actions';
 
 export default function Signup({ number , onClose }) {
 	const toast = useToast();
@@ -37,7 +36,6 @@ export default function Signup({ number , onClose }) {
 
 		return otp;
 	}
-	const { currentUser, users } = useSelector((store) => store.auth);
 
 	const dispatch = useDispatch();
 
@@ -75,8 +73,6 @@ export default function Signup({ number , onClose }) {
 
 	const userRegister = async () => {
 		// console.log('currentUser', currentUser);
-		let newUser = await dispatch(addNewUser(registerForm));
-		dispatch(setLoginUser(newUser));
 		onClose();
 	};
 

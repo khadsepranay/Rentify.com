@@ -1,0 +1,176 @@
+import { Box, Button, FormControl, Stack, TextField } from "@mui/material";
+import RentifyName from "../Home/Images/logoImage/rentifyName.jpg";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { LoadingButton } from "@mui/lab";
+
+function Signup() {
+  let Navigate = useNavigate();
+
+  let [form, setForm] = useState({
+    name: "",
+    email: "",
+    mobile: "",
+    password: "",
+    address: "",
+  });
+
+  let [buttonLoading, setButtonLoading] = useState(false);
+
+  let handleForm = ({ target }) => {
+    setForm({ ...form, [target.name]: target.value });
+  };
+
+  let handleSignup = (e) => {
+    e.preventDefault();
+    setButtonLoading(true);
+    axios
+      .post("https://tender-lime-pike.cyclic.app/user/signup", {
+        ...form,
+      })
+      .then((res) => {
+        setButtonLoading(false);
+        alert("Signup Successful");
+        Navigate("/login");
+      })
+      .catch((err) => {
+        setButtonLoading(false);
+        alert("Something went wrong... Please Signup again");
+      });
+  };
+  useEffect(() => {
+    scrollToTop();
+  }, []);
+
+  function scrollToTop() {
+    window.scrollTo(0, 0);
+  }
+
+  return (
+    <Box
+      sx={{
+        width: "100vw",
+        bgcolor: "#003333",
+        paddingBottom:{lg:'80px',md:'50px',sm:'50px',xs:'50px'},
+        paddingTop:'50px',
+        margin:'0px',
+      }}
+    >
+      <Box sx={{ 
+          width: "100vw",
+          padding: "auto",
+          boxSizing: "border-box", }}>
+        <Link to="/">
+          <Box component="img" src={RentifyName}></Box>{" "}
+        </Link>
+        <Box sx={{ margin: "auto", boxSizing: "border-box" }}>
+          <Box
+            component="h3"
+            sx={{
+              fontSize: "35px",
+              boxShadow: "1px 1px 5px grey",
+              backgroundColor: "white",
+              padding: "30px",
+              height: "500px",
+              width: { lg: "500px", md: "500px", sm: "450px", xs: "380px" },
+              margin: "20px auto",
+            }}
+          >
+            <Box sx={{ paddingBottom: "20px" }} color="red">
+              SIGNUP
+            </Box>
+            <Stack
+              sx={{
+                width: { lg: "500px", md: "500px", sm: "450px", xs: "380px" },
+                height: "200px",
+              }}
+              gap="20px"
+            >
+              <TextField
+                type="text"
+                id="name"
+                name="name"
+                label="Name"
+                placeholder="Enter Name"
+                variant="outlined"
+                InputLabelProps={{ className: "TextFieldLable" }}
+                InputProps={{ className: "TextFieldInput" }}
+                required={true}
+                onChange={(e) => handleForm(e)}
+              />
+              <TextField
+                type="email"
+                id="email"
+                name="email"
+                label="Email"
+                placeholder="Enter Email"
+                variant="outlined"
+                InputLabelProps={{ className: "TextFieldLable" }}
+                inputProps={{ className: "TextFieldInput" }}
+                onChange={(e) => handleForm(e)}
+                required
+              />
+              <TextField
+                type="number"
+                id="mobile"
+                name="mobile"
+                label="Mobile"
+                placeholder="Enter Mobile No."
+                variant="outlined"
+                InputLabelProps={{ className: "TextFieldLable" }}
+                inputProps={{ className: "TextFieldInput" }}
+                onChange={(e) => handleForm(e)}
+                required
+              />
+              <TextField
+                type="text"
+                id="address"
+                name="address"
+                label="Address"
+                placeholder="Enter Address"
+                variant="outlined"
+                InputLabelProps={{ className: "TextFieldLable" }}
+                inputProps={{ className: "TextFieldInput" }}
+                onChange={(e) => handleForm(e)}
+                required
+              />
+              <TextField
+                type="password"
+                id="password"
+                name="password"
+                label="Password"
+                placeholder="Enter Password"
+                variant="outlined"
+                InputLabelProps={{ className: "TextFieldLable" }}
+                inputProps={{ className: "TextFieldInput" }}
+                onChange={(e) => handleForm(e)}
+                required
+              />
+              <LoadingButton
+                variant="contained"
+                sx={{
+                  width: { lg: "100%", md: "100%", sm: "460px", xs: "80vw" },
+                  marginTop: { lg: "15px", md: "15px", sm: "15px", xs: "15px" },
+                }}
+                loading={buttonLoading}
+                onClick={(e) => handleSignup(e)}
+              >
+                Signup
+              </LoadingButton>
+            </Stack>
+          </Box>
+        </Box>
+        <Box sx={{ color: "white" }}>
+          Already Signed Up?{" "}
+          <Link to="/login" style={{ color: "red", textDecoration: "none" }}>
+            Log In
+          </Link>
+        </Box>
+      </Box>
+    </Box>
+  );
+}
+
+export default Signup;
