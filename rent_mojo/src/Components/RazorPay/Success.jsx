@@ -47,7 +47,7 @@ export default function Success() {
 
   let token = JSON.parse(localStorage.getItem('token'))
   
-    axios.delete('http://localhost:8000/cart/success',{
+    axios.delete('https://tender-lime-pike.cyclic.app/cart/success',{
       headers:{
         token
       }
