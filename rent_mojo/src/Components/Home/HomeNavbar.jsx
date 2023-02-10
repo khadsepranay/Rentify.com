@@ -115,7 +115,7 @@ export default function HomeNavbar() {
 
 
 	useEffect(()=>{
-		axios.get('http://localhost:8000/product').then((res)=>{
+		axios.get('https://tender-lime-pike.cyclic.app/product').then((res)=>{
 			console.log(res.data)
 			setData(res.data)
 		}).catch((err)=>{
