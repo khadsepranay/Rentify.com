@@ -46,7 +46,6 @@ export default function HomeNavbar() {
 	let isLogin = Auth.isLogin
 	let CartData = useSelector((state)=>state.Cart.CartData)
 	let NewProductAdded = useSelector((state)=>state.Cart.NewProductAdded)
-	console.log(NewProductAdded)
 
 	useEffect(()=>{
 		if(NewProductAdded){
@@ -116,7 +115,6 @@ export default function HomeNavbar() {
 
 	useEffect(()=>{
 		axios.get('https://tender-lime-pike.cyclic.app/product').then((res)=>{
-			console.log(res.data)
 			setData(res.data)
 		}).catch((err)=>{
 			console.log(err)
@@ -278,7 +276,7 @@ export default function HomeNavbar() {
 										{
 											CartData && CartData.map((el)=>{
 												return(
-													<Box style={{display:'flex',paddingBottom:'10px',gap:'20px',alignItems:'center',justifyContent:'left'}}>
+													<Box key={el._id} style={{display:'flex',paddingBottom:'10px',gap:'20px',alignItems:'center',justifyContent:'left'}}>
 														<Image src={el.product.image} style={{width:'55px',height:'34px'}}/>
 														<Box sx={{overflow:'hidden',textAlign:'left'}}>{el.product.title}</Box>
 													</Box>

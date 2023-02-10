@@ -1,33 +1,20 @@
 import {
   Box,
   Button,
-  ChakraProvider,
-  CircularProgress,
   Flex,
-  HStack,
   Image,
-  Select,
   Table,
-  TableContainer,
   Tbody,
-  Td,
   Text,
-  Th,
   Thead,
-  Tr,
-  useToast,
   VStack,
 } from "@chakra-ui/react";
-import { fontWeight } from "@mui/system";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { AiOutlineFileText } from "react-icons/ai";
 import { ImBin } from "react-icons/im";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import HomeNavbar from "../Home/HomeNavbar";
-import { BsDashLg, BsPlusCircle, BsPlusLg } from "react-icons/bs";
-import { BiMinusCircle } from "react-icons/bi";
-import axios from "axios";
 import {
   decreaseCartData,
   deleteCartItem,
@@ -38,7 +25,6 @@ import EmptyCart from './EmptyCart'
 // import Nav from "../../Productpages/Nav"
 
 const Cart = () => {
-  let token = JSON.parse(localStorage.getItem("token")) || null;
 
   let cartData = useSelector((state) => state.Cart.CartData);
 

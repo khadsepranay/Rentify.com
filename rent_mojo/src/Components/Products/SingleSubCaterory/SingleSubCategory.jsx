@@ -23,7 +23,6 @@ function Bedroom() {
   const location = useLocation();
   let path = location.pathname;
   let [nothing, category, sub_category] = path.split("/");
-  console.log(category, sub_category);
 
   useEffect(() => {
     setLoading(true);
@@ -221,6 +220,7 @@ function Bedroom() {
                 roomData.map((el) => {
                   return (
                     <Link
+                      key={el._id}
                       to={`/${el.category}/${el.sub_category}`}
                       style={{ textDecoration: "none", color: "#808080" }}
                     >
@@ -364,6 +364,7 @@ function Bedroom() {
                 data.map((el) => {
                   return (
                     <Link
+                      key={el._id}
                       to={`/${el.category}/${el.sub_category}/${el._id}`}
                       style={{ textDecoration: "none" }}
                     >

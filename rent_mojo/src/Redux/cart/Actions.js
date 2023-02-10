@@ -24,7 +24,6 @@ let isadded = (id) =>(dispatch) =>{
             token
         }
     }).then((res)=>{
-        console.log(res.data)
         dispatch({type:CartData,payload:res.data})
     }).catch((err)=>{
         console.log(err)

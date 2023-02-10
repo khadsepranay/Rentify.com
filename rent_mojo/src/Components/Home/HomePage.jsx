@@ -71,7 +71,7 @@ function scrollToTop() {
                     <SimpleGrid columns={[3, 4, 4, 5, 6]} spacing='25px'>
                         {
                             iconsDiv.map((el) => (
-                                <Link to={el.href}>
+                                <Link key={el.id} to={el.href}> 
                                 <Box key={el.id} cursor={'pointer'} height='120px' border={'1px solid #e2eaf0'} borderRadius={'10px'} _hover={{ background: "#fff", boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px" }}>
                                     <Flex direction={'column'} alignItems={'center'} justifyContent={'center'} padding={'30px'}>
                                         <Image src={el.icon} alt="icon-image-1" width={'30px'} />

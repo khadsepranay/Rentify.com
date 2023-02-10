@@ -293,7 +293,7 @@ export default function HomeCarousel() {
         </Box>
         <Carousel breakPoints={breakPoints}>
           {homeData?.map((el) => (
-            <Link style={{textDecoration:"none"}} to="">
+            <Link key={el.id} style={{textDecoration:"none"}} to="">
               <Box key={el.id} width={'265px'} height={'370px'} display={'flex'} flexDirection={'column'} justifyContent={'center'} gap={'20px'} margin={'18px'} padding={'20px'} backgroundColor={'#fff'} boxShadow={'rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px'} cursor={"pointer"}>
                 <Box height={'222px'} width={'222px'} >
                   <Image src={el.img} alt="carousel-img" height={'100%'} width={'100%'} />

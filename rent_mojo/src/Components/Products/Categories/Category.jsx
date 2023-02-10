@@ -117,6 +117,7 @@ function Packages() {
               roomData.map((el) => {
                 return (
                   <NavLink
+                    key={el._id}
                     to={`/${el.category}/${el.sub_category}`}
                     style={{ textDecoration: "none" }}
                   >

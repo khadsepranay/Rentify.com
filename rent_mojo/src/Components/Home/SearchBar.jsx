@@ -23,7 +23,7 @@ export const SearchBar = ({ handleChange, filterData, searchValue, setSearchValu
                     }}>
                         {
                             filterData && filterData.map((el) => (
-                                <Link href={`/${el.category}/${el.sub_category}/${el._id}`} style={{textDecoration:'none'}} onClick={()=>setSearchValue(null)}>
+                                <Link key={el._id} href={`/${el.category}/${el.sub_category}/${el._id}`} style={{textDecoration:'none'}} onClick={()=>setSearchValue(null)}>
                                    <Box style={{marginBottom:'5px',display:'flex',justifyContent:'space-between'}} _hover={{backgroundColor:'red',color:'white'}}>
                                     <Text align="left" paddingLeft={'3px'}>{el.title}</Text>
                                     <Image src={el.image} style={{width:'50px',height:'27px'}}/>
