@@ -111,6 +111,14 @@ export default function Form() {
   };
 
   let Navigate = useNavigate();
+  
+  useEffect(() => {
+    scrollToTop();
+  }, []);
+
+  function scrollToTop() {
+    window.scrollTo(0, 0);
+  }
 
   return (
     <div className={classes.root} style={{height:'100%'}}>
