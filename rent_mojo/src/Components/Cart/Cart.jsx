@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  ChakraProvider,
   Flex,
   Image,
   Table,
@@ -67,8 +68,8 @@ const Cart = () => {
     window.scrollTo(0, 0);
   }
 
-  if(cartData.length==0){
-    return <EmptyCart/>
+  if (cartData.length == 0) {
+    return <ChakraProvider><EmptyCart /></ChakraProvider>
   }
 
   return (
@@ -80,6 +81,13 @@ const Cart = () => {
         <Box bg={"#F5F7FA"} width={"100%"} padding={"50px 0px 50px 0px"}>
           <Box
             display={"flex"}
+            flexDirection={{
+              base: "column",
+              sm: "column",
+              md: "column",
+              lg: "row",
+              xl: "row",
+            }}
             justifyContent={"space-between"}
             width={{
               base: "100%",
@@ -90,13 +98,6 @@ const Cart = () => {
             }}
             margin={"auto"}
             mt={"10px"}
-            flexDir={{
-              base: "column",
-              sm: "column",
-              md: "column",
-              lg: "row",
-              xl: "row",
-            }}
             gap={"15px"}
             fontFamily={"sans-serif"}
           >
@@ -112,7 +113,7 @@ const Cart = () => {
               p={"25px"}
               borderRadius={"20px"}
               m={"auto"}
-              pos={"absolute"}
+              position={"absolute"}
               top={"85px"}
               left={"20px"}
             >
@@ -219,7 +220,7 @@ const Cart = () => {
                 }}
                 margin={"20px -35.525px 0px 0px"}
                 _hover={{ bg: "#DC3226" }}
-                onClick={()=>Navigate('/payment')}
+                onClick={() => Navigate('/payment')}
               >
                 <Box>
                   <Text fontSize={"12px"}>
@@ -241,6 +242,7 @@ const Cart = () => {
               p={"25px"}
               borderRadius={"20px"}
               m={"auto"}
+              justifyContent={"space-between"}
               ml={"950px"}
             >
               {/* main cart data rendering  */}
@@ -327,7 +329,7 @@ const Cart = () => {
                       </Box>
                     </Flex>
                     <Box
-                      sx={{ color: "red", textAlign: "left", fontSize: "12px" }}
+                      color="red" textAlign="left" fontSize="12px"
                     >
                       {el.product.quantity + el.quantity} Items left
                     </Box>

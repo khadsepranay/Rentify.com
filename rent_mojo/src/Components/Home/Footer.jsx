@@ -121,7 +121,7 @@ export default function Footer() {
                 marginTop={'-80px'}>
                 <Container as={Stack} maxW={'6xl'} py={10}>
                     <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
-                        <Stack align={'flex-start'} marginTop={'80px'} >
+                        <Stack align={'flex-start'}  >
                             <ListHeader>
                                 <Text fontSize={'14px'} color={'#313131'}>RENTOMOJO</Text>
                             </ListHeader>

@@ -220,6 +220,7 @@ export default function HomeNavbar() {
 										src={rentifyName}
 										alt='name-img'
 										height='30px'
+										display={{base:"none",sm:"none",md:"block",lg:"block",xl:"block"}}
 									/>
 								</Box>
 							</RefLink>
@@ -250,6 +251,7 @@ export default function HomeNavbar() {
 							display={'flex'}
 							alignItems={'center'}
 							gap={'5px'}
+							width={{base:"100px",sm:"100px"}}
 						>
 							
 								<span>
@@ -303,7 +305,36 @@ export default function HomeNavbar() {
 						</Button>:null
 							}
 						{
-							isLogin?<Button sx={{backgroundColor:'green',color:'white',_hover:{backgroundColor:'#E90303',color:'white',width:'140px',transitionDuration:'0.5s',transitionTimingFunction:'ease-out'}}} onMouseEnter={()=>setName("Logout")} onMouseLeave={()=>setName(tempName)} onClick={()=>handleLogout()}>{name}</Button>:<RefLink to='/login'><Button sx={{backgroundColor:'#E90303',color:'white',fontSize:'13px',_hover:{backgroundColor:'#ff3333',transitionDuration:'0.5s',transitionTimingFunction:'ease-out'}}}>SIGNUP/LOGIN</Button></RefLink>
+							isLogin ?
+							<Button 
+							   sx={{backgroundColor:'green',
+							     color:'white',
+								 _hover:{backgroundColor:'#E90303',
+								 color:'white',
+								 width:"140px",
+								 transitionDuration:'0.5s',
+								 transitionTimingFunction:'ease-out'
+								}}} 
+							   onMouseEnter={()=>setName("Logout")} 
+							   onMouseLeave={()=>setName(tempName)} 
+							   onClick={()=>handleLogout()}>
+								{name}
+							</Button>
+							:
+							<RefLink to='/login'>
+								<Button 
+								 sx={{backgroundColor:'#E90303',
+								 color:'white',
+								 fontSize:'12px',
+								 width:{base:"80px",sm:"100px",md:"120px",lg:"140px",xl:"150px"},
+								 _hover:{backgroundColor:'#ff3333',
+								 transitionDuration:'0.5s',
+								 transitionTimingFunction:'ease-out'
+								}}}
+								>
+									SIGNUP/LOGIN
+							   </Button>
+							</RefLink>
 						}
 					</Stack>
 				</Flex>
@@ -376,12 +407,14 @@ const MobileNav = () => {
 			p={4}
 			display={{ md: 'none' }}
 		>
-			{NAV_ITEMS.map((navItem) => (
+			{ 
+			  NAV_ITEMS.map((navItem) => (
 				<MobileNavItem
 					key={navItem.label}
 					{...navItem}
 				/>
-			))}
+			))
+			}
 		</Stack>
 	);
 };

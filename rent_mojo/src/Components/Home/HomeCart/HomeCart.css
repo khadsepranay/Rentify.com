@@ -8,12 +8,9 @@
     border-radius: 50%;
     position: absolute;
     top: 2px;
-    right: -10px;
-    display: -ms-flexbox;
+    right: 20px;
     display: flex;
-    -ms-flex-align: center;
     align-items: center;
-    -ms-flex-pack: center;
     justify-content: center;
 }
 .hover-div{
@@ -44,6 +41,12 @@
 }
 
 @media all and (min-width : 100px) and (max-width : 700px) {
+    .cart-header {
+        top: -5px; 
+        right:20px
+    }
+}
+@media all and (min-width : 701px) and (max-width : 1050px) {
     .cart-header {
         top: -10px; 
     }

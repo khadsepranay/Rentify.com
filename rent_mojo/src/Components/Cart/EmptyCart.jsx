@@ -13,7 +13,7 @@ import HomeNavbar from '../Home/HomeNavbar';
 
 const EmptyCart = () => {
 	return (
-		<div>
+		<Box>
 			<Box mt={'90px'}>
 				<HomeNavbar />
 			</Box>
@@ -68,7 +68,7 @@ const EmptyCart = () => {
 					</Link>
 				</Box>
 			</Stack>
-		</div>
+		</Box>
 	);
 };
 
