@@ -24,6 +24,7 @@ function Bedroom() {
   let path = location.pathname;
   let [nothing, category, sub_category] = path.split("/");
 
+
   useEffect(() => {
     setLoading(true);
   }, []);

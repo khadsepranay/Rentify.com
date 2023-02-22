@@ -4,7 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { handleSignin } from "../../Redux/User/Actions";
+import { handleSignin } from "../../Redux/User/actions";
 import { LoadingButton } from "@mui/lab";
 
 function Login() {
@@ -61,7 +61,7 @@ function Login() {
         }}
       >
         <Link to="/">
-          <Box component="img" src={RentifyName}></Box>
+          <Box component="img" src={RentifyName} margin={'0px auto 30px'}></Box>
         </Link>
         <Box sx={{ margin: "auto", boxSizing: "border-box" }}>
           <Box
@@ -71,8 +71,8 @@ function Login() {
               boxShadow: "1px 1px 5px grey",
               backgroundColor: "white",
               padding: "30px",
-              height: "300px",
-              width: { lg: "500px", md: "500px", sm: "450px", xs: "380px" },
+              height: "350px",
+              width: { lg: "560px", md: "560px", sm: "510px", xs: "440px" },
               margin: "20px auto",
             }}
           >

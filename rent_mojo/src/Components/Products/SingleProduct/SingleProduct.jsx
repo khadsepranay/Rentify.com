@@ -3,17 +3,18 @@ import { Slider } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import HomeNavbar from "../../Home/HomeNavbar";
 import Loader from "../Loader";
 import { useSelector, useDispatch } from "react-redux";
-import { isadded, newProductAdded } from "../../../Redux/Cart/Actions";
-import { isAddedToCart } from "../../../Redux/Cart/ActionTypes";
+import { isadded, newProductAdded } from "../../../Redux/cart/actions";
+import { isAddedToCart } from "../../../Redux/cart/actionTypes";
 import { useToast } from "@chakra-ui/react";
 import { LoadingButton } from "@mui/lab";
 
 function SingleProduct() {
   let location = useLocation();
+  let Navigate = useNavigate()
   let path = location.pathname;
   let [nothing, category, sub_category, id] = path.split("/");
   let [data, setData] = useState({});
@@ -28,6 +29,8 @@ function SingleProduct() {
   let Cart = useSelector((state) => state.Cart);
   let isLogin = Auth.isLogin;
   let isAdded = Cart.isAdded;
+  
+  let token = JSON.parse(localStorage.getItem("token"));
   
 
   useEffect(() => {
@@ -100,6 +103,13 @@ function SingleProduct() {
         alert(err);
       });
   }
+
+  useEffect(()=>{
+    if(!token){
+      alert('Please Login')
+      Navigate('/')
+    }
+  },[])
 
   if (loading) {
     return (

@@ -1,4 +1,4 @@
-import { login,logout } from "./ActionTypes"
+import { login,logout } from "./actionTypes"
 let initialState = {
     isLogin:false,
     isLogout:true

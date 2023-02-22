@@ -36,9 +36,9 @@ import rentifyLogo from './Images/logoImage/rentifyLogo.png';
 import { useSelector,useDispatch } from 'react-redux';
 import { useState, useEffect } from "react"
 import axios from "axios"
-import { login } from '../../Redux/User/ActionTypes';
-import { getData, newProductAdded } from '../../Redux/Cart/Actions';
-import { isNewItemAdded } from '../../Redux/Cart/ActionTypes';
+import { login } from '../../Redux/User/actionTypes';
+import { getData, newProductAdded } from '../../Redux/cart/actions';
+import { isNewItemAdded } from '../../Redux/cart/actionTypes';
 
 export default function HomeNavbar() {
 
@@ -220,7 +220,7 @@ export default function HomeNavbar() {
 										src={rentifyName}
 										alt='name-img'
 										height='30px'
-										display={{base:"none",sm:"none",md:"block",lg:"block",xl:"block"}}
+										display={{base:"none",sm:"none",md:"none",lg:"block",xl:"block"}}
 									/>
 								</Box>
 							</RefLink>

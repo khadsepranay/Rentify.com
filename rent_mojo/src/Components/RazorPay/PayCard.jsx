@@ -97,7 +97,7 @@ export default class PayCard extends React.Component {
                     name="number"
                     className="form-control"
                     placeholder="Card Number"
-                    pattern="[\d| ]{16,22}"
+                    pattern="[\d| ]{16}"
                     required
                     style={{ width: 300, margin: "5px" }}
                     onChange={this.handleInputChange}

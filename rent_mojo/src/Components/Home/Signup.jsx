@@ -54,8 +54,8 @@ function Signup() {
         width: "100vw",
         bgcolor: "#003333",
         paddingBottom:{lg:'80px',md:'50px',sm:'50px',xs:'50px'},
-        paddingTop:'50px',
-        margin:'0px',
+        paddingTop:'30px',
+        margin:'0px'
       }}
     >
       <Box sx={{ 
@@ -63,7 +63,7 @@ function Signup() {
           padding: "auto",
           boxSizing: "border-box", }}>
         <Link to="/">
-          <Box component="img" src={RentifyName}></Box>{" "}
+          <Box component="img" src={RentifyName} margin={'auto'}></Box>{" "}
         </Link>
         <Box sx={{ margin: "auto", boxSizing: "border-box" }}>
           <Box
@@ -73,14 +73,15 @@ function Signup() {
               boxShadow: "1px 1px 5px grey",
               backgroundColor: "white",
               padding: "30px",
-              height: "500px",
-              width: { lg: "500px", md: "500px", sm: "450px", xs: "380px" },
+              height: "570px",
+              width: { lg: "560px", md: "560px", sm: "510px", xs: "440px" },
               margin: "20px auto",
             }}
           >
             <Box sx={{ paddingBottom: "20px" }} color="red">
               SIGNUP
             </Box>
+            <FormControl>
             <Stack
               sx={{
                 width: { lg: "500px", md: "500px", sm: "450px", xs: "380px" },
@@ -160,6 +161,7 @@ function Signup() {
                 Signup
               </LoadingButton>
             </Stack>
+            </FormControl>
           </Box>
         </Box>
         <Box sx={{ color: "white" }}>

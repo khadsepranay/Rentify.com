@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CartData, DecreaseCartData, IncreaseCartData, isAddedToCart, isNewItemAdded } from "./ActionTypes.js";
+import { CartData, DecreaseCartData, IncreaseCartData, isAddedToCart, isNewItemAdded } from "./actionTypes.js";
 
 
 

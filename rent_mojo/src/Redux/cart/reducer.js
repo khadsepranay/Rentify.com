@@ -1,5 +1,5 @@
-import { newProductAdded } from "./Actions"
-import { CartData, DecreaseCartData, IncreaseCartData, isAddedToCart, isNewItemAdded } from "./ActionTypes";
+import { newProductAdded } from "./actions"
+import { CartData, DecreaseCartData, IncreaseCartData, isAddedToCart, isNewItemAdded } from "./actionTypes";
 
 let initState = {
     isAdded : false,

@@ -72,7 +72,7 @@ const SocialButton = ({
 export default function Footer() {
 
     return (
-        <Box bg="#f5f7fa" marginTop={'50px'} fontFamily={'Muli, sans-serif'} paddingLeft={'30px'}>
+        <Box bg="#f5f7fa" marginTop={'50px'} fontFamily={'Muli, sans-serif'}>
             <Container maxW={"6xl"} py={20}>
                 <Box textAlign={'left'}>
                     <ListHeader>

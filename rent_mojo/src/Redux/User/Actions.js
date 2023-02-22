@@ -1,4 +1,4 @@
-import {login,logout} from './ActionTypes'
+import {login,logout} from './actionTypes'
 import { useNavigate } from "react-router-dom"
 import axios from 'axios'
 

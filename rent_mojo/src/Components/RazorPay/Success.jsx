@@ -9,7 +9,7 @@ import TextField from "@material-ui/core/TextField";
 import succlogo from "../RazorPay/animat-checkmark.gif";
 import axios from "axios";
 import { useSelector,useDispatch } from 'react-redux';
-import { newProductAdded } from "../../Redux/Cart/Actions";
+import { newProductAdded } from "../../Redux/cart/actions";
 const useStyles = makeStyles({
   root: {
     minWidth: 400,

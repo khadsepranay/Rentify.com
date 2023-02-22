@@ -21,7 +21,7 @@ import {
   deleteCartItem,
   getData,
   increaseCartData,
-} from "../../Redux/Cart/Actions";
+} from "../../Redux/cart/actions";
 import EmptyCart from './EmptyCart'
 // import Nav from "../../Productpages/Nav"
 
@@ -80,21 +80,15 @@ const Cart = () => {
       {
         <Box bg={"#F5F7FA"} width={"100%"} padding={"50px 0px 50px 0px"}>
           <Box
-            display={"flex"}
-            flexDirection={{
-              base: "column",
-              sm: "column",
-              md: "column",
-              lg: "row",
-              xl: "row",
-            }}
+            display={'flex'}
             justifyContent={"space-between"}
+            flexDirection={{base:'row',xl:'row',lg:'row',md:'column-reverse',sm:'column-reverse',base:'column-reverse'}}
             width={{
-              base: "100%",
+              base: "100vw",
               sm: "100%",
               md: "100%",
-              lg: "80%",
-              xl: "90%",
+              lg: "100%",
+              xl: "100%",
             }}
             margin={"auto"}
             mt={"10px"}
@@ -102,20 +96,11 @@ const Cart = () => {
             fontFamily={"sans-serif"}
           >
             <Box
-              width={{
-                base: "95%",
-                sm: "95%",
-                md: "95%",
-                lg: "65%",
-                xl: "65%",
-              }}
               background="white"
               p={"25px"}
               borderRadius={"20px"}
               m={"auto"}
-              position={"absolute"}
-              top={"85px"}
-              left={"20px"}
+              width={{xl:'800px',lg:'800px',md:'520px',sm:'500px',base:'380px'}}
             >
               <Box>
                 <Flex
@@ -232,27 +217,19 @@ const Cart = () => {
               </Button>
             </Box>
             <Box
-              width={{
-                base: "100%",
-                sm: "100%",
-                md: "100%",
-                lg: "35%",
-                xl: "35%",
-              }}
               p={"25px"}
               borderRadius={"20px"}
               m={"auto"}
               justifyContent={"space-between"}
-              ml={"950px"}
             >
               {/* main cart data rendering  */}
               <VStack spacing={3}>
                 {cartData?.map((el) => (
                   <Box
-                    w="100%"
+                    w={{lg:"70%",md:"80%",sm:"90%"}}
                     background="white"
                     borderRadius={8}
-                    p="5px 15px"
+                    p="15px"
                   >
                     <Flex alignItems={"top"} justifyContent={"space-evenly"} gap={'10px'}>
                       <Box
@@ -277,7 +254,7 @@ const Cart = () => {
                         <Image
                           src={el.product.image}
                           alt=""
-                          w={"100%"}
+                          w={"80px"}
                           h={"100%"}
                         />
                       </Box>
@@ -329,7 +306,7 @@ const Cart = () => {
                       </Box>
                     </Flex>
                     <Box
-                      color="red" textAlign="left" fontSize="12px"
+                      color="red" textAlign="left" fontSize="12px" marginLeft='4px'
                     >
                       {el.product.quantity + el.quantity} Items left
                     </Box>
