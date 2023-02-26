@@ -34,7 +34,7 @@ In this project we have made the foolowing things :
 
 ## Sign In page :
 
-![login](img/Login.png)
+![login](img/login.png)
 
 ![signup](img/Signup.png)
 
@@ -50,7 +50,7 @@ In this project we have made the foolowing things :
 
 ## Cart Page : 
 
-![cart](img/Cart.png)
+![cart](img/cart.png)
 
 ## Order Successful Page : 
 
