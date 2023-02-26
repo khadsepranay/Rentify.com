@@ -63,7 +63,7 @@ In this project we have made the foolowing things :
 ![footer](img/footers.png)
 
 ## Learnings :
-- Real-life implementation of React,Express,MongoDB,Redux,MaterialUI, ChakraUI,RazorPay.
+- Real-life implementation of React, Express, MongoDB, Redux, MaterialUI, ChakraUI and RazorPay.
 - Time-management and Accountability.
 - Learn to work in pressure.
 - Learn to tackle problems and how to keep our-self motivated.
