@@ -9,8 +9,7 @@ In this project we have made the foolowing things :
  - Signup Page
  - Various project Pages
  - Cart Page
- - Order Successful Page
- - Footer Page
+ - Order Page
 
 ---
 
@@ -58,9 +57,6 @@ In this project we have made the foolowing things :
 ![orderPlaced](Pay3.png)
 ![orderPlaced](Pay4.png)
 
-## Footer Page :
-
-![footer](img/footers.png)
 
 ## Learnings :
 - Real-life implementation of React,Redux,Chakra-UI.
