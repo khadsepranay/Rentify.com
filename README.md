@@ -9,8 +9,7 @@ In this project we have made the foolowing things :
  - Signup Page
  - Various project Pages
  - Cart Page
- - Order Successful Page
- - Footer Page
+ - Order Page
 
 ---
 
@@ -61,7 +60,7 @@ In this project we have made the foolowing things :
 
 ## Footer Page :
 
-![footer](img/Footer.png)
+![footer](img/footers.png)
 
 ## Learnings :
 - Real-life implementation of React,Express,MongoDB,Redux,MaterialUI, ChakraUI,RazorPay.
