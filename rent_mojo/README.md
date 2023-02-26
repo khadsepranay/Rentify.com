@@ -60,7 +60,7 @@ In this project we have made the foolowing things :
 
 ## Footer Page :
 
-![footer](img/footer.png)
+![footer](img/footers.png)
 
 ## Learnings :
 - Real-life implementation of React,Redux,Chakra-UI.
