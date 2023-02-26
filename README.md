@@ -22,13 +22,14 @@ In this project we have made the foolowing things :
 * **MongoDB**
 * **Material-UI**
 * **Chakra-UI**
+* **Razor-Pay**
 
 ***
 ## Landing Page :
 
 ![home1](img/HomePage.png)
 
-![home2](img/Search.png)
+![home2](img/search.png)
 
 
 ## Sign In page :
@@ -63,7 +64,7 @@ In this project we have made the foolowing things :
 ![footer](img/Footer.png)
 
 ## Learnings :
-- Real-life implementation of React,Redux,Chakra-UI.
+- Real-life implementation of React,Express,MongoDB,Redux,MaterialUI, ChakraUI,RazorPay.
 - Time-management and Accountability.
 - Learn to work in pressure.
 - Learn to tackle problems and how to keep our-self motivated.
