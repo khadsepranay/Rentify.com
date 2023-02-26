@@ -326,13 +326,12 @@ export default function HomeNavbar() {
 								 sx={{backgroundColor:'#E90303',
 								 color:'white',
 								 fontSize:'12px',
-								 width:{base:"80px",sm:"100px",md:"120px",lg:"140px",xl:"150px"},
 								 _hover:{backgroundColor:'#ff3333',
 								 transitionDuration:'0.5s',
 								 transitionTimingFunction:'ease-out'
 								}}}
 								>
-									SIGNUP/LOGIN
+									LOGIN/SIGNUP
 							   </Button>
 							</RefLink>
 						}

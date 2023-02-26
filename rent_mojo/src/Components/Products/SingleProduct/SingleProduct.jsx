@@ -11,6 +11,7 @@ import { isadded, newProductAdded } from "../../../Redux/cart/actions";
 import { isAddedToCart } from "../../../Redux/cart/actionTypes";
 import { useToast } from "@chakra-ui/react";
 import { LoadingButton } from "@mui/lab";
+import Footer from '../../Home/Footer'
 
 function SingleProduct() {
   let location = useLocation();
@@ -146,29 +147,6 @@ function SingleProduct() {
               margin: "auto",
             }}
           ></Box>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              gap: "20px",
-              textAlign: "left",
-              border: "1px solid gray",
-              padding: "10px",
-              borderRadius: "10px",
-              marginTop: "50px",
-            }}
-          >
-            <Box
-              component="img"
-              src="https://www.rentomojo.com/public/images/icons/virusSafetyGreen.png"
-              sx={{ width: "50px" }}
-            ></Box>
-            <Box>
-              Safety precautions during COVID-19. We’re taking additional steps
-              and precautionary measures to protect our community from COVID-19.
-            </Box>
-            <Box>Know More</Box>
-          </Box>
         </Box>
         <Box sx={{ padding: "100px auto", width: "100%" }}>
           <Box sx={{ fontSize: "22px", fontWeight: "600", color: "#313131" }}>
@@ -262,6 +240,7 @@ function SingleProduct() {
           </Box>
         </Box>
       </Box>
+      <ChakraProvider><Footer/></ChakraProvider>
     </Box>
   );
 }

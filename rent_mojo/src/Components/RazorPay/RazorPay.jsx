@@ -125,9 +125,114 @@ export default function Form() {
       <ChakraProvider>
         <HomeNavbar />
       </ChakraProvider>
-          <Card
-            style={{ boxShadow: "5px 5px 10px gray",width:'800px',margin:'130px auto' }}
-          >
+      {
+        window.innerWidth>810?<Card
+        style={{ boxShadow: "5px 5px 10px gray",width:'800px',margin:'130px auto' }}
+      >
+          
+            <CardContent>
+              <Grid
+                container
+                direction="row"
+                justify="center"
+                alignItems="center"
+              >
+                <Grid item xs={12}>
+                  <Stepper activeStep={activeStep} className={classes.stepper}>
+                    {steps.map((label, index) => {
+                      const stepProps = {};
+                      const labelProps = {};
+                      if (isStepOptional(index)) {
+                        labelProps.optional = (
+                          <Typography variant="caption"></Typography>
+                        );
+                      }
+                      if (isStepSkipped(index)) {
+                        stepProps.completed = false;
+                      }
+                      return (
+                        <Step key={label} {...stepProps}>
+                          <StepLabel {...labelProps}>{label}</StepLabel>
+                        </Step>
+                      );
+                    })}
+                  </Stepper>
+                </Grid>
+                <Grid item xs={12}>
+                  <div className={classes.actions}>
+                    {activeStep === steps.length ? (
+                      <div>
+                        <Typography
+                          className={classes.instructions}
+                        ></Typography>
+                        <Button
+                          onClick={handleReset}
+                          className={classes.button}
+                        >
+                          Reset
+                        </Button>
+                      </div>
+                    ) : (
+                      <div>
+                        <Typography
+                          className={classes.instructions}
+                          style={{ height: "350px" }}
+                        >
+                          {getStepContent(activeStep)}
+                          <br />
+                        </Typography>
+                        <div className={classes.actions}>
+                          {activeStep == 3 || activeStep == 0 ? null : (
+                            <Button
+                              disabled={activeStep === 0}
+                              onClick={handleBack}
+                              className={classes.button}
+                              style={{
+                                backgroundColor: "#ff3333",
+                                color: "white",
+                                width: "100px",
+                              }}
+                            >
+                              Back
+                            </Button>
+                          )}
+
+                          {activeStep === steps.length - 1 ? (
+                            <Button
+                              style={{
+                                backgroundColor: "teal",
+                                color: "white",
+                                width: "100px",
+                              }}
+                              onClick={() => Navigate("/")}
+                            >
+                              Home
+                            </Button>
+                          ) : (
+                            <Button
+                              variant="contained"
+                              onClick={handleNext}
+                              className={classes.button}
+                              style={{
+                                backgroundColor: "teal",
+                                color: "white",
+                                width: "100px",
+                              }}
+                            >
+                              Next
+                            </Button>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </Grid>
+              </Grid>
+            </CardContent>
+          </Card>:<Card
+        style={{ boxShadow: "5px 5px 10px gray",width:'400px',margin:'130px auto' }}
+      >
+          
             <CardContent>
               <Grid
                 container
@@ -228,6 +333,7 @@ export default function Form() {
               </Grid>
             </CardContent>
           </Card>
+}
     </div>
   );
 }

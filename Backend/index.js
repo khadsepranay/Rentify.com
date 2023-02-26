@@ -6,7 +6,6 @@ const { product } = require("./Routes/product_Routes");
 const { cart } = require("./Routes/cart_Routes");
 let Port = process.env.Port;
 
-const { userAuthMiddleware } = require("./Middleware/userAuthMiddleware");
 const cors = require("cors");
 const category = require("./Routes/categoryData_route");
 

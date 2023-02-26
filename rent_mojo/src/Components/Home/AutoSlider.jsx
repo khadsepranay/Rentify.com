@@ -125,7 +125,7 @@ export default function AutoSlider() {
                 </Slider>
             </Box>
             {
-                windowSize.innerWidth < 1050 ? null :
+                windowSize.innerWidth < 1280 ? null :
                     <Flex gap={{ base: "2px", md: "2px", sm: "2px", lg: "5px" }} justifyContent={'center'} alignItems={'center'} mt={{ sm: "-250px", lg: "10px" }}>
                         <Image src='https://www.rentomojo.com/public/images/icons/virusSafetyGreen.png' width={'20px'} />
                         <Text>

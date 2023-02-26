@@ -56,7 +56,7 @@ function Login() {
         sx={{
           width: "100vw",
           padding: "100px auto 0px",
-          paddingTop: "100px",
+          paddingTop:'80px',
           boxSizing: "border-box",
         }}
       >
@@ -70,9 +70,9 @@ function Login() {
               fontSize: "35px",
               boxShadow: "1px 1px 5px grey",
               backgroundColor: "white",
-              padding: "30px",
-              height: "350px",
-              width: { lg: "560px", md: "560px", sm: "510px", xs: "440px" },
+              padding: {lg:'20px',md:'20px',sm:'20px',xs:'10px'},
+              height: "290px",
+              width: { lg: "560px", md: "560px", sm: "550px", xs: "320px" },
               margin: "20px auto",
             }}
           >
@@ -81,8 +81,9 @@ function Login() {
             </Box>
             <Stack
               sx={{
-                width: { lg: "500px", md: "500px", sm: "450px", xs: "380px" },
+                width: { lg: "500px", md: "500px", sm: "480px", xs: "280px" },
                 height: "200px",
+                margin:'auto'
               }}
               gap="20px"
             >
@@ -113,7 +114,7 @@ function Login() {
               <LoadingButton
                 variant="contained"
                 sx={{
-                  marginTop: { lg: "15px", md: "15px", sm: "15px", xs: "15px" },
+                  marginTop: { lg: "15px", md: "15px", sm: "15px", xs: "15px" }
                 }}
                 onClick={(e) => handleLogin(e)}
                 loading={buttonLoading}

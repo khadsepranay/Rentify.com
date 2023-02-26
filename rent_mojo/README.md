@@ -24,56 +24,41 @@ In this project we have made the foolowing things :
 ***
 ## Landing Page :
 
-![home](img/home.png)
+![home1](img/HomePage.png)
 
-![home1](img/home1.png)
-
-![home2](img/home2.png)
-
-![home3](img/home3.png)
-
-![search](img/search.png)
+![home2](img/Search.png)
 
 
 ## Sign In page :
 
-![signup](img/login.png)
+![login](img/Login.png)
 
-![signup1](img/login1.png)
-
-![signup2](img/login3.png)
+![signup](img/Signup.png)
 
 ## Products Page:
 
-![products](img/products1.png)
+![products](img/Category.png)
 
-![products](img/products2.png)
+![products](img/SubCategory.png)
 
-![products](img/products3.png)
-
-![products](img/products4.png)
-
-![products](img/products5.png)
-
-![products](img/products6.png)
-
-![products](img/products7.png)
+![products](img/SingleProduct.png)
 
 
 
 ## Cart Page : 
 
-![cart](img/cart.png)
-
-![cart1](img/cart1.png)
+![cart](img/Cart.png)
 
 ## Order Successful Page : 
 
-![orderPlaced](success.png)
+![orderPlaced](Pay1.png)
+![orderPlaced](Pay2.png)
+![orderPlaced](Pay3.png)
+![orderPlaced](Pay4.png)
 
 ## Footer Page :
 
-![footer](img/footer.png)
+![footer](img/Footer.png)
 
 ## Learnings :
 - Real-life implementation of React,Redux,Chakra-UI.

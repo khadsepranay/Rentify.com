@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, GridItem, Image, Show, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import { Box, ChakraProvider, Flex, Grid, GridItem, Image, Show, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react"
 import axios from "axios"
@@ -7,6 +7,7 @@ import AutoSlider from "./AutoSlider"
 import HomeCarousel from "./HomeCarousel/HomeCarousel"
 import {MoreRenting} from './MoreRenting'
 import ReviewCarousel from "./ReviewCarousel"
+import Footer from "./Footer";
 
 const iconsDiv = [
 
@@ -67,12 +68,12 @@ function scrollToTop() {
                 <AutoSlider />
                 {/* // Passing `columns={[2, null, 3]}` and `columns={{ sm: 2, md: 3 }}`
             // will have the same effect. */}
-                <Box width={{ base: '95%', sm: '95%', md: '95%', lg: '75%' }} zIndex={'100'} position={"relative"} margin={'auto'} marginTop={{base:"-250px",sm:"-200px",md:"150px",lg:'-90px',xl:"50px"}}>
+                <Box width={{ base: '95%', sm: '95%', md: '95%', lg: '75%' }} zIndex={'100'} position={"relative"} margin={{base:"-250px auto 0px",sm:"-150px auto 0px",md:"-60px auto 30px",lg:'-50px auto',xl:"50px auto 50px"}}>
                     <SimpleGrid columns={[3, 4, 4, 5, 6]} spacing='25px'>
                         {
                             iconsDiv.map((el) => (
                                 <Link key={el.id} to={el.href}> 
-                                <Box key={el.id} cursor={'pointer'} height='120px' border={'1px solid #e2eaf0'} borderRadius={'10px'} _hover={{ background: "#fff", boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px" }}>
+                                <Box key={el.id} cursor={'pointer'} height='120px' boxShadow={'5px 5px 20px #e2eaf0'} borderRadius={'10px'} _hover={{ background: "#fff", boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px" }}>
                                     <Flex direction={'column'} alignItems={'center'} justifyContent={'center'} padding={'30px'}>
                                         <Image src={el.icon} alt="icon-image-1" width={'30px'} />
                                         <Text>{el.iconName}</Text>
@@ -99,6 +100,7 @@ function scrollToTop() {
                     <ReviewCarousel />
                 </Box>
             </Box>
+            <ChakraProvider><Footer/></ChakraProvider>
         </Box>
     )
 }
