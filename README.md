@@ -53,10 +53,10 @@ In this project we have made the foolowing things :
 
 ## Order Successful Page : 
 
-![orderPlaced](Pay1.png)
-![orderPlaced](Pay2.png)
-![orderPlaced](Pay3.png)
-![orderPlaced](Pay4.png)
+![orderPlaced](img/Pay1.png)
+![orderPlaced](img/Pay2.png)
+![orderPlaced](img/Pay3.png)
+![orderPlaced](img/Pay4.png)
 
 ## Footer Page :
 
