@@ -21,7 +21,7 @@ import {
   deleteCartItem,
   getData,
   increaseCartData,
-} from "../../Redux/cart/actions";
+} from "../../Redux/Cart/actions";
 import EmptyCart from "./EmptyCart";
 
 const Cart = () => {
@@ -299,13 +299,13 @@ const Cart = () => {
                           <Table>
                             <Thead>
                               <tr>
-                                <td>Rent</td>
+                                <td style={{marginRight:'4px'}}>Rent</td>
                                 <td>Deposit</td>
                               </tr>
                             </Thead>
                             <Tbody>
                               <tr>
-                                <td>{`₹${el.price * el.quantity}/month`}</td>
+                                <td style={{marginRight:'4px'}}>{`₹${el.price * el.quantity}/month`}</td>
                                 <td>₹ {el.product.price2 * el.quantity}</td>
                               </tr>
                             </Tbody>

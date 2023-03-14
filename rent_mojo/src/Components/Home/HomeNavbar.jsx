@@ -25,8 +25,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { login } from "../../Redux/User/actionTypes";
-import { getData, newProductAdded } from "../../Redux/cart/actions";
-import { isNewItemAdded } from "../../Redux/cart/actionTypes";
+import { getData, newProductAdded } from "../../Redux/Cart/actions";
+import { isNewItemAdded } from "../../Redux/Cart/actionTypes";
 
 export default function HomeNavbar() {
   let Auth = useSelector((state) => state.Auth);
