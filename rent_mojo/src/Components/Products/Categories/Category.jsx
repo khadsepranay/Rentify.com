@@ -3,16 +3,15 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import HomeNavbar from "../../Home/HomeNavbar";
-import Product_Navbar from '../Product_Navbar'
-import Skeleton from "@mui/material/Skeleton";
-import Stack from "@mui/material/Stack";
+import Product_Navbar from "../Product_Navbar";
 import Loader from "../Loader";
 import { ChakraProvider } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
 
 function Packages() {
   let [roomData, setRoomData] = useState([]);
-  let [reload,setReload] = useState(false)
+  let [reload, setReload] = useState(false);
+  let [loading, setLoading] = useState(false);
 
   let location = useLocation();
 
@@ -23,10 +22,6 @@ function Packages() {
   useEffect(() => {
     scrollToTop();
   }, []);
-
-  function scrollToTop() {
-    window.scrollTo(0, 0);
-  }
 
   useEffect(() => {
     setLoading(true);
@@ -41,7 +36,10 @@ function Packages() {
       });
   }, [reload]);
 
-  let [loading, setLoading] = useState(false);
+  function scrollToTop() {
+    window.scrollTo(0, 0);
+  }
+
   if (loading) {
     return (
       <ChakraProvider>
@@ -65,7 +63,7 @@ function Packages() {
       <ChakraProvider>
         <HomeNavbar />
       </ChakraProvider>
-      <Product_Navbar reload={reload} setReload={setReload}/>
+      <Product_Navbar reload={reload} setReload={setReload} />
       <Box
         sx={{
           width: { xl: "75vw", lg: "85vw", md: "85vw", sm: "90vw", xs: "90vw" },

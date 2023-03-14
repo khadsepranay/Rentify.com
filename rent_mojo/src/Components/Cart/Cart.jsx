@@ -22,19 +22,13 @@ import {
   getData,
   increaseCartData,
 } from "../../Redux/cart/actions";
-import EmptyCart from './EmptyCart'
-// import Nav from "../../Productpages/Nav"
+import EmptyCart from "./EmptyCart";
 
 const Cart = () => {
-
   let cartData = useSelector((state) => state.Cart.CartData);
 
   let dispatch = useDispatch();
-  let Navigate = useNavigate()
-
-  useEffect(() => {
-    dispatch(getData());
-  }, []);
+  let Navigate = useNavigate();
 
   let ref_deposit = 0;
   let delivery_charges = 0;
@@ -60,16 +54,21 @@ const Cart = () => {
     dispatch(deleteCartItem(id));
   }
 
-  useEffect(() => {
-    scrollToTop();
-  }, []);
-
   function scrollToTop() {
     window.scrollTo(0, 0);
   }
 
+  useEffect(() => {
+    dispatch(getData());
+    scrollToTop();
+  }, []);
+
   if (cartData.length == 0) {
-    return <ChakraProvider><EmptyCart /></ChakraProvider>
+    return (
+      <ChakraProvider>
+        <EmptyCart />
+      </ChakraProvider>
+    );
   }
 
   return (
@@ -80,9 +79,16 @@ const Cart = () => {
       {
         <Box bg={"#F5F7FA"} width={"100%"} padding={"50px 0px 50px 0px"}>
           <Box
-            display={'flex'}
+            display={"flex"}
             justifyContent={"space-between"}
-            flexDirection={{base:'row',xl:'row',lg:'row',md:'column-reverse',sm:'column-reverse',base:'column-reverse'}}
+            flexDirection={{
+              base: "row",
+              xl: "row",
+              lg: "row",
+              md: "column-reverse",
+              sm: "column-reverse",
+              base: "column-reverse",
+            }}
             width={{
               base: "100vw",
               sm: "100%",
@@ -100,7 +106,13 @@ const Cart = () => {
               p={"25px"}
               borderRadius={"20px"}
               m={"auto"}
-              width={{xl:'800px',lg:'800px',md:'520px',sm:'500px',base:'380px'}}
+              width={{
+                xl: "800px",
+                lg: "800px",
+                md: "520px",
+                sm: "500px",
+                base: "380px",
+              }}
             >
               <Box>
                 <Flex
@@ -205,7 +217,7 @@ const Cart = () => {
                 }}
                 margin={"20px -35.525px 0px 0px"}
                 _hover={{ bg: "#DC3226" }}
-                onClick={() => Navigate('/payment')}
+                onClick={() => Navigate("/payment")}
               >
                 <Box>
                   <Text fontSize={"12px"}>
@@ -226,12 +238,16 @@ const Cart = () => {
               <VStack spacing={3}>
                 {cartData?.map((el) => (
                   <Box
-                    w={{lg:"70%",md:"80%",sm:"90%"}}
+                    w={{ xl: "80%", lg: "70%", md: "80%", sm: "90%" }}
                     background="white"
                     borderRadius={8}
                     p="15px"
                   >
-                    <Flex alignItems={"top"} justifyContent={"space-evenly"} gap={'10px'}>
+                    <Flex
+                      alignItems={"top"}
+                      justifyContent={"space-evenly"}
+                      gap={"10px"}
+                    >
                       <Box
                         p="5px 5px "
                         w={{
@@ -306,7 +322,10 @@ const Cart = () => {
                       </Box>
                     </Flex>
                     <Box
-                      color="red" textAlign="left" fontSize="12px" marginLeft='4px'
+                      color="red"
+                      textAlign="left"
+                      fontSize="12px"
+                      marginLeft="4px"
                     >
                       {el.product.quantity + el.quantity} Items left
                     </Box>

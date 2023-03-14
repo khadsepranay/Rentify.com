@@ -11,17 +11,17 @@ import { isadded, newProductAdded } from "../../../Redux/cart/actions";
 import { isAddedToCart } from "../../../Redux/cart/actionTypes";
 import { useToast } from "@chakra-ui/react";
 import { LoadingButton } from "@mui/lab";
-import Footer from '../../Home/Footer'
+import Footer from "../../Home/Footer";
 
 function SingleProduct() {
   let location = useLocation();
-  let Navigate = useNavigate()
   let path = location.pathname;
   let [nothing, category, sub_category, id] = path.split("/");
   let [data, setData] = useState({});
   let [value, setValue] = useState(100);
   let [loading, setLoading] = useState(false);
   let [buttonLoading, setButtonLoading] = useState(true);
+  let [buttonText, setButtonText] = useState("");
 
   let dispatch = useDispatch();
   let toast = useToast();
@@ -30,9 +30,6 @@ function SingleProduct() {
   let Cart = useSelector((state) => state.Cart);
   let isLogin = Auth.isLogin;
   let isAdded = Cart.isAdded;
-  
-  let token = JSON.parse(localStorage.getItem("token"));
-  
 
   useEffect(() => {
     dispatch({ type: isAddedToCart, payload: false });
@@ -44,8 +41,9 @@ function SingleProduct() {
       .then((res) => {
         setData(res.data);
         setLoading(false);
-        setButtonLoading(false)
+        setButtonLoading(false);
         scrollToTop();
+        setButtonText("Add To Cart");
       })
       .catch((err) => {
         console.log(err);
@@ -53,7 +51,7 @@ function SingleProduct() {
   }, []);
 
   useEffect(() => {
-      dispatch(isadded(data._id));
+    dispatch(isadded(data._id));
   }, [data]);
 
   function scrollToTop() {
@@ -79,6 +77,7 @@ function SingleProduct() {
     }
     let token = JSON.parse(localStorage.getItem("token"));
     setButtonLoading(true);
+    setButtonText("");
     axios
       .get(`https://tender-lime-pike.cyclic.app/cart/add/${id}`, {
         headers: {
@@ -104,13 +103,6 @@ function SingleProduct() {
         alert(err);
       });
   }
-
-  useEffect(()=>{
-    if(!token){
-      alert('Please Login')
-      Navigate('/')
-    }
-  },[])
 
   if (loading) {
     return (
@@ -145,6 +137,8 @@ function SingleProduct() {
               width: { lg: "70%", md: "80%", sm: "90%", xs: "100%" },
               height: { lg: "70%", md: "80%", sm: "90%", xs: "100%" },
               margin: "auto",
+              boxShadow:'2px 2px 10px grey',
+              padding:'20px'
             }}
           ></Box>
         </Box>
@@ -229,18 +223,21 @@ function SingleProduct() {
                 backgroundColor: "red",
                 color: "white",
                 width: "100%",
+                height: "40px",
                 margin: "45px auto",
                 ":hover": { backgroundColor: "#FF6464" },
               }}
               onClick={() => addToCart(data._id)}
               disabled={!isLogin || isAdded}
             >
-              {isAdded ? "Added to cart" : "Add To Cart"}
+              {isAdded ? "Added to cart" : buttonText}
             </LoadingButton>
           </Box>
         </Box>
       </Box>
-      <ChakraProvider><Footer/></ChakraProvider>
+      <ChakraProvider>
+        <Footer />
+      </ChakraProvider>
     </Box>
   );
 }

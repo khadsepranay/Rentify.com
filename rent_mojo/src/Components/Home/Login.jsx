@@ -1,6 +1,5 @@
-import { Box, Button, FormControl, Stack, TextField } from "@mui/material";
+import { Box, Stack, TextField } from "@mui/material";
 import RentifyName from "../Home/Images/logoImage/rentifyName.jpg";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -56,12 +55,12 @@ function Login() {
         sx={{
           width: "100vw",
           padding: "100px auto 0px",
-          paddingTop:'80px',
+          paddingTop: "80px",
           boxSizing: "border-box",
         }}
       >
         <Link to="/">
-          <Box component="img" src={RentifyName} margin={'0px auto 30px'}></Box>
+          <Box component="img" src={RentifyName} margin={"0px auto 30px"}></Box>
         </Link>
         <Box sx={{ margin: "auto", boxSizing: "border-box" }}>
           <Box
@@ -70,7 +69,7 @@ function Login() {
               fontSize: "35px",
               boxShadow: "1px 1px 5px grey",
               backgroundColor: "white",
-              padding: {lg:'20px',md:'20px',sm:'20px',xs:'10px'},
+              padding: { lg: "20px", md: "20px", sm: "20px", xs: "10px" },
               height: "290px",
               width: { lg: "560px", md: "560px", sm: "550px", xs: "320px" },
               margin: "20px auto",
@@ -83,7 +82,7 @@ function Login() {
               sx={{
                 width: { lg: "500px", md: "500px", sm: "480px", xs: "280px" },
                 height: "200px",
-                margin:'auto'
+                margin: "auto",
               }}
               gap="20px"
             >
@@ -114,7 +113,7 @@ function Login() {
               <LoadingButton
                 variant="contained"
                 sx={{
-                  marginTop: { lg: "15px", md: "15px", sm: "15px", xs: "15px" }
+                  marginTop: { lg: "15px", md: "15px", sm: "15px", xs: "15px" },
                 }}
                 onClick={(e) => handleLogin(e)}
                 loading={buttonLoading}

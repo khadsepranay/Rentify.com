@@ -19,14 +19,15 @@ function Bedroom() {
   let [value, setValue] = useState(100);
   let [reset, setReset] = useState(true);
   let [insideLoading, setInsideLoading] = useState(false);
+  let [loading, setLoading] = useState(false);
 
   const location = useLocation();
   let path = location.pathname;
   let [nothing, category, sub_category] = path.split("/");
 
-
   useEffect(() => {
     setLoading(true);
+    scrollToTop();
   }, []);
 
   useEffect(() => {
@@ -37,7 +38,7 @@ function Bedroom() {
         setRoomData(res.data);
         setLoading(false);
         setInsideLoading(false);
-        scrollToTop()
+        scrollToTop();
       })
       .catch((err) => {
         console.log(err);
@@ -55,18 +56,16 @@ function Bedroom() {
     }
     setInsideLoading(true);
     axios
-      .get(`https://tender-lime-pike.cyclic.app/product/${category}/${sub_category}`)
+      .get(
+        `https://tender-lime-pike.cyclic.app/product/${category}/${sub_category}`
+      )
       .then((res) => {
         setData(res.data);
         setInsideLoading(false);
         setLoading(false);
-        scrollToTop()
+        scrollToTop();
       });
   }
-
-  useEffect(() => {
-    scrollToTop();
-  }, []);
 
   function scrollToTop() {
     window.scrollTo(0, 0);
@@ -75,8 +74,6 @@ function Bedroom() {
   function handleChange(e) {
     setValue(e.target.value);
   }
-
-  let [loading, setLoading] = useState(false);
 
   if (loading) {
     return (
@@ -379,7 +376,12 @@ function Bedroom() {
                           width: "90%",
                         }}
                       >
-                        <Box component="img" src={el.image} width="100%" height='100%'></Box>
+                        <Box
+                          component="img"
+                          src={el.image}
+                          width="100%"
+                          height="100%"
+                        ></Box>
                         <Box
                           sx={{
                             padding: {
