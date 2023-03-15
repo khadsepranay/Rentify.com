@@ -5,14 +5,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
-import Product_Navbar from "../Product_Navbar";
+import Product_Navbar from "../Navbar/Product_Navbar";
 import HomeNavbar from "../../Home/HomeNavbar";
-import Loader from "../Loader";
-import Inside_Loader from "../Inside_Loader";
+import Loader from "../Loader/Loader";
+import Inside_Loader from "../Loader/Inside_Loader";
 import { ChakraProvider } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
 
-function Bedroom() {
+function SubCategory() {
   let [roomData, setRoomData] = useState([]);
   let [data, setData] = useState([]);
   let [close, setClose] = useState(true);
@@ -483,4 +483,4 @@ function Bedroom() {
   );
 }
 
-export default Bedroom;
+export default SubCategory;

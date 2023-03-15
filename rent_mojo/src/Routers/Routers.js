@@ -1,11 +1,11 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { Routes, Route } from "react-router-dom";
 import { HomePage } from "../Components/Home/HomePage";
-import Login from "../Components/Home/Login";
-import Signup from "../Components/Home/Signup";
+import Login from "../Components/Login/Login";
+import Signup from "../Components/Signup/Signup";
 import Category from "../Components/Products/Categories/Category";
 import SingleProduct from "../Components/Products/SingleProduct/SingleProduct";
-import SingleSubCategory from "../Components/Products/SingleSubCaterory/SingleSubCategory";
+import SubCategory from "../Components/Products/SubCaterory/SubCategory";
 import Cart from "../Components/Cart/Cart";
 import RazorPay from "../Components/Payments/RazorPay";
 
@@ -25,7 +25,7 @@ let Routers = () => {
       <Route path="/:category" element={<Category />}></Route>
       <Route
         path="/:category/:sub_category"
-        element={<SingleSubCategory />}
+        element={<SubCategory />}
       ></Route>
       <Route
         path="/:category/:sub_category/:id"

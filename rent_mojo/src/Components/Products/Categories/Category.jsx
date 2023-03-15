@@ -3,8 +3,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import HomeNavbar from "../../Home/HomeNavbar";
-import Product_Navbar from "../Product_Navbar";
-import Loader from "../Loader";
+import Product_Navbar from "../Navbar/Product_Navbar";
+import Loader from "../Loader/Loader";
 import { ChakraProvider } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
 

@@ -5,7 +5,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import HomeNavbar from "../../Home/HomeNavbar";
-import Loader from "../Loader";
+import Loader from "../Loader/Loader";
 import { useSelector, useDispatch } from "react-redux";
 import { isadded, newProductAdded } from "../../../Redux/Cart/actions";
 import { isAddedToCart } from "../../../Redux/Cart/actionTypes";
