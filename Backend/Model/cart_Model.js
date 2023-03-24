@@ -20,7 +20,7 @@ const cartSchema = mongoose.Schema({
   tenure: {
     type: Number,
   },
-});
+},{versionKey:false});
 
 const CartModel = mongoose.model("Carts", cartSchema);
 
