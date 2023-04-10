@@ -45,7 +45,7 @@ export default function Success() {
 
   let dispatch = useDispatch()
 
-  let token = JSON.parse(localStorage.getItem('token'))
+  let token = JSON.parse(localStorage.getItem('rentifyToken'))
   
     axios.delete('https://tender-lime-pike.cyclic.app/cart/success',{
       headers:{

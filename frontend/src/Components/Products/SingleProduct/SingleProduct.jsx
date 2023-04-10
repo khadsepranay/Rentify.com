@@ -3,7 +3,7 @@ import { Slider } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import HomeNavbar from "../../Home/HomeNavbar";
 import Loader from "../Loader/Loader";
 import { useSelector, useDispatch } from "react-redux";
@@ -75,7 +75,7 @@ function SingleProduct() {
       price = data.price1;
       tenure = 12;
     }
-    let token = JSON.parse(localStorage.getItem("token"));
+    let token = JSON.parse(localStorage.getItem("rentifyToken"));
     setButtonLoading(true);
     setButtonText("");
     axios

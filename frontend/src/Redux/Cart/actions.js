@@ -8,7 +8,7 @@ import {
 } from "./actionTypes.js";
 
 let isadded = (id) => (dispatch) => {
-  let token = JSON.parse(localStorage.getItem("token"));
+  let token = JSON.parse(localStorage.getItem("rentifyToken"));
   axios
     .get(`https://tender-lime-pike.cyclic.app/cart/isadded/${id}`, {
       headers: {
@@ -24,7 +24,7 @@ let isadded = (id) => (dispatch) => {
     });
 };
 let getData = () => (dispatch) => {
-  let token = JSON.parse(localStorage.getItem("token")) || null;
+  let token = JSON.parse(localStorage.getItem("rentifyToken")) || null;
   axios
     .get("https://tender-lime-pike.cyclic.app/cart", {
       headers: {
@@ -40,7 +40,7 @@ let getData = () => (dispatch) => {
 };
 
 let increaseCartData = (id) => (dispatch) => {
-  let token = JSON.parse(localStorage.getItem("token"));
+  let token = JSON.parse(localStorage.getItem("rentifyToken"));
   axios
     .get(`https://tender-lime-pike.cyclic.app/cart/cartquantityadd/${id}`, {
       headers: {
@@ -53,7 +53,7 @@ let increaseCartData = (id) => (dispatch) => {
 };
 
 let decreaseCartData = (id) => (dispatch) => {
-  let token = JSON.parse(localStorage.getItem("token"));
+  let token = JSON.parse(localStorage.getItem("rentifyToken"));
   axios
     .get(`https://tender-lime-pike.cyclic.app/cart/cartquantityreduce/${id}`, {
       headers: {
@@ -66,7 +66,7 @@ let decreaseCartData = (id) => (dispatch) => {
 };
 
 let deleteCartItem = (id) => (dispatch) => {
-  let token = JSON.parse(localStorage.getItem("token"));
+  let token = JSON.parse(localStorage.getItem("rentifyToken"));
   axios
     .delete(`https://tender-lime-pike.cyclic.app/cart/delete/${id}`, {
       headers: {

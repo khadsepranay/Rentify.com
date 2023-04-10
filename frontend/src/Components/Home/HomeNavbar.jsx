@@ -37,7 +37,7 @@ export default function HomeNavbar() {
   let dispatch = useDispatch();
   let Navigate = useNavigate();
 
-  let token = JSON.parse(localStorage.getItem("token")) || null;
+  let token = JSON.parse(localStorage.getItem("rentifyToken")) || null;
   const { isOpen, onToggle } = useDisclosure();
   let [name, setName] = useState("");
   let [tempName, setTempName] = useState("");
@@ -100,7 +100,7 @@ export default function HomeNavbar() {
   let handleLogout = () => {
     dispatch({ type: login, payload: false });
     dispatch({ type: isNewItemAdded, payload: false });
-    localStorage.removeItem("token");
+    localStorage.removeItem("rentifyToken");
     Navigate("/");
   };
 
