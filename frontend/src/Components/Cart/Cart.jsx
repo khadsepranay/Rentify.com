@@ -238,7 +238,7 @@ const Cart = () => {
               <VStack spacing={3}>
                 {cartData?.map((el) => (
                   <Box
-                    w={{ xl: "80%", lg: "70%", md: "80%", sm: "90%" }}
+                    w={{ xl: "450px", lg: "450px", md: "80%", sm: "90%" }}
                     background="white"
                     borderRadius={8}
                     p="15px"

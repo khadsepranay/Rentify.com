@@ -235,9 +235,11 @@ function SingleProduct() {
           </Box>
         </Box>
       </Box>
+      <Box sx={{marginTop:'-150px'}}>
       <ChakraProvider>
         <Footer />
       </ChakraProvider>
+      </Box>
     </Box>
   );
 }
