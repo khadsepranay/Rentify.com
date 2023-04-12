@@ -37,7 +37,7 @@ const EmptyCart = () => {
 
         <Box>
           <Text>
-            Add a few items to your cart and come back here for an
+            Add few items to your cart and come back here for an
             <br />
             express checkout process!
           </Text>
