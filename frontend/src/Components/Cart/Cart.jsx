@@ -409,7 +409,7 @@ const Cart = () => {
               m={"20px 10px"}
             >
               <Text fontSize="xl" color="grey">
-                Address and Payment
+                Address and Payments
               </Text>
             </Box>
           </Box>
