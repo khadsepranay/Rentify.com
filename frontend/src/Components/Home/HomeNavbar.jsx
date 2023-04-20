@@ -94,6 +94,9 @@ export default function HomeNavbar() {
     let FilteredData = newData.filter((el) => {
       return el.title.includes(searchValue);
     });
+    if(searchValue==''){
+      FilteredData=[]
+    }
     setTimeout(()=>{
       setFilterData(FilteredData);
     },800)
