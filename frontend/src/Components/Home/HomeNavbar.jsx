@@ -94,7 +94,9 @@ export default function HomeNavbar() {
     let FilteredData = newData.filter((el) => {
       return el.title.includes(searchValue);
     });
-    setFilterData(FilteredData);
+    setTimeout(()=>{
+      setFilterData(FilteredData);
+    },800)
   }, [searchValue]);
 
   let handleLogout = () => {
