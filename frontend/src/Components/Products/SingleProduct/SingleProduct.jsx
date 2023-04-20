@@ -141,8 +141,11 @@ function SingleProduct() {
               padding:'20px'
             }}
           ></Box>
+          <Box sx={{marginTop:'50px', fontSize: "22px", fontWeight: "600", color: "#313131", letterSpacing:'4px' }}>
+            {data.title}
+          </Box>
         </Box>
-        <Box sx={{ padding: "100px auto", width: "100%" }}>
+        <Box sx={{ padding: "100px auto", width: "100%", marginTop:'20px' }}>
           <Box sx={{ fontSize: "22px", fontWeight: "600", color: "#313131" }}>
             {data.title}
           </Box>
