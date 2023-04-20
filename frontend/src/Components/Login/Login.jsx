@@ -1,4 +1,4 @@
-import { Box, Stack, TextField } from "@mui/material";
+import { Box, FormControl, Stack, TextField } from "@mui/material";
 import RentifyName from "../Home/Images/logoImage/rentifyName.jpg";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -24,6 +24,7 @@ function Login() {
   });
 
   let [buttonLoading, setButtonLoading] = useState(false);
+  let [buttonDisabled,setButtonDisabled] = useState(true)
 
   let handleForm = ({ target }) => {
     setForm({ ...form, [target.name]: target.value });
@@ -36,6 +37,14 @@ function Login() {
   useEffect(() => {
     scrollToTop();
   }, []);
+  
+  useEffect(()=>{
+    if(form.email!='' && form.password!=''){
+      setButtonDisabled(false)
+    }else{
+      setButtonDisabled(true)
+    }
+  },[form])
 
   function scrollToTop() {
     window.scrollTo(0, 0);
@@ -78,6 +87,7 @@ function Login() {
             <Box sx={{ paddingBottom: "20px" }} color="red">
               LOGIN
             </Box>
+              <FormControl>
             <Stack
               sx={{
                 width: { lg: "500px", md: "500px", sm: "480px", xs: "280px" },
@@ -96,7 +106,7 @@ function Login() {
                 InputLabelProps={{ className: "TextFieldLable" }}
                 inputProps={{ className: "TextFieldInput" }}
                 onChange={(e) => handleForm(e)}
-                required
+                required = {true}
               />
               <TextField
                 type="password"
@@ -117,10 +127,12 @@ function Login() {
                 }}
                 onClick={(e) => handleLogin(e)}
                 loading={buttonLoading}
+                disabled={buttonDisabled}
               >
                 Login
               </LoadingButton>
             </Stack>
+            </FormControl>
           </Box>
         </Box>
         <Box sx={{ color: "white" }}>
