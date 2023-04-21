@@ -54,7 +54,7 @@ function Login() {
     <Box
       sx={{
         width: "100%",
-        bgcolor: "#003333",
+        bgcolor: "#212121",
         height: "110vh",
         margin: "0px",
         padding: "0px",
@@ -76,15 +76,15 @@ function Login() {
             component="h3"
             sx={{
               fontSize: "35px",
-              boxShadow: "1px 1px 5px grey",
-              backgroundColor: "white",
+              boxShadow: "1px 1px 3px black",
+              backgroundColor: "#212121",
               padding: { lg: "20px", md: "20px", sm: "20px", xs: "10px" },
               height: "290px",
               width: { lg: "560px", md: "560px", sm: "550px", xs: "320px" },
               margin: "20px auto",
             }}
           >
-            <Box sx={{ paddingBottom: "20px" }} color="red">
+            <Box sx={{ paddingBottom: "20px" }} color="rgb(189, 186, 186)">
               LOGIN
             </Box>
               <FormControl>
@@ -93,6 +93,7 @@ function Login() {
                 width: { lg: "500px", md: "500px", sm: "480px", xs: "280px" },
                 height: "200px",
                 margin: "auto",
+                gap : '30px'
               }}
               gap="20px"
             >
@@ -107,6 +108,7 @@ function Login() {
                 inputProps={{ className: "TextFieldInput" }}
                 onChange={(e) => handleForm(e)}
                 required = {true}
+                sx={{'outlineColor':'white'}}
               />
               <TextField
                 type="password"
@@ -135,7 +137,7 @@ function Login() {
             </FormControl>
           </Box>
         </Box>
-        <Box sx={{ color: "white" }}>
+        <Box sx={{ color: "white", marginTop:'25px' }}>
           Not a User?{" "}
           <Link to="/signup" style={{ color: "red", textDecoration: "none" }}>
             Sign Up
