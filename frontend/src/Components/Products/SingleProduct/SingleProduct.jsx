@@ -230,7 +230,7 @@ function SingleProduct() {
                 margin: "45px auto",
                 ":hover": { backgroundColor: "#FF6464" },
                 "&.Mui-disabled": {
-                  color: "#E0E0E0",
+                  color: "black",
                 }
               }}
               onClick={() => addToCart(data._id)}

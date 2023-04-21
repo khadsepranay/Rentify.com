@@ -158,15 +158,26 @@ function Signup() {
                 inputProps={{ className: "TextFieldInput" }}
                 onChange={(e) => handleForm(e)}
                 required
-              />
+              />{
+                buttonDisabled?
+                <LoadingButton
+                  variant="contained"
+                  sx={{
+                    width: { lg: "100%", md: "100%", sm: "460px", xs: "280px" },
+                    marginTop: { lg: "15px", md: "15px", sm: "15px", xs: "15px" },
+                    "&.Mui-disabled": {
+                      color: "#c0c0c0"
+                    }
+                  }}
+                  disabled={true}
+                >
+                  Signup
+                </LoadingButton>:
               <LoadingButton
                 variant="contained"
                 sx={{
                   width: { lg: "100%", md: "100%", sm: "460px", xs: "280px" },
-                  marginTop: { lg: "15px", md: "15px", sm: "15px", xs: "15px" },
-                  "&.Mui-disabled": {
-                    color: "#c0c0c0"
-                  }
+                  marginTop: { lg: "15px", md: "15px", sm: "15px", xs: "15px" }
                 }}
                 loading={buttonLoading}
                 onClick={(e) => handleSignup(e)}
@@ -174,6 +185,7 @@ function Signup() {
               >
                 Signup
               </LoadingButton>
+}
             </Stack>
             </FormControl>
           </Box>

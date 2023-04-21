@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { handleSignin } from "../../Redux/User/actions";
 import { LoadingButton } from "@mui/lab";
+import { Button } from "@chakra-ui/react";
 
 function Login() {
   let Navigate = useNavigate();
@@ -121,21 +122,35 @@ function Login() {
                 inputProps={{ className: "TextFieldInput" }}
                 onChange={(e) => handleForm(e)}
                 required
-              />
+              />{
+                buttonDisabled?
+                <LoadingButton
+                  variant="contained"
+                  sx={{
+                    marginTop: { lg: "15px", md: "15px", sm: "15px", xs: "15px" },
+                    width: "100%",
+                    height: "40px",
+                    "&.Mui-disabled": {
+                      color: "#c0c0c0"
+                    }
+                  }}
+                  disabled={true}
+                >
+                  Login
+                </LoadingButton>:
               <LoadingButton
                 variant="contained"
                 sx={{
                   marginTop: { lg: "15px", md: "15px", sm: "15px", xs: "15px" },
-                  "&.Mui-disabled": {
-                    color: "#c0c0c0"
-                  }
+                  width: "100%",
+                  height: "40px",
                 }}
                 onClick={(e) => handleLogin(e)}
                 loading={buttonLoading}
-                disabled={buttonDisabled}
               >
                 Login
               </LoadingButton>
+}
             </Stack>
             </FormControl>
           </Box>
