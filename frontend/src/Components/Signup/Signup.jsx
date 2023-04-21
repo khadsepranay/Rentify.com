@@ -164,6 +164,9 @@ function Signup() {
                 sx={{
                   width: { lg: "100%", md: "100%", sm: "460px", xs: "280px" },
                   marginTop: { lg: "15px", md: "15px", sm: "15px", xs: "15px" },
+                  "&.Mui-disabled": {
+                    color: "#c0c0c0"
+                  }
                 }}
                 loading={buttonLoading}
                 onClick={(e) => handleSignup(e)}

@@ -126,6 +126,9 @@ function Login() {
                 variant="contained"
                 sx={{
                   marginTop: { lg: "15px", md: "15px", sm: "15px", xs: "15px" },
+                  "&.Mui-disabled": {
+                    color: "#c0c0c0"
+                  }
                 }}
                 onClick={(e) => handleLogin(e)}
                 loading={buttonLoading}

@@ -229,6 +229,9 @@ function SingleProduct() {
                 height: "40px",
                 margin: "45px auto",
                 ":hover": { backgroundColor: "#FF6464" },
+                "&.Mui-disabled": {
+                  color: "#E0E0E0",
+                }
               }}
               onClick={() => addToCart(data._id)}
               disabled={!isLogin || isAdded}
