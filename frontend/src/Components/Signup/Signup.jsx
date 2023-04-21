@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { LoadingButton } from "@mui/lab";
+import '../../App.css'
 
 function Signup() {
   let Navigate = useNavigate();
@@ -61,7 +62,7 @@ function Signup() {
     <Box
       sx={{
         width: "100vw",
-        bgcolor: "#003333",
+        bgcolor: "#212121",
         paddingBottom:{lg:'80px',md:'50px',sm:'50px',xs:'50px'},
         paddingTop:'30px',
         margin:'0px'
@@ -79,15 +80,15 @@ function Signup() {
             component="h3"
             sx={{
               fontSize: "35px",
-              boxShadow: "1px 1px 5px grey",
-              backgroundColor: "white",
+              boxShadow: "1px 1px 3px #111111",
+              backgroundColor: "#212121",
               padding: {lg:'20px',md:'20px',sm:'20px',xs:'10px'},
               height: "520px",
               width: { lg: "560px", md: "560px", sm: "510px", xs: "320px" },
               margin: "20px auto",
             }}
           >
-            <Box sx={{ paddingBottom: "20px" }} color="red">
+            <Box sx={{ paddingBottom: "20px" }} color="rgb(189, 186, 186)">
               SIGNUP
             </Box>
             <FormControl>
@@ -174,7 +175,7 @@ function Signup() {
             </FormControl>
           </Box>
         </Box>
-        <Box sx={{ color: "white" }}>
+        <Box sx={{ color: "rgb(189, 186, 186)" }}>
           Already Signed Up?{" "}
           <Link to="/login" style={{ color: "red", textDecoration: "none" }}>
             Log In

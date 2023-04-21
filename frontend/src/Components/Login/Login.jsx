@@ -76,7 +76,7 @@ function Login() {
             component="h3"
             sx={{
               fontSize: "35px",
-              boxShadow: "1px 1px 3px black",
+              boxShadow: "1px 1px 3px #111111",
               backgroundColor: "#212121",
               padding: { lg: "20px", md: "20px", sm: "20px", xs: "10px" },
               height: "290px",
@@ -137,7 +137,7 @@ function Login() {
             </FormControl>
           </Box>
         </Box>
-        <Box sx={{ color: "white", marginTop:'25px' }}>
+        <Box sx={{ color: "rgb(189, 186, 186)", marginTop:'30px' }}>
           Not a User?{" "}
           <Link to="/signup" style={{ color: "red", textDecoration: "none" }}>
             Sign Up

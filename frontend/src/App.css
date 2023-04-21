@@ -12,3 +12,7 @@
 .MuiOutlinedInput-notchedOutline {
   border-color: rgb(189, 186, 186) !important;
 }
+::-webkit-scrollbar {
+    display: none;
+}
+
