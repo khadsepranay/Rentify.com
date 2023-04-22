@@ -14,7 +14,7 @@ let handleSignin = (e, form, setButtonLoading) => (dispatch) => {
         dispatch({ type: login, payload: true });
         let token = res.data.token;
         localStorage.setItem("rentifyToken", JSON.stringify(token));
-        alert("Login Successful");
+        alert("Logged in successfully");
       }
       setButtonLoading(false);
     })
