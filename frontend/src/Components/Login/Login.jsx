@@ -126,7 +126,7 @@ function Login() {
                 required
               />
               {
-                hidePassword?<VisibilityOffIcon sx={{color:'white', position:'absolute', left:{xl:'460px',lg:'460px',md:'460px',sm:'440px',xs:'240px'}, bottom:'74px',cursor:'pointer'}} onClick={()=>setHidePassword(false)}/>:<VisibilityIcon sx={{color:'white', position:'absolute', left:{xl:'460px',lg:'460px',md:'460px',sm:'440px',xs:'240px'}, bottom:'74px',cursor:'pointer'}} onClick={()=>setHidePassword(true)}/>
+                hidePassword?<VisibilityOffIcon sx={{color:'rgb(189, 186, 186)', position:'absolute', left:{xl:'460px',lg:'460px',md:'460px',sm:'440px',xs:'240px'}, bottom:'74px',cursor:'pointer'}} onClick={()=>setHidePassword(false)}/>:<VisibilityIcon sx={{color:'rgb(189, 186, 186)', position:'absolute', left:{xl:'460px',lg:'460px',md:'460px',sm:'440px',xs:'240px'}, bottom:'74px',cursor:'pointer'}} onClick={()=>setHidePassword(true)}/>
               }
               {buttonDisabled?
                 <LoadingButton
