@@ -5,7 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { handleSignin } from "../../Redux/User/actions";
 import { LoadingButton } from "@mui/lab";
-import { Button } from "@chakra-ui/react";
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 function Login() {
   let Navigate = useNavigate();
@@ -26,6 +27,7 @@ function Login() {
 
   let [buttonLoading, setButtonLoading] = useState(false);
   let [buttonDisabled,setButtonDisabled] = useState(true)
+  let [hidePassword,setHidePassword] = useState(true)
 
   let handleForm = ({ target }) => {
     setForm({ ...form, [target.name]: target.value });
@@ -112,7 +114,7 @@ function Login() {
                 sx={{'outlineColor':'white'}}
               />
               <TextField
-                type="password"
+                type={hidePassword?'password':'text'}
                 id="password"
                 name="password"
                 label="Password"
@@ -122,8 +124,11 @@ function Login() {
                 inputProps={{ className: "TextFieldInput" }}
                 onChange={(e) => handleForm(e)}
                 required
-              />{
-                buttonDisabled?
+              />
+              {
+                hidePassword?<VisibilityOffIcon sx={{color:'white', position:'absolute', left:{xl:'460px',lg:'460px',md:'460px',sm:'440px',xs:'240px'}, bottom:'74px',cursor:'pointer'}} onClick={()=>setHidePassword(false)}/>:<VisibilityIcon sx={{color:'white', position:'absolute', left:{xl:'460px',lg:'460px',md:'460px',sm:'440px',xs:'240px'}, bottom:'74px',cursor:'pointer'}} onClick={()=>setHidePassword(true)}/>
+              }
+              {buttonDisabled?
                 <LoadingButton
                   variant="contained"
                   sx={{

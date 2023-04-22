@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { LoadingButton } from "@mui/lab";
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import '../../App.css'
 
 function Signup() {
@@ -20,6 +22,7 @@ function Signup() {
 
   let [buttonLoading, setButtonLoading] = useState(false);
   let [buttonDisabled,setButtonDisabled] = useState(true)
+  let [hidePassword,setHidePassword] = useState(true)
 
   let handleForm = ({ target }) => {
     setForm({ ...form, [target.name]: target.value });
@@ -148,7 +151,7 @@ function Signup() {
                 required
               />
               <TextField
-                type="password"
+                type={hidePassword?'password':'text'}
                 id="password"
                 name="password"
                 label="Password"
@@ -158,7 +161,11 @@ function Signup() {
                 inputProps={{ className: "TextFieldInput" }}
                 onChange={(e) => handleForm(e)}
                 required
-              />{
+              />
+              {
+                hidePassword?<VisibilityOffIcon sx={{color:'white', position:'absolute', left:{xl:'460px',lg:'460px',md:'460px',sm:'410px',xs:'240px'}, bottom:'-144px',cursor:'pointer'}} onClick={()=>setHidePassword(false)}/>:<VisibilityIcon sx={{color:'white', position:'absolute', left:{xl:'460px',lg:'460px',md:'460px',sm:'410px',xs:'240px'}, bottom:'-144px',cursor:'pointer'}} onClick={()=>setHidePassword(true)}/>
+              }
+              {
                 buttonDisabled?
                 <LoadingButton
                   variant="contained"
