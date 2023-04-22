@@ -420,27 +420,27 @@ const NAV_ITEMS = [
       {
         label: "Packages",
         subLabel: "Find your dream design job",
-        href: "./packages",
+        href: "/packages",
       },
       {
         label: "Furniture",
         subLabel: "An exclusive list for contract work",
-        href: "./furniture",
+        href: "/furniture",
       },
       {
         label: "Appliances",
         subLabel: "An exclusive list for contract work",
-        href: "./appliances",
+        href: "/appliances",
       },
       {
         label: "Electronics",
         subLabel: "An exclusive list for contract work",
-        href: "./electronics",
+        href: "/electronics",
       },
       {
         label: "Fitness",
         subLabel: "An exclusive list for contract work",
-        href: "./fitness",
+        href: "/fitness",
       },
     ],
   },
