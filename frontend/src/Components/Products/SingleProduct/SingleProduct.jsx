@@ -230,7 +230,7 @@ function SingleProduct() {
                 margin: "45px auto",
                 ":hover": { backgroundColor: "#FF6464" },
                 "&.Mui-disabled": {
-                  color: "#ff6666",
+                  color: "white",
                   fontWeight:'bold'
                 }
               }}
