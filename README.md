@@ -31,9 +31,11 @@ In this project we have made the foolowing things :
 ![home2](img/search.png)
 
 
-## Sign In page :
+## Log In page :
 
 ![login](img/login.png)
+
+## Sign Up page :
 
 ![signup](img/Signup.png)
 
